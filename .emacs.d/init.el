@@ -1,19 +1,15 @@
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/modules/")
-(add-to-list 'load-path "~/.emacs.d/modules/inf-ruby/")
-(add-to-list 'load-path "~/.emacs.d/modules/rinari/")
-(add-to-list 'load-path "~/.emacs.d/modules/nxhtml/")
-(add-to-list 'load-path "~/.emacs.d/modules/ecb-2.40/")
-;; Tabs and spaces
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
 
+;; Window size
+(setq initial-frame-alist '((top . 10) (left . 30)
+                            (width . 90) (height . 50)))
+;; Tabs and spaces
+(setq-default tab-width 2) ;; Should probably stop doing this
+(setq-default indent-tabs-mode nil) ; Use spaces instead of tabs
 ;;(setq-default c-basic-offset 2)
-;;(setq-default indent-tabs-mode nil) ; Use spaces instead of tabs
 ;;(setq sentence-end-double-space nil) ; Sentences end with one space
-;;(setq default-tab-width 2) ; Tab appears to be 2 spaces, but isn't saved that way
-;;(setq-default tab-width 2) ; Length of tab is 2 SPC
 
 ;; Appearance
 (set-default-font "Inconsolata-14" "Menlo-12")
@@ -23,6 +19,7 @@
 
 ;; Dictionary
 (setq ispell-dictionary "english") ; Set ispell dictionary
+
 ;; Menu bar
 (define-key menu-bar-tools-menu [games] nil)
 (tool-bar-mode 0)
@@ -63,3 +60,38 @@
 ;; Default mode
 (setq default-major-mode 'text-mode) ; Text-mode is default mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
+
+;; Keyboard shortcuts
+;; Make Emacs autoindent
+	(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Kernel style
+(defun c-lineup-arglist-tabs-only (ignored)
+  "Line up argument lists by tabs, not spaces"
+  (let* ((anchor (c-langelem-pos c-syntactic-element))
+	 (column (c-langelem-2nd-pos c-syntactic-element))
+	 (offset (- (1+ column) anchor))
+	 (steps (floor offset c-basic-offset)))
+    (* (max steps 1)
+       c-basic-offset)))
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            ;; Add kernel style
+            (c-add-style
+             "linux-tabs-only"
+             '("linux" (c-offsets-alist
+                        (arglist-cont-nonempty
+                         c-lineup-gcc-asm-reg
+                         c-lineup-arglist-tabs-only))))))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Enable kernel mode for the appropriate files
+              (when (and filename
+                         (string-match (expand-file-name "~/src/linux-trees")
+                                       filename))
+                (setq indent-tabs-mode t)
+                (c-set-style "linux-tabs-only")))))
+;; End Kernel style
