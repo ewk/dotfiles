@@ -3,15 +3,36 @@ export PATH
 
 #bindkey -me
 
-# Load vcs prompt 
+# Load vcs prompt
+# Brian Carper's git status line trick
 autoload -Uz vcs_info
-precmd() {
-  psvar=()
-  vcs_info
-  [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+ 
+zstyle ':vcs_info:*' stagedstr '%F{28}●'
+zstyle ':vcs_info:*' unstagedstr '%F{11}●'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+zstyle ':vcs_info:*' enable git svn
+precmd () {
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{blue}]'
+    } else {
+        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{red}●%F{blue}]'
+    }
+ 
+    vcs_info
 }
+ 
+setopt prompt_subst
+PROMPT='%F{blue}%n@%m %c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%% %{$reset_color%}'
+# Old VCS
+#autoload -Uz vcs_info
+#precmd() {
+#  psvar=()
+#  vcs_info
+#  [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+#}
   # set prompt to user@host current directory %  
-PS1='%n@%m%(1v.%F{green}%1v%f.) %. %# '
+#PS1='%n@%m%(1v.%F{green}%1v%f.) %. %# '
 # END VCS 
 
 setopt prompt_subst # use substitutions in prompts
