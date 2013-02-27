@@ -84,7 +84,7 @@ set textwidth=80
 set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines 
 
 " Linebreak
-set linebreak "break at word. 
+" set linebreak "break at word. 
 set showbreak=… "does what it says 
 
 " Whitespace
