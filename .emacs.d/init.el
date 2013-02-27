@@ -21,6 +21,8 @@
 (column-number-mode 1) ; Show column number in mode-line
 (global-linum-mode 1) ; Line numbers in all buffers
 
+;; Dictionary
+(setq ispell-dictionary "english") ; Set ispell dictionary
 ;; Menu bar
 (define-key menu-bar-tools-menu [games] nil)
 (tool-bar-mode 0)
@@ -55,46 +57,9 @@
 (setq make-backup-files nil) ; No backup files ~
 (setq auto-save-timeout 60) ; Autosave every minute
 
-;; ???
+;; Print argument list of function you are writing
 (eldoc-mode 1)
 
 ;; Default mode
 (setq default-major-mode 'text-mode) ; Text-mode is default mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
-
-;; inf-ruby
-;;;(1) modify .emacs to use ruby-mode 
-;;;     for example :
-
-    (autoload 'ruby-mode "ruby-mode"
-      "Mode for editing ruby source files" t)
-    (setq auto-mode-alist
-          (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
-    (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
-    				     interpreter-mode-alist))
-    
-;;;(2) set to load inf-ruby and set inf-ruby key definition in ruby-mode.
-
-    (autoload 'run-ruby "inf-ruby"
-      "Run an inferior Ruby process")
-    (autoload 'inf-ruby-keys "inf-ruby"
-      "Set local key defs for inf-ruby in ruby-mode")
-    (add-hook 'ruby-mode-hook
-          '(lambda ()
-             (inf-ruby-keys)
-    ))
-
-;; Rinari
-(require 'rinari)
-
-;;; nxml (HTML ERB template support)
-(setq
-nxhtml-global-minor-mode t
-mumamo-chunk-coloring 'submode-colored
-nxhtml-skip-welcome t
-indent-region-mode t
-rng-nxml-auto-validate-flag nil
-nxml-degraded t)
-(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo))
-
-
