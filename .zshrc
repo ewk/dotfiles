@@ -35,13 +35,13 @@ PROMPT='%F{blue}%n@%m %c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%% %{$re
 #PS1='%n@%m%(1v.%F{green}%1v%f.) %. %# '
 # END VCS 
 
-setopt prompt_subst # use substitutions in prompts
+# setopt prompt_subst # use substitutions in prompts
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
 setopt histverify # Turn on verbose history substitution 
 setopt append_history # Prevents race conditions saving to history file
 setopt hist_ignore_dups # Ignore duplicates in command history 
-setopt noclobber # Prevensts redirected output from overwriting existing files 
+setopt noclobber # Prevents redirected output from overwriting existing files 
 
 # Use 1000 history lines internally, save all of them to the file ~/.history 
 HISTSIZE=100
@@ -67,4 +67,4 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # User specific aliases and functions
 alias sudo='sudo env PATH=$PATH'
-#alias 'open'='xdg-open'
+alias 'open'='xdg-open'
