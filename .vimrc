@@ -10,9 +10,12 @@ set encoding=utf-8
 set shortmess+=I 
 
 " pathogen will load any file or directory in .vim/bundle; must load before filetype
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
-call pathogen#helptags() 
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#infect()
+"call pathogen#helptags() 
 
 " ================ General Config ====================
 set number "enable line numbering at paragraphs
@@ -41,7 +44,7 @@ set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set ignorecase       "Ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
 nmap <silent> ,/ :nohlsearch<CR> " Clear highlighted search
-set path+=Projects/** "Allows :find file to drill down subdirectories without specifying full path
+"set path+=Projects/** "Allows :find file to drill down subdirectories without specifying full path
 
 " ================ Turn Off Swap Files ==============
 set nobackup   " No more backup files
@@ -73,7 +76,7 @@ autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 
-filetype plugin indent on " load plugin and Indent based on filetype
+"filetype plugin indent on " load plugin and Indent based on filetype
 runtime macros/matchit.vim
 
 " ================ File Format ====================== 
@@ -207,5 +210,5 @@ nnoremap gj j
 nnoremap gk k
 
 " You idiot, stop typing in insert mode! 
-au InsertEnter * hi Normal ctermbg=234 guibg=#000000
-au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+"au InsertEnter * hi Normal ctermbg=234 guibg=#000000
+"au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
