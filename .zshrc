@@ -43,4 +43,7 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # User specific aliases and functions
 alias sudo='sudo env PATH=$PATH'
-alias 'open'='xdg-open'
+if [[ `uname` == 'Linux' ]]
+then
+  alias 'open'='xdg-open'
+fi
