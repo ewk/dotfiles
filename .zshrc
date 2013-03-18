@@ -2,40 +2,28 @@ PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
 export PATH
 
 #bindkey -me
+setopt prompt_subst # use substitutions in prompts
+precmd() {
+    psvar=()
+    vcs_info
+    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+}
+
+# You can now use `%1v' to drop the $vcs_info_msg_0_ contents in your prompt;
+
+PS1="%n@%m %(1v.%F{red}%1v%f.)%# "
 
 # Load vcs prompt
-# Brian Carper's git status line trick
-autoload -Uz vcs_info
- 
-zstyle ':vcs_info:*' stagedstr '%F{28}●'
-zstyle ':vcs_info:*' unstagedstr '%F{11}●'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
-zstyle ':vcs_info:*' enable git svn
-precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{blue}]'
-    } else {
-        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{red}●%F{blue}]'
-    }
- 
-    vcs_info
-}
- 
-setopt prompt_subst
-PROMPT='%F{blue}%n@%m %c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%% %{$reset_color%}'
-# Old VCS
 #autoload -Uz vcs_info
+#zstyle ':vcs_info:*' enable git svn hg
+#zstyle ':vcs_info:git*' formats "%s  %r/%S %b %m%u%c "
 #precmd() {
-#  psvar=()
-#  vcs_info
-#  [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+#    vcs_info
 #}
-  # set prompt to user@host current directory %  
-#PS1='%n@%m%(1v.%F{green}%1v%f.) %. %# '
 # END VCS 
+# set prompt to user@host current directory %  
+#PROMPT="%n@%m %~ ${vcs_info_msg_0_} %# "
 
-# setopt prompt_subst # use substitutions in prompts
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
 setopt histverify # Turn on verbose history substitution 
