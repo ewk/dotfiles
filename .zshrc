@@ -2,27 +2,15 @@ PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
 export PATH
 
 #bindkey -me
+
 setopt prompt_subst # use substitutions in prompts
-precmd() {
-    psvar=()
-    vcs_info
-    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
-}
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}]%f '
+precmd () { vcs_info }
 
-# You can now use `%1v' to drop the $vcs_info_msg_0_ contents in your prompt;
-
-PS1="%n@%m %(1v.%F{red}%1v%f.)%# "
-
-# Load vcs prompt
-#autoload -Uz vcs_info
-#zstyle ':vcs_info:*' enable git svn hg
-#zstyle ':vcs_info:git*' formats "%s  %r/%S %b %m%u%c "
-#precmd() {
-#    vcs_info
-#}
-# END VCS 
-# set prompt to user@host current directory %  
-#PROMPT="%n@%m %~ ${vcs_info_msg_0_} %# "
+PS1='%n@%m %F{3}%c ${vcs_info_msg_0_}%f%# '
 
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
