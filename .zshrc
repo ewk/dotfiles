@@ -2,15 +2,29 @@ PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
 export PATH
 
 #bindkey -me
-
+# Version control
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
+# git status line traffic light trick, more of a pain than it's worth
+#zstyle ':vcs_info:*' stagedstr '%F{28}●'
+#zstyle ':vcs_info:*' unstagedstr '%F{11}●'
+#zstyle ':vcs_info:*' check-for-changes true
+#precmd () {
+#    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+#        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{blue}]'
+#    } else {
+#        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{red}●%F{blue}]'
+#    }
+#  }
+#PROMPT='%n@%m %F{3}%c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%{$reset_color%}%f%# '
+
+#simple vcs
 zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}]%f '
 precmd () { vcs_info }
-
 PS1='%n@%m %F{3}%c ${vcs_info_msg_0_}%f%# '
+# End simple vcs
 
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
