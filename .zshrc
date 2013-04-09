@@ -1,7 +1,7 @@
 PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
 export PATH
 
-#bindkey -me
+bindkey -me
 # Version control
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
