@@ -2,6 +2,12 @@ PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
 export PATH
 
 bindkey -e
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 # Version control
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
