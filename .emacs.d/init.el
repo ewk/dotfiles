@@ -95,3 +95,13 @@
                 (setq indent-tabs-mode t)
                 (c-set-style "linux-tabs-only")))))
 ;; End Kernel style
+
+;; Org Mode
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+
+;; Auto-complete
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(require 'auto-complete-config)
+(ac-config-default)

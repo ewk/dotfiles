@@ -1,6 +1,5 @@
-export EDITOR=gvim
+export EDITOR=emacs
 # But use emacs key bindings in terminal
-bindkey -e
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 
 ulimit -S -n 1024

@@ -1,7 +1,13 @@
 PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
 export PATH
 
-#bindkey -me
+bindkey -e
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 # Version control
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
