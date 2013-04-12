@@ -1,3 +1,5 @@
+(set-language-environment "UTF-8")
+
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/modules/")
@@ -5,20 +7,17 @@
 ;; Window size
 (setq initial-frame-alist '((top . 10) (left . 30)
                             (width . 90) (height . 50)))
-;; Tabs and spaces
-(setq-default tab-width 2) ;; Should probably stop doing this
-(setq-default indent-tabs-mode nil) ; Use spaces instead of tabs
-;;(setq-default c-basic-offset 2)
-;;(setq sentence-end-double-space nil) ; Sentences end with one space
-
 ;; Appearance
 (set-default-font "Inconsolata-14" "Menlo-12")
 (require 'zenburn-theme)
 (column-number-mode 1) ; Show column number in mode-line
 (global-linum-mode 1) ; Line numbers in all buffers
 
-;; Dictionary
-(setq ispell-dictionary "english") ; Set ispell dictionary
+;; Tabs and spaces
+(setq-default tab-width 2) ;; Should probably stop doing this
+(setq-default c-basic-offset 8)
+(setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
+;;(setq sentence-end-double-space nil) ; Sentences end with one space
 
 ;; Menu bar
 (define-key menu-bar-tools-menu [games] nil)
@@ -61,47 +60,25 @@
 (setq default-major-mode 'text-mode) ; Text-mode is default mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
 
-;; Keyboard shortcuts
-;; Make Emacs autoindent
-	(define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; Kernel style
-(defun c-lineup-arglist-tabs-only (ignored)
-  "Line up argument lists by tabs, not spaces"
-  (let* ((anchor (c-langelem-pos c-syntactic-element))
-	 (column (c-langelem-2nd-pos c-syntactic-element))
-	 (offset (- (1+ column) anchor))
-	 (steps (floor offset c-basic-offset)))
-    (* (max steps 1)
-       c-basic-offset)))
-
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            ;; Add kernel style
-            (c-add-style
-             "linux-tabs-only"
-             '("linux" (c-offsets-alist
-                        (arglist-cont-nonempty
-                         c-lineup-gcc-asm-reg
-                         c-lineup-arglist-tabs-only))))))
-
-(add-hook 'c-mode-hook
-          (lambda ()
-            (let ((filename (buffer-file-name)))
-              ;; Enable kernel mode for the appropriate files
-              (when (and filename
-                         (string-match (expand-file-name "~/src/linux-trees")
-                                       filename))
-                (setq indent-tabs-mode t)
-                (c-set-style "linux-tabs-only")))))
-;; End Kernel style
-
-;; Org Mode
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-
 ;; Auto-complete
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (require 'auto-complete-config)
 (ac-config-default)
+
+;; find-tags for elisp
+(define-key emacs-lisp-mode-map 
+  (kbd "M-.") 'find-function-at-point)
+
+;; Custom key bindings
+(global-set-key "\C-w" 'backward-kill-word) 
+
+;; unique buffer names
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+(defun my-disable-electric-indentation ()
+  "Stop ';', '}', etc. from re-indenting the current line." 
+  (c-toggle-electric-state -1)) 
+(add-hook 'c-mode-common-hook 'my-disable-electric-indentation)
+
+
