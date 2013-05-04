@@ -75,3 +75,7 @@ export PERL_MM_OPT="INSTALL_BASE=/home/ewk/perl5";
 export PERL5LIB="/home/ewk/perl5/lib/perl5:$PERL5LIB";
 export PATH="/home/ewk/perl5/bin:$PATH";
 
+# Because Emacs already has this
+autoload -U tetris
+zle -N tetris
+bindkey KEYS tetris
