@@ -210,5 +210,5 @@ nnoremap gj j
 nnoremap gk k
 
 " You idiot, stop typing in insert mode! 
-"au InsertEnter * hi Normal ctermbg=234 guibg=#000000
-"au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+au InsertEnter * hi Normal ctermbg=234 guibg=#000000
+au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f

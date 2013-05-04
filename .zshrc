@@ -1,4 +1,4 @@
-PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/bin:
+PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
 export PATH
 
 bindkey -e

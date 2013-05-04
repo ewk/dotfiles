@@ -3,7 +3,7 @@
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/modules/")
-
+(add-to-list 'load-path "~/.emacs.d/modules/auto-complete-1.3.1")
 ;; Window size
 (setq initial-frame-alist '((top . 10) (left . 30)
                             (width . 90) (height . 50)))
@@ -61,9 +61,9 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
 
 ;; Auto-complete
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (require 'auto-complete-config)
 (ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; find-tags for elisp
 (define-key emacs-lisp-mode-map 
