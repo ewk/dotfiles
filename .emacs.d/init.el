@@ -69,9 +69,6 @@
 (define-key emacs-lisp-mode-map 
   (kbd "M-.") 'find-function-at-point)
 
-;; Custom key bindings
-(global-set-key "\C-w" 'backward-kill-word) 
-
 ;; unique buffer names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
