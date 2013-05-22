@@ -10,8 +10,8 @@ set encoding=utf-8
 set shortmess+=I 
 
 " pathogen will load any file or directory in .vim/bundle; must load before filetype
+filetype off
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#infect()
@@ -30,6 +30,9 @@ set title " change terminal title
 set autochdir										"pwd is always same as current file 
 set hidden " Hides buffers instead of closing them 
 syntax on " Enable syntax highlighting.
+set modelines=0 " For security? 
+set ttyfast
+au FocusLost * :wa " Autosave
 
 " Remember last location in file
 if has("autocmd")
@@ -43,7 +46,9 @@ set hlsearch         "Higlight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set ignorecase       "Ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
-nmap <silent> ,/ :nohlsearch<CR> " Clear highlighted search
+" Use very magic search by default
+nnoremap / /\v
+vnoremap / /\v
 "set path+=Projects/** "Allows :find file to drill down subdirectories without specifying full path
 
 " ================ Turn Off Swap Files ==============
@@ -66,7 +71,8 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType python setlocal ts=4 sts=4 sw=4 set noexpandtab
- 
+" autocmd Filetype c
+
 " Customisations based on house-style (arbitrary)
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
