@@ -4,6 +4,8 @@ export PATH
 # Use Emacs key bindings, C-e, C-a, etc
 bindkey -e
 
+setopt nobeep
+
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
