@@ -1,6 +1,7 @@
 PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
 export PATH
 
+# Use Emacs key bindings, C-e, C-a, etc
 bindkey -e
 
 # Enable Ctrl-x-e to edit command line
