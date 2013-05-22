@@ -4,8 +4,6 @@ export PATH
 # Use Emacs key bindings, C-e, C-a, etc
 bindkey -e
 
-setopt nobeep
-
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -41,6 +39,7 @@ setopt histverify # Turn on verbose history substitution
 setopt append_history # Prevents race conditions saving to history file
 setopt hist_ignore_dups # Ignore duplicates in command history 
 setopt noclobber # Prevents redirected output from overwriting existing files 
+setopt nobeep
 
 # Use 1000 history lines internally, save all of them to the file ~/.history 
 HISTSIZE=100
