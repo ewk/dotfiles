@@ -47,7 +47,7 @@ set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set ignorecase       "Ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
 " Use very magic search by default
-nnoremap / /\v 
+nnoremap / /\v
 vnoremap / /\v
 "set path+=Projects/** "Allows :find file to drill down subdirectories without specifying full path
 
@@ -174,7 +174,7 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 let mapleader="," 
 
 " Clear highlighted search
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
