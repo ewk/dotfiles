@@ -174,7 +174,10 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 let mapleader="," 
 
 " Clear highlighted search
-nmap <silent> ,/ :nohlsearch<CR> 
+nmap <silent> ,/ :nohlsearch<CR>
+
+" Strip all trailing whitespace in the current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " To save, press ctrl-s.
 nmap <c-s> :w<CR> 
