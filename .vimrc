@@ -60,10 +60,11 @@ set nowb       " Prevents automatic write backup before overwriting file
 set autoindent    " Always autoindent and copy previous indentation on copy 
 set smartindent   " Automatically indent when adding a curly bracket, etc.
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
-set shiftwidth=2  " Affects automatic indentation. Tabs should be converted to a group of 2 spaces; filetype detection will change this for Python, etc.
-set softtabstop=2 " default is same as tabstop and shiftwidth 
-set tabstop=2     " Change width of tab character
-set expandtab     " Converts tabs to spaces using softtabstop value 
+" You will nearly always want tabstop == softtabstop == shiftwidth
+set tabstop=2     " Width of tab character
+set softtabstop=2 " Fine tune amount of white space to be inserted; higher prcedence than tabstop
+set expandtab     " use spaces in place of tab characters using softtabstop value 
+set shiftwidth=2  " Amount of white space to insert or remove in normal mode
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent    " Copy the structure of the existing lines indent when autoindenting a new line. Uses spaces instead of tabs if expandtab is set   
 
@@ -71,9 +72,6 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType python setlocal ts=4 sts=4 sw=4 set noexpandtab
-" autocmd Filetype c
-
-" Customisations based on house-style (arbitrary)
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
