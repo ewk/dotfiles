@@ -1,0 +1,14 @@
+dotfiles
+========
+
+
+  "If I have seen further it is by standing on the shoulders of giants."
+
+                                    - misattributed to Sir Isaac Newton
+
+This repo houses my (appropriately named) dotfiles- config files for git, vim, zsh, and emacs (I don't really use or maintain any of the emacs stuff, so you should probably ignore it). 
+
+I make no claim to the functionality, originality, or even the usefulness of these files. It's the result of years of yak shaving, reading the manual, and digging through other people's code. 
+
+Since I had the freedom to borrow heavily from others, you should feel free to
+do the same -- assuming, of course, there's anything in here you find useful. 
