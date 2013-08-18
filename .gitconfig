@@ -5,24 +5,24 @@
 	email = edkovsky@gmail.com
 
 [core]
-    excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 	editor = gvim -f
 
 [alias]
-    co = checkout
-    ci = commit
+  co = checkout
+  ci = commit
   st = status
   br = branch
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[github]
-	user = ewk
-	token = a44997ae2b3d90156012527182f148b4
+
 [credential]
 	helper = cache --timeout=3600
+
 [push]
 	default = matching
+
 [color]
 	ui = true

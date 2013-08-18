@@ -27,7 +27,7 @@ set autoread                    "Reload files changed outside vim
 set visualbell " no beeping
 set noerrorbells " I said no beeping!
 set title " change terminal title
-set autochdir										"pwd is always same as current file 
+set autochdir "pwd is always same as current file 
 set hidden " Hides buffers instead of closing them 
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
@@ -154,7 +154,9 @@ set startofline "keep cursor at same position when scrolling
 set cursorline
 highlight CursorLine guibg=black ctermbg=lightblue
 set showmatch " highlight matching pairs
-
+set colorcolumn=85
+highlight ColorColumn guibg=DarkSlateGray 
+highlight Visual guibg=DarkSlateGray 
 " ================ CTags ======================
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 "Load tags auotmatically from working directory
@@ -219,6 +221,6 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" You idiot, stop typing in insert mode! 
+" You idiot, stop typing commands in insert mode! 
 au InsertEnter * hi Normal ctermbg=234 guibg=#000000
 au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f

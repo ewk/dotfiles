@@ -33,6 +33,8 @@
 (setq blink-matching-paren-distance nil) ; Blinking parenthesis
 (setq show-paren-style 'expression) ; Highlight text between parens
 (global-hl-line-mode t) ; Highlight cursor line
+(blink-cursor-mode 0)
+(setq visible-bell t)
 
 ; Interactive do things- find file auto complete
 (setq ido-enable-flex-matching t)
@@ -48,6 +50,7 @@
 
 ;; Aliases
 (defalias 'yes-or-no-p 'y-or-n-p) ; y/n instead of yes/no
+;; (setq confirm-kill-emacs 'yes-or-no-p) ;; Never quit accidentally
 
 ;; Backups and autosave
 (setq make-backup-files nil) ; No backup files ~
@@ -78,4 +81,32 @@
   (c-toggle-electric-state -1)) 
 (add-hook 'c-mode-common-hook 'my-disable-electric-indentation)
 
+;; Got a wheel mouse!
+(mouse-wheel-mode 1)
 
+(setq kill-whole-line t)
+
+;; Some small hacks Chris Kirchen
+(setq user-mail-address "edkovsky@gmail.com")
+(setq display-time-24hr-format t)
+(display-time-mode 1)
+(setq isearch-lazy-highlight nil)
+(setq Info-use-header-line nil)
+(setq Info-fontify nil)
+(setq ps-paper-type 'a4)
+(setq kill-read-only-ok t)
+(setq diff-switches "-urN")
+
+;; (require ruby-mode)
+;; .rb and .rbx are Ruby files
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rbx$" . ruby-mode))
+
+;; go-mode
+;;(require 'go-mode)
+;;(add-hook 'go-mode-hook 'subword-mode)
+;;(add-hook 'go-mode-hook #'(lambda () (setq fill-column 79)))
+;;(add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
+
+;; For emacsclient
+;(server-start)
