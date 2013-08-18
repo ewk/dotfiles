@@ -179,7 +179,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Use leader to paste from system clipboard instead of global paste gymnastics
+" Use leader to paste from system clipboard instead of global register gymnastics
 map <leader>v "+gP
 
 " To save, press ctrl-s.
