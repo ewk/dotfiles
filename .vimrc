@@ -61,10 +61,10 @@ set autoindent    " Always autoindent and copy previous indentation on copy
 set smartindent   " Automatically indent when adding a curly bracket, etc.
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 " You will nearly always want tabstop == softtabstop == shiftwidth
-set tabstop=2     " Width of tab character
-set softtabstop=2 " Fine tune amount of white space to be inserted; higher prcedence than tabstop
+set tabstop=4     " Width of tab character
+set softtabstop=4 " Fine tune amount of white space to be inserted; higher prcedence than tabstop
 set expandtab     " use spaces in place of tab characters using softtabstop value 
-set shiftwidth=2  " Amount of white space to insert or remove in normal mode
+set shiftwidth=4  " Amount of white space to insert or remove in normal mode
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent    " Copy the structure of the existing lines indent when autoindenting a new line. Uses spaces instead of tabs if expandtab is set   
 
@@ -76,6 +76,7 @@ autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
   
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
