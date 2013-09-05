@@ -161,16 +161,16 @@ highlight Visual guibg=DarkSlateGray
 " ================ CTags ======================
 noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 "Load tags auotmatically from working directory
-:set tags=./tags,/~/Projects
+set tags=./tags,/~/Projects
 
 "Load template for new files
 :autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
 
 " Sample abbreviation for C files
-" :iabbrev for( for (x=0;x<var;x++){<cr><cr>}
+" iabbrev for( for (x=0;x<var;x++){<cr><cr>}
 
 "Load tags automatically from working directory
-:set tags=./tags,/~/Projects
+set tags=./tags,/~/Projects
 
 " ================ Keyboard customization ======================
 " change the mapleader from \ to ,
