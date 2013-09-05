@@ -159,7 +159,7 @@ set colorcolumn=85
 highlight ColorColumn guibg=DarkSlateGray 
 highlight Visual guibg=DarkSlateGray 
 " ================ CTags ======================
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 "Load tags auotmatically from working directory
 :set tags=./tags,/~/Projects
 
@@ -177,42 +177,42 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 let mapleader="," 
 
 " Clear highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Use leader to paste from system clipboard instead of global register gymnastics
-map <leader>v "+gP
-imap <leader>v <esc>"+gPi
+noremap <leader>v "+gP
+inoremap <leader>v <esc>"+gPi
 
 " To save, press ctrl-s.
-nmap <c-s> :w<CR> 
-imap <c-s> <Esc>:w<CR>a
+nnoremap <c-s> :w<CR> 
+inoremap <c-s> <Esc>:w<CR>a
 
 " Easy window navigation
-map <C-h> <C-w>h 
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+noremap <C-h> <C-w>h 
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " Toggle in insert mode to paste large amounts of text in terminal vim
 set pastetoggle=<F2> 
 
 " Use Q to reformat the current paragraph (or selection) after pasting
-vmap Q gq 
-nmap Q gqap
+vnoremap Q gq 
+nnoremap Q gqap
 
 " When you forget to open a file with sudo
-cmap w!! w !sudo tee % >/dev/null 
+cnoremap w!! w !sudo tee % >/dev/null 
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z
