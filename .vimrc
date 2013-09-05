@@ -167,7 +167,7 @@ noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 :autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
 
 " Sample abbreviation for C files
-" :iabbrev <buffer> for( for (x=0;x<var;x++){<cr><cr>}
+" :iabbrev for( for (x=0;x<var;x++){<cr><cr>}
 
 "Load tags automatically from working directory
 :set tags=./tags,/~/Projects
