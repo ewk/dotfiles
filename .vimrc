@@ -32,11 +32,11 @@ set hidden " Hides buffers instead of closing them
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
-au FocusLost * :wa " Autosave
+autocmd FocusLost * :wa " Autosave
 
 " Remember last location in file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
 
@@ -164,7 +164,7 @@ noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 set tags=./tags,/~/Projects
 
 "Load template for new files
-:autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
+autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
 
 " Sample abbreviation for C files
 " iabbrev for( for (x=0;x<var;x++){<cr><cr>}
@@ -224,5 +224,5 @@ nnoremap gj j
 nnoremap gk k
 
 " You idiot, stop typing commands in insert mode! 
-au InsertEnter * hi Normal ctermbg=234 guibg=#000000
-au InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
+autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
