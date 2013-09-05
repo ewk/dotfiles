@@ -184,6 +184,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Use leader to paste from system clipboard instead of global register gymnastics
 map <leader>v "+gP
+imap <leader>v <esc>"+gPi
 
 " To save, press ctrl-s.
 nmap <c-s> :w<CR> 
