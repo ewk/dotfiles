@@ -76,11 +76,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-(defun my-disable-electric-indentation ()
-  "Stop ';', '}', etc. from re-indenting the current line." 
-  (c-toggle-electric-state -1)) 
-(add-hook 'c-mode-common-hook 'my-disable-electric-indentation)
-
 ;; Got a wheel mouse!
 (mouse-wheel-mode 1)
 
