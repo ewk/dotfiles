@@ -67,10 +67,9 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
 
 ;; Auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-
+;;(require 'auto-complete-config)
+;;(ac-config-default)
+;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; unique buffer names
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
