@@ -14,7 +14,7 @@
 (global-linum-mode 1) ; Line numbers in all buffers
 
 ;; Tabs and spaces
-(setq-default tab-width 2) ;; Should probably stop doing this
+(setq-default tab-width 4) ;; Should probably stop doing this
 (setq-default c-basic-offset 8)
 (setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
 ;;(setq sentence-end-double-space nil) ; Sentences end with one space
@@ -33,7 +33,7 @@
 
 ;; Highlighting
 (show-paren-mode 1) ; Highlight parenthesis pairs
-(setq blink-matching-paren-distance nil) ; Blinking parenthesis
+(setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
 (global-hl-line-mode t) ; Highlight cursor line
 (blink-cursor-mode 0)
@@ -76,7 +76,6 @@
   (kbd "M-.") 'find-function-at-point)
 
 ;; unique buffer names
-(require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; Got a wheel mouse!
