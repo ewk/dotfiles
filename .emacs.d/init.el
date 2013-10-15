@@ -24,9 +24,12 @@
 (tool-bar-mode 0)
 (setq inhibit-startup-message t) ; No message at startup
 
-;; enable autopair in all buffers
-(require 'autopair)
-(autopair-global-mode)
+;; enable electric pair in all buffers
+(electric-pair-mode t)
+(defun my-disable-electric-indentation ()
+  "Stop ';', '}', etc. from re-indenting the current line." 
+  (c-toggle-electric-state -1)) 
+(add-hook 'c-mode-common-hook 'my-disable-electric-indentation)
 
 ;; Highlighting
 (show-paren-mode 1) ; Highlight parenthesis pairs
