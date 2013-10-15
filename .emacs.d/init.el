@@ -71,9 +71,6 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
-;; find-tags for elisp
-(define-key emacs-lisp-mode-map 
-  (kbd "M-.") 'find-function-at-point)
 
 ;; unique buffer names
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
