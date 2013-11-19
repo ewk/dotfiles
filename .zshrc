@@ -79,3 +79,6 @@ fi
 autoload -U tetris
 zle -N tetris
 bindkey KEYS tetris
+
+# Sets the Mail Environment Variable
+MAIL=/var/spool/mail/ewk && export MAIL
