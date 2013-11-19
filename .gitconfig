@@ -2,7 +2,7 @@
 
 [user]
 	name = Eddie Kovsky
-	email = ewk@edkovsky
+	email = ewk@edkovsky.org
 
 [core]
   excludesfile = ~/.gitignore
