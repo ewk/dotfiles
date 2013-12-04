@@ -26,3 +26,8 @@ alias ls='ls -G'
 # export COLOR_GRAY='\e[1;30m'
 # export COLOR_LIGHT_GRAY='\e[0;37m'
 alias colorslist="set | egrep 'COLOR_\w*'"
+
+# Setting PATH for Python 3.3
+# The orginal version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
+export PATH
