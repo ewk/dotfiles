@@ -14,7 +14,7 @@
 (global-linum-mode 1) ; Line numbers in all buffers
 
 ;; Tabs and spaces
-(setq-default tab-width 4) ;; Should probably stop doing this
+(setq-default tab-width 8) ;; Should probably stop doing this
 (setq-default c-basic-offset 8)
 (setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
 ;;(setq sentence-end-double-space nil) ; Sentences end with one space

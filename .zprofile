@@ -1,4 +1,4 @@
-export EDITOR=gvim
+export EDITOR="vim"
 # But use emacs key bindings in terminal
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 

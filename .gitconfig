@@ -2,7 +2,7 @@
 
 [user]
 	name = Eddie Kovsky
-	email = edkovsky@gmail.com
+	email = ewk@edkovsky.org
 
 [core]
   excludesfile = ~/.gitignore
@@ -26,3 +26,20 @@
 
 [color]
 	ui = true
+
+[format]
+    #headers = "Organization: git-foo\n"
+    #subjectprefix = CHANGE
+    #suffix = .txt
+    #numbered = auto
+    #to = <email>
+    #cc = <email>
+    #attach [ = mime-boundary-string ]
+    signoff = true
+
+[sendemail]
+    smtpserver = box492.bluehost.com
+    smtpserverport = 465
+    smtpencryption = ssl
+    smtpuser = ewk+edkovsky.org
+    confirm = always
