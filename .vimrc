@@ -88,8 +88,8 @@ runtime macros/matchit.vim
 
 " ================ File Format ====================== 
 " Margins and word wrapping
-set wrap
-set textwidth=80
+set wrap " Wrap sets how text is displayed based on window size. Textwidth sets column width in the buffer.
+"set textwidth=80 " Warning is set in Visual Clues section; enforcement is not automatic with textwidht turned off
 " set wrapmargin=5 "wordwrapping at right hand column; ignored if textwidth is on
 set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines 
 
@@ -155,11 +155,14 @@ endif
 " ================ Visual clues ======================
 set startofline "keep cursor at same position when scrolling
 set cursorline
-highlight CursorLine guibg=black ctermbg=lightblue
+highlight CursorLine guibg=black ctermbg=lightblue ctermbg=lightblue
+highlight ColorColumn guibg=magenta ctermbg=magenta
+" set colorcolumn=81
+" instead setting colorcolumn, matchadd only highlights lines pas 80 columns
+call matchadd('ColorColumn', '\%81v', 100)
 set showmatch " highlight matching pairs
-set colorcolumn=80
-highlight ColorColumn guibg=DarkSlateGray 
-highlight Visual guibg=DarkSlateGray 
+highlight Visual guibg=DarkSlateGray ctermbg=lightblue
+
 " ================ CTags ======================
 noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 "Load tags auotmatically from working directory
