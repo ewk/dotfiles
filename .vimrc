@@ -33,6 +33,7 @@ syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
 "autocmd FocusLost * :wa " Autosave
+set autowrite "Instead save buffer when changing files
 
 " Remember last location in file
 if has("autocmd")
