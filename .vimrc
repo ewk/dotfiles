@@ -85,6 +85,7 @@ autocmd BufNewFile,BufRead *.rss setfiletype xml
 
 "filetype plugin indent on " load plugin and Indent based on filetype
 runtime macros/matchit.vim
+"set matchpairs+=<:>
 
 " ================ File Format ====================== 
 " Margins and word wrapping
