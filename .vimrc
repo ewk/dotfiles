@@ -193,6 +193,9 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 noremap <leader>v "+gP
 inoremap <leader>v <esc>"+gPi
 
+" And copy to system clipboard
+noremap <leader>c "+y
+
 " To save, press ctrl-s.
 nnoremap <c-s> :w<CR> 
 inoremap <c-s> <Esc>:w<CR>a
