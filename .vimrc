@@ -176,9 +176,6 @@ set tags=./tags,/~/Projects
 "Load template for new files
 autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
 
-" Sample abbreviation for C files
-" iabbrev for( for (x=0;x<var;x++){<cr><cr>}
-
 "Load tags automatically from working directory
 set tags=./tags,/~/Projects
 
@@ -236,5 +233,14 @@ nnoremap gk k
 " Swap ; and :
 nnoremap ; :
 nnoremap : ;
+
+" ================ Useful abbreviations ======================
+iab retrun return
+iab pritn print
+iab hbs #! /bin/sh
+iab hbp #! /usr/bin/env perl<CR>use 5.014; use warnings; use autodie;<CR>
+iab hbr #! /usr/bin/env ruby -w
+iab for( for (i = 0; x < var; x++) {<cr><cr>}
+
 " ================ Functions ======================
 
