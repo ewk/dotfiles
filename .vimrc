@@ -32,7 +32,8 @@ set hidden " Hides buffers instead of closing them
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
-autocmd FocusLost * :wa " Autosave
+"autocmd FocusLost * :wa " Autosave
+set autowrite "Instead save buffer when changing files
 
 " Remember last location in file
 if has("autocmd")
@@ -42,7 +43,7 @@ endif
 
 " ================ Search Settings  =================
 set incsearch        "Find the next match as you type 
-set hlsearch         "Higlight searches by default
+set hlsearch         "Highlight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set ignorecase       "Ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
@@ -53,7 +54,7 @@ vnoremap / /\v
 
 " ================ Turn Off Swap Files ==============
 set nobackup   " No more backup files
-set noswapfile "No more swap files for git to ignore; turn this on for large files
+"set noswapfile "No more swap files for git to ignore; turn this on for large files
 set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
@@ -85,11 +86,12 @@ autocmd BufNewFile,BufRead *.rss setfiletype xml
 
 "filetype plugin indent on " load plugin and Indent based on filetype
 runtime macros/matchit.vim
+"set matchpairs+=<:>
 
 " ================ File Format ====================== 
 " Margins and word wrapping
-set wrap
-set textwidth=80
+set wrap " Wrap sets how text is displayed based on window size. Textwidth sets column width in the buffer.
+"set textwidth=80 " Warning is set in Visual Clues section; enforcement is not automatic with textwidht turned off
 " set wrapmargin=5 "wordwrapping at right hand column; ignored if textwidth is on
 set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines 
 
@@ -98,8 +100,8 @@ set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines
 set showbreak=… "does what it says 
 
 " Whitespace
-set list " highlight trailing whitespace; conflicts with linebreak 
-set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.
+set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:·
+set list " highlight trailing whitespace; conflicts with linebreak
 autocmd filetype html,xml set listchars-=tab:>. " except for html
 
 " Paste formatting
@@ -155,11 +157,17 @@ endif
 " ================ Visual clues ======================
 set startofline "keep cursor at same position when scrolling
 set cursorline
-highlight CursorLine guibg=black ctermbg=lightblue
+highlight CursorLine guibg=black ctermbg=lightblue ctermbg=lightblue
+highlight ColorColumn guibg=magenta ctermbg=magenta
+" set colorcolumn=81
+" instead setting colorcolumn, matchadd only highlights lines pas 80 columns
+call matchadd('ColorColumn', '\%81v', 100)
 set showmatch " highlight matching pairs
-set colorcolumn=80
-highlight ColorColumn guibg=DarkSlateGray 
-highlight Visual guibg=DarkSlateGray 
+highlight Visual guibg=DarkSlateGray ctermbg=lightblue
+" stop typing commands in insert mode! 
+autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
+autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+
 " ================ CTags ======================
 noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 "Load tags auotmatically from working directory
@@ -167,9 +175,6 @@ set tags=./tags,/~/Projects
 
 "Load template for new files
 autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
-
-" Sample abbreviation for C files
-" iabbrev for( for (x=0;x<var;x++){<cr><cr>}
 
 "Load tags automatically from working directory
 set tags=./tags,/~/Projects
@@ -187,6 +192,9 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Use leader to paste from system clipboard instead of global register gymnastics
 noremap <leader>v "+gP
 inoremap <leader>v <esc>"+gPi
+
+" And copy to system clipboard
+noremap <leader>c "+y
 
 " To save, press ctrl-s.
 nnoremap <c-s> :w<CR> 
@@ -225,6 +233,17 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" You idiot, stop typing commands in insert mode! 
-autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
-autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+" Swap ; and :
+nnoremap ; :
+nnoremap : ;
+
+" ================ Useful abbreviations ======================
+iab retrun return
+iab pritn print
+iab hbs #! /bin/sh
+iab hbp #! /usr/bin/env perl<CR>use 5.014; use warnings; use autodie;<CR>
+iab hbr #! /usr/bin/env ruby -w
+iab for( for (i = 0; x < var; x++) {<cr><cr>}
+
+" ================ Functions ======================
+
