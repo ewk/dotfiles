@@ -98,7 +98,7 @@ set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines
 set showbreak=… "does what it says 
 
 " Whitespace
-set listchars=tab:▸\ ,eol:¬,extends:#,trail:.
+set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:·
 set list " highlight trailing whitespace; conflicts with linebreak
 autocmd filetype html,xml set listchars-=tab:>. " except for html
 
