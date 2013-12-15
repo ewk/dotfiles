@@ -32,7 +32,7 @@ set hidden " Hides buffers instead of closing them
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
-autocmd FocusLost * :wa " Autosave
+"autocmd FocusLost * :wa " Autosave
 
 " Remember last location in file
 if has("autocmd")
@@ -53,7 +53,7 @@ vnoremap / /\v
 
 " ================ Turn Off Swap Files ==============
 set nobackup   " No more backup files
-set noswapfile "No more swap files for git to ignore; turn this on for large files
+"set noswapfile "No more swap files for git to ignore; turn this on for large files
 set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
