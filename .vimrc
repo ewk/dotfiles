@@ -42,7 +42,7 @@ endif
 
 " ================ Search Settings  =================
 set incsearch        "Find the next match as you type 
-set hlsearch         "Higlight searches by default
+set hlsearch         "Highlight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set ignorecase       "Ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
@@ -162,6 +162,9 @@ highlight ColorColumn guibg=magenta ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 set showmatch " highlight matching pairs
 highlight Visual guibg=DarkSlateGray ctermbg=lightblue
+" stop typing commands in insert mode! 
+autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
+autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
 
 " ================ CTags ======================
 noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
@@ -228,6 +231,5 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" You idiot, stop typing commands in insert mode! 
-autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
-autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+" ================ Functions ======================
+
