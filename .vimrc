@@ -231,5 +231,8 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
+" Swap ; and :
+nnoremap ; :
+nnoremap : ;
 " ================ Functions ======================
 
