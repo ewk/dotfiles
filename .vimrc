@@ -54,7 +54,7 @@ vnoremap / /\v
 
 " ================ Turn Off Swap Files ==============
 set nobackup   " No more backup files
-"set noswapfile "No more swap files for git to ignore; turn this on for large files
+set noswapfile "No more swap files for git to ignore; turn this on for large files
 set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
