@@ -5,7 +5,7 @@
 	email = ewk@edkovsky.org
 
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 	editor = gvim -f
 
 [alias]

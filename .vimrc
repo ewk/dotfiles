@@ -191,7 +191,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Use leader to paste from system clipboard instead of global register gymnastics
 noremap <leader>v "+gP
-inoremap <leader>v <esc>"+gPi
+"inoremap <leader>v <esc>"+gPi
 
 " And copy to system clipboard
 noremap <leader>c "+y
