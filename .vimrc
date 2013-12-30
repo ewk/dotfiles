@@ -32,8 +32,7 @@ set hidden " Hides buffers instead of closing them
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
-"autocmd FocusLost * :wa " Autosave
-set autowrite "Instead save buffer when changing files
+autocmd FocusLost * :wa " Autosave
 
 " Remember last location in file
 if has("autocmd")
