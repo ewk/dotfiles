@@ -32,8 +32,7 @@ set hidden " Hides buffers instead of closing them
 syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
-"autocmd FocusLost * :wa " Autosave
-set autowrite "Instead save buffer when changing files
+autocmd FocusLost * :wa " Autosave
 
 " Remember last location in file
 if has("autocmd")
@@ -81,7 +80,7 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
- 
+
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 
