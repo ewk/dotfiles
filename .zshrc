@@ -82,3 +82,5 @@ bindkey KEYS tetris
 
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
+
+source ~/perl5/perlbrew/etc/bashrc
