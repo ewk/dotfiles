@@ -96,4 +96,4 @@ man() {
 }
 
 # perlbrew config
-source ~/perl5/perlbrew/etc/bashrc
+source ~/bin/perl5/etc/bashrc
