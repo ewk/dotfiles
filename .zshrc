@@ -96,4 +96,5 @@ man() {
 }
 
 # perlbrew config
-source ~/perl5/perlbrew/etc/bashrc
+export PERLBREW_ROOT=~/bin/perl5
+source ~/bin/perl5/etc/bashrc
