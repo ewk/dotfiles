@@ -58,11 +58,11 @@ set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
 set autoindent    " Always autoindent and copy previous indentation on copy 
-set smartindent   " Automatically indent when adding a curly bracket, etc.
+"set smartindent   " Automatically indent when adding a curly bracket, etc.
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 " You will nearly always want tabstop == softtabstop == shiftwidth
 set tabstop=4     " Width of tab character
-set softtabstop=4 " Fine tune amount of white space to be inserted; higher prcedence than tabstop
+set softtabstop=4 " Fine tune amount of white space to be inserted; higher precedence than tabstop
 set expandtab     " use spaces in place of tab characters using softtabstop value 
 set shiftwidth=4  " Amount of white space to insert or remove in normal mode
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
