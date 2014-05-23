@@ -186,6 +186,9 @@ let mapleader=","
 " Clear highlighted search
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
+" quick exit from insert mode
+:inoremap jk <esc>
+
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
