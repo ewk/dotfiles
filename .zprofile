@@ -31,3 +31,8 @@ alias colorslist="set | egrep 'COLOR_\w*'"
 # The orginal version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 export PATH
+# GPG config
+# keychain starts the gpg daemon for us
+eval $(keychain --eval)
+GPG_TTY=$(tty)
+export GPG_TTY
