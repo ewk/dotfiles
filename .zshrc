@@ -1,7 +1,8 @@
-PATH=$PATH:$HOME/bin:usr/local:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
+PATH=$PATH:$HOME/bin:usr/local:usr/local/bin:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
 export PATH
 
-# Use Emacs key bindings, C-e, C-a, etc
+export EDITOR="vim"
+# But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
 # Enable Ctrl-x-e to edit command line
@@ -33,6 +34,30 @@ precmd () { vcs_info }
 PS1='%n@%m %F{3}%c ${vcs_info_msg_0_}%f%# '
 # End simple vcs
 
+# Colors and rainbows
+
+export TERM=xterm-256color
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export CLICOLOR=1
+# export COLOR_NC='\e[0m' # No Color
+# export COLOR_WHITE='\e[1;37m'
+# export COLOR_BLACK='\e[0;30m'
+# export COLOR_BLUE='\e[0;34m'
+# export COLOR_LIGHT_BLUE='\e[1;34m'
+# export COLOR_GREEN='\e[0;32m'
+# export COLOR_LIGHT_GREEN='\e[1;32m'
+# export COLOR_CYAN='\e[0;36m'
+# export COLOR_LIGHT_CYAN='\e[1;36m'
+# export COLOR_RED='\e[0;31m'
+# export COLOR_LIGHT_RED='\e[1;31m'
+# export COLOR_PURPLE='\e[0;35m'
+# export COLOR_LIGHT_PURPLE='\e[1;35m'
+# export COLOR_BROWN='\e[0;33m'
+# export COLOR_YELLOW='\e[1;33m'
+# export COLOR_GRAY='\e[1;30m'
+# export COLOR_LIGHT_GRAY='\e[0;37m'
+alias colorslist="set | egrep 'COLOR_\w*'"
+
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
 setopt histverify # Turn on verbose history substitution 
@@ -48,6 +73,7 @@ HISTFILE=~/.bash_history
 
 alias ll='ls -l'
 alias pu=pushd
+alias ls='ls -G'
 # alias rm='rm -i'
 # Load the function-based completion system 
 autoload -U compinit
@@ -98,3 +124,4 @@ man() {
 # perlbrew config
 export PERLBREW_ROOT=~/bin/perl5
 source ~/bin/perl5/etc/bashrc
+
