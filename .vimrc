@@ -83,6 +83,7 @@ autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
+autocmd BufNewFile,BufRead *.mixal setfiletype asm
 
 "filetype plugin indent on " load plugin and Indent based on filetype
 runtime macros/matchit.vim
@@ -246,7 +247,7 @@ iab pritn print
 iab hbs #! /bin/sh
 iab hbp #! /usr/bin/env perl<CR>use 5.014; use warnings; use autodie;<CR>
 iab hbr #! /usr/bin/env ruby -w
-iab for( for (i = 0; x < var; x++) {<cr><cr>}
+autocmd FileType c iabbrev for( for (i = 0; x < var; x++) {<cr><cr>}
 
 " ================ Functions ======================
 
