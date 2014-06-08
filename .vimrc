@@ -150,16 +150,18 @@ set mousemodel=popup
 
 " ================ Color scheme ======================
 if has("gui_running")
-    colorscheme zenburn 
+    colorscheme zenburn
 else
-    colorscheme desert 
+    colorscheme badwolf "zenburn
 endif
 
 " ================ Visual clues ======================
 set startofline "keep cursor at same position when scrolling
-set cursorline
-highlight CursorLine guibg=black ctermbg=lightblue ctermbg=lightblue
-highlight ColorColumn guibg=magenta ctermbg=magenta
+"if has("gui_running")
+    set cursorline
+    highlight CursorLine guibg=black
+"endif
+highlight ColorColumn guibg=magenta
 " set colorcolumn=81
 " instead setting colorcolumn, matchadd only highlights lines pas 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
