@@ -1,3 +1,4 @@
+# .zshrc main configuration file
 
 # Version control
 setopt prompt_subst # use substitutions in prompts
@@ -23,6 +24,8 @@ precmd () { vcs_info }
 PS1='%n@%m %F{3}%c ${vcs_info_msg_0_}%f%# '
 # End simple vcs
 
+# resource limits for the shell
+ulimit -S -n 1024
 
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features. 
@@ -43,7 +46,7 @@ alias ls='ls -G --color=auto'
 # alias rm='rm -i'
 # Load the function-based completion system 
 autoload -U compinit
-compinit 
+compinit
 
 # Load pager for long list of completion options
 # Return advances one line, tab advances one page
