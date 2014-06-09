@@ -1,3 +1,3 @@
-# resource limits for the shell
-ulimit -S -n 1024
+#~/.zprofile
+# This file is generally used for automatic execution of user's scripts.
 
