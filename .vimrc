@@ -121,6 +121,7 @@ set foldcolumn=2 "Display fold depth
 " ================ Completion =======================
 set wildmode=full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignorecase          "ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
 set ofu=syntaxcomplete#Complete " turn on omnicompletion 
 
