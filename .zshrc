@@ -138,8 +138,9 @@ chpwd() {
 
 setopt autopushd pushdsilent pushdtohome
 
-## Remove duplicate entries
-setopt pushdignoredups
+# Remove duplicate entries
+#setopt pushdignoredups
+typeset -U dirstack
 
-## This reverts the +/- operators.
+# This reverts the +/- operators.
 setopt pushdminus
