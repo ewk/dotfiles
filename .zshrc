@@ -68,6 +68,8 @@ fi
 if [[ `uname` == 'Darwin' ]]
 then
   alias 'gitk'='gitx'
+else
+  alias 'gitk'='gitk&'
 fi
 
 # Because Emacs already has this
