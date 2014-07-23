@@ -81,8 +81,8 @@ bindkey KEYS tetris
 MAIL=/var/spool/mail/ewk && export MAIL
 
 # perlbrew config
-export PERLBREW_ROOT=~/bin/perl5
-source ~/bin/perl5/etc/bashrc
+#export PERLBREW_ROOT=~/bin/perl5
+#source ~/bin/perl5/etc/bashrc
 
 # fix up zle; replaces readline
 # create a zkbd compatible hash;
