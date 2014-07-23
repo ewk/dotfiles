@@ -12,7 +12,7 @@ bindkey -e
 
 # GPG config
 # keychain starts the gpg daemon for us
-eval $(keychain --eval)
+eval $(keychain --eval --quiet)
 GPG_TTY=$(tty)
 export GPG_TTY
 
