@@ -1,6 +1,9 @@
 # set the command search path and environment variables;
 # this file should not contain commands that produce output
-PATH=$PATH:$HOME/bin:usr/local:usr/local/bin:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:
+PATH=$PATH:$HOME/bin:$HOME/bin/mdk/bin:usr/local:usr/local/bin:/usr/local/lib:/usr/local/mysql/bin:/usr/bin:/usr/bin/vendor_perl:/sbin:
+for d in /$HOME/bin/*/; do
+    PATH+=":$d"
+done
 export PATH
 
 export EDITOR="vim"
