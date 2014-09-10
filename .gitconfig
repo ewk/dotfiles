@@ -28,23 +28,6 @@
 [color]
 	ui = true
 
-[format]
-    #headers = "Organization: git-foo\n"
-    #subjectprefix = CHANGE
-    #suffix = .txt
-    #numbered = auto
-    #to = <email>
-    #cc = <email>
-    #attach [ = mime-boundary-string ]
-    signoff = true
-
-[sendemail]
-    smtpserver = box492.bluehost.com
-    smtpserverport = 465
-    smtpencryption = ssl
-    smtpuser = ewk+edkovsky.org
-    confirm = always
-
 [grep]
 	extendRegexp = true
 	lineNumber = true

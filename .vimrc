@@ -72,8 +72,8 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd FileType python setlocal ts=4 sts=4 sw=4 set noexpandtab
-" Keep vim from mangling kernel patches; need a better solution for all patches
-autocmd FileType patch setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+" vim mangles kernel patches; need a better solution- this is useless
+"autocmd FileType patch setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
@@ -83,6 +83,7 @@ autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
+autocmd BufNewFile,BufRead *.mixal setfiletype asm
 
 "filetype plugin indent on " load plugin and Indent based on filetype
 runtime macros/matchit.vim
@@ -120,6 +121,7 @@ set foldcolumn=2 "Display fold depth
 " ================ Completion =======================
 set wildmode=full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignorecase          "ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
 set ofu=syntaxcomplete#Complete " turn on omnicompletion 
 
@@ -149,16 +151,18 @@ set mousemodel=popup
 
 " ================ Color scheme ======================
 if has("gui_running")
-    colorscheme zenburn 
+    colorscheme zenburn
 else
-    colorscheme desert 
+    colorscheme badwolf "zenburn
 endif
 
 " ================ Visual clues ======================
 set startofline "keep cursor at same position when scrolling
-set cursorline
-highlight CursorLine guibg=black ctermbg=lightblue ctermbg=lightblue
-highlight ColorColumn guibg=magenta ctermbg=magenta
+"if has("gui_running")
+    set cursorline
+    highlight CursorLine guibg=black
+"endif
+highlight ColorColumn guibg=magenta
 " set colorcolumn=81
 " instead setting colorcolumn, matchadd only highlights lines pas 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
@@ -185,6 +189,9 @@ let mapleader=","
 
 " Clear highlighted search
 nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+" quick exit from insert mode
+:inoremap jk <esc>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -243,7 +250,7 @@ iab pritn print
 iab hbs #! /bin/sh
 iab hbp #! /usr/bin/env perl<CR>use 5.014; use warnings; use autodie;<CR>
 iab hbr #! /usr/bin/env ruby -w
-iab for( for (i = 0; x < var; x++) {<cr><cr>}
+autocmd FileType c iabbrev for( for (i = 0; x < var; x++) {<cr><cr>}
 
 " ================ Functions ======================
 
