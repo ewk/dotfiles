@@ -80,11 +80,6 @@
 (setq default-major-mode 'text-mode) ; Text-mode is default mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ; auto-formatting in text-mode
 
-;; Auto-complete
-;;(require 'auto-complete-config)
-;;(ac-config-default)
-;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-
 ;; unique buffer names
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
@@ -133,3 +128,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;; Flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'flycheck-tip)
+(flycheck-tip-use-timer 'verbose)
+
+;; company-mode autocomplete
+;(require 'company)
+;(add-hook 'after-init-hook 'global-company-mode)
+
+;; auto-complete mode
+;(add-to-list 'load-path "~/.emacs.d")
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;(require 'auto-complete-config)
+;(ac-config-default)
