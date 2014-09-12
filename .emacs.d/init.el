@@ -3,10 +3,14 @@
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/modules/")
-(add-to-list 'load-path "~/.emacs.d/modules/auto-complete-1.3.1")
-;; Window size
-(setq initial-frame-alist '((top . 10) (left . 30)
-                            (width . 90) (height . 50)))
+;(add-to-list 'load-path "~/.emacs.d/modules/auto-complete-1.3.1")
+
+;; Replace package archive with melpa
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+
 ;; Appearance
 (set-default-font "Inconsolata-14" "Menlo-12")
 (require 'zenburn-theme)
