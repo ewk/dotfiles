@@ -16,13 +16,19 @@
 (require 'zenburn-theme)
 (column-number-mode 1) ; Show column number in mode-line
 (global-linum-mode 1) ; Line numbers in all buffers
+;; Window size
+(setq initial-frame-alist '((top . 10) (left . 30)
+                            (width . 90) (height . 50)))
 
 ;; Tabs and spaces
 (setq-default tab-width 8) ;; Set tab width
 (setq-default c-basic-offset 8) ;; Applies to C and most languages
 (setq-default cperl-indent-level 8) ;; Perl, of course, is different
 (setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
-;;(setq sentence-end-double-space nil) ; Sentences end with one space
+;(setq sentence-end-double-space nil) ; Sentences end with one space
+(global-set-key (kbd "C-c w") 'whitespace-mode) ; view all whitespace characters
+;; show unncessary whitespace that can mess up your diff
+(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 ;; Menu bar
 (define-key menu-bar-tools-menu [games] nil)
