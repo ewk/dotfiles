@@ -116,18 +116,6 @@
 ;; For emacsclient
 ;(server-start)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("c885b3bb5811fe87fef057db52b00794c177660c24376ae220e5f2a71ae34b83" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 ;; Flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
