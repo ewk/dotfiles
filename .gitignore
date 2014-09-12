@@ -2,6 +2,7 @@
 *.bundle
 *.tmproj
 *.swp
+*.mix
 .DS_Store
 .Trash/
 .appletviewer
