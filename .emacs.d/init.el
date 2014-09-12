@@ -56,6 +56,9 @@
 (ido-mode 1)
 (icomplete-mode t) ; Completion in mini-buffer
 (setq confirm-nonexistent-file-or-buffer nil)
+;(global-set-key (kbd "C-x C-b") 'ibuffer) ; replace buffer management
+; better way to enable ibuffer
+(defalias 'list-buffers 'ibuffer)
 
 ;; Buffer management
 (setq pop-up-frame t) ; Buffers in separate frames
