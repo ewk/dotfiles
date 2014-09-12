@@ -174,15 +174,13 @@ autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
 autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
 
 " ================ CTags ======================
-noremap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-"Load tags auotmatically from working directory
-set tags=./tags,/~/Projects
+noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
+"Load tags recursively from working directory
+set tags=./tags;
 
+" ================ Templates ======================
 "Load template for new files
 autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
-
-"Load tags automatically from working directory
-set tags=./tags,/~/Projects
 
 " ================ Keyboard customization ======================
 " change the mapleader from \ to ,

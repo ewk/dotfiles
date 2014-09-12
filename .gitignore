@@ -32,3 +32,4 @@ doc/api
 doc/app
 log/*.log
 tmp/**/*
+tags
