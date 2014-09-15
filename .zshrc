@@ -42,7 +42,7 @@ HISTFILE=~/.bash_history
 
 alias ll='ls -l'
 alias pu=pushd
-alias ls='ls -G --color=auto'
+alias ls='ls -G'
 # alias rm='rm -i'
 # Load the function-based completion system 
 autoload -U compinit
