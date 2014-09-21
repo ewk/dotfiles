@@ -29,5 +29,6 @@
 	ui = true
 
 [grep]
-	extendRegexp = true
+    #extendRegexp = true # ignored when patternType is set
 	lineNumber = true
+    patternType = perl
