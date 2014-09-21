@@ -33,6 +33,7 @@ syntax on " Enable syntax highlighting.
 set modelines=0 " For security? 
 set ttyfast
 autocmd FocusLost * :wa " Autosave
+set grepprg=ack\ -k " use ack instead of grep; doesn't change vimgrep
 
 " Remember last location in file
 if has("autocmd")

@@ -146,3 +146,7 @@ typeset -U dirstack
 
 # This reverts the +/- operators.
 setopt pushdminus
+
+# Ack
+ACKRC=~/.ackrc
+#ACK_OPTIONS
