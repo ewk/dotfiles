@@ -179,21 +179,6 @@ noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
 "Load tags recursively from working directory
 set tags=./tags;
 
-" ================ Cscope ======================
-" use quickfix window for cscope
-:set cscopequickfix=s-,c-,d-,i-,t-,e-
-" search ctag file as well as cscope database
-:set cst
-" add any database in current directory
-if filereadable("cscope.out")
-    cs add cscope.out
-" else add database pointed to by environment
-elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB
-endif
-" verbose mode for database connections
-:set csverb
-
 " ================ Templates ======================
 "Load template for new files
 autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
