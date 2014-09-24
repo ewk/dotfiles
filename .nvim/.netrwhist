@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/ewk/Projects/TAOCP'
+let g:netrw_dirhist_2='/home/ewk/Documents/hacks/perl/intermediate_perl'
+let g:netrw_dirhist_3='/home/ewk/Projects/linux_src/Documentation/ko_KR'
+let g:netrw_dirhist_4='/home/ewk/Projects/eudyptula/task09'
+let g:netrw_dirhist_5='/home/ewk/Projects/linux_src'
