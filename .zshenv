@@ -22,7 +22,6 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 
 # Colors and rainbows
-
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
