@@ -40,9 +40,8 @@ HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.bash_history
 
-alias ll='ls -l --color=auto'
 alias pu=pushd
-alias ls='ls -G --color=auto'
+alias ll='ls -l'
 # alias rm='rm -i'
 # Load the function-based completion system 
 autoload -U compinit
