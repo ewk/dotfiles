@@ -16,3 +16,21 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".nvim/bundle/supertab"]
+	path = .nvim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule ".nvim/bundle/vim-autoclose"]
+	path = .nvim/bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule ".nvim/bundle/vim-surround"]
+	path = .nvim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".nvim/bundle/ack.vim"]
+	path = .nvim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".nvim/bundle/vim-gitgutter"]
+	path = .nvim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".nvim/bundle/vim-colors-solarized"]
+	path = .nvim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
