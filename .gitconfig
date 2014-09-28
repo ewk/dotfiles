@@ -1,13 +1,16 @@
 [global]
 
 [user]
-	name = Eddie Kovsky
-	email = ewk@edkovsky.org
+    name = Eddie Kovsky
+    email = ewk@edkovsky.org
+    #signingkey = <gpg-key-id>
 
 [core]
-	excludesfile = ~/.gitignore
-	editor = gvim -f
-	abbrev = 12 # default 7 char abbreviations may collide
+    excludesfile = ~/.gitignore
+    editor = gvim -f
+    abbrev = 12 # default 7 char abbreviations may collide
+    pager = less
+    whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
 
 [alias]
     g = grep -P --break --heading --line-number
@@ -21,17 +24,18 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 
 [push]
-	default = matching
+    default = matching
 
 [color]
-	ui = true
+    ui = true
 
 [grep]
     #extendRegexp = true # ignored when patternType is set
-	lineNumber = true
+    lineNumber = true
     patternType = perl
+
 [merge]
-	tool = gvimdiff
+    tool = gvimdiff
