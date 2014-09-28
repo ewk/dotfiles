@@ -152,8 +152,9 @@ set spell
 set mousemodel=popup
 
 " ================ Color scheme ======================
+set background=dark
 if has("gui_running")
-    colorscheme zenburn
+    colorscheme solarized
 else
     colorscheme badwolf "zenburn
 endif
