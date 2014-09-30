@@ -149,3 +149,6 @@ setopt pushdminus
 # Ack
 ACKRC=~/.ackrc
 #ACK_OPTIONS
+
+# Grep
+alias grep=egrep
