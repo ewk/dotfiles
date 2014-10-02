@@ -151,4 +151,5 @@ ACKRC=~/.ackrc
 #ACK_OPTIONS
 
 # Grep
-alias grep=egrep
+alias grep='egrep --color'
+GREP_COLOR='1;30;43'
