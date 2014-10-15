@@ -4,8 +4,8 @@
 # Always color, even if piping to a another program
 --color
 
-# Use "less -r" as my pager
---pager=less -r
+# Use "less" as my pager
+--pager=less -R
 
 # Example: type addition; treat .xs as a perl file
 # --type-add=perl:ext:xs
