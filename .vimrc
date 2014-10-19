@@ -34,6 +34,7 @@ set modelines=0 " For security?
 set ttyfast
 autocmd FocusLost * :wa " Autosave
 set grepprg=ack\ -k " use ack instead of grep; doesn't change vimgrep
+let g:netrw_liststyle=1 " Use list style in Netrw :E
 
 " Remember last location in file
 if has("autocmd")
