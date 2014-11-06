@@ -82,7 +82,15 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-autocmd FileType mix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+" use Vim plugins included in standard Go distribution
+if exists("g:did_load_filetypes")
+    filetype off
+    filetype plugin indent off
+endif
+set runtimepath+=/lib/golang/misc/vim
+filetype plugin indent on
+syntax on
 
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
