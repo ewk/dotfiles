@@ -68,26 +68,13 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 
 " Syntax of these languages is fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-autocmd BufNewFile,BufRead *.rss setfiletype xml " Treat .rss files as XML
-autocmd BufNewFile,BufRead *.mixal setfiletype asm
-autocmd BufNewFile,BufRead *.h setfiletype c " Treat header files as c, not cpp
-
-" use Vim plugins included in standard Go distribution
-if exists("g:did_load_filetypes")
-    filetype off
-    filetype plugin indent off
-endif
-set runtimepath+=/lib/golang/misc/vim
-filetype plugin indent on " load plugin and Indent based on filetype
-syntax on
+autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
 
 runtime macros/matchit.vim
 
