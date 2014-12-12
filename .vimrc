@@ -75,7 +75,7 @@ autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
-
+autocmd FileType go autocmd BufWritePre <buffer> silent! :%! gofmt
 runtime macros/matchit.vim
 
 " ================ File Format ======================
