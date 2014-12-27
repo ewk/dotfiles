@@ -70,12 +70,12 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
-autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab nowrap
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
 autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
-autocmd FileType go autocmd BufWritePre <buffer> silent! :%! gofmt
+autocmd FileType go setlocal nowrap
 runtime macros/matchit.vim
 
 " ================ File Format ======================
@@ -87,10 +87,10 @@ set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to next/prev lines
 
 " Linebreak
 " set linebreak "break at word.
-set showbreak=… "does what it says
+"set showbreak=… "does what it says, but breaks cursor placement
 
 " Whitespace
-set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:·
+set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
 set list " highlight trailing whitespace; conflicts with linebreak
 autocmd filetype html,xml set listchars-=tab:>. " except for html
 
