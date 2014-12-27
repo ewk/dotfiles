@@ -139,12 +139,12 @@ set spell
 set mousemodel=popup
 
 " ================ Color scheme ======================
-if has("gui_running")
+"if has("gui_running")
     colorscheme zenburn
-else
-    set background=dark
-    colorscheme solarized "zenburn
-endif
+"else
+"    set background=dark
+"    colorscheme solarized "zenburn
+"endif
 
 " ================ Visual clues ======================
 set startofline "keep cursor at same position when scrolling
