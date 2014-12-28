@@ -80,7 +80,6 @@ autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
 autocmd FileType go setlocal nowrap
-runtime macros/matchit.vim "Use % to jump to matching tag, brace, etc.
 
 " ================ File Format ======================
 " Margins and word wrapping
