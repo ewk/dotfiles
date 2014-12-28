@@ -154,5 +154,3 @@ ACKRC=~/.ackrc
 alias grep='egrep --color'
 GREP_COLOR='1;30;43'
 
-# Go - "the only environment variable you'll need!"
-export GOPATH=$HOME/Projects/go

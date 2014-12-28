@@ -1,9 +1,15 @@
 # set the command search path and environment variables;
 # this file should not contain commands that produce output
-for d in /$HOME/bin/*/; do
-    PATH+=":$d"
-done
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin/vendor_perl:/usr/bin:/sbin:$PATH:
+
+# /etc/zprofile usually does this for all users' home directories
+#for d in $HOME/bin/*; do
+#    PATH+=":$d"
+#done
+export GOROOT=$HOME/bin/go
+export GOPATH=$HOME/Projects/go
+#PATH+=/usr/bin/vendor_perl: <- Only need this on Arch
+# The PATH+= syntax is brittle. Better to avoid it.
+PATH=$GOROOT/bin:$PATH
 export PATH
 
 export EDITOR="vim"
