@@ -1,20 +1,16 @@
 " source /path/to/external/config/file
 
-" Use Vim settings, rather then Vi settings
-set nocompatible
-
-" Use UTF-8.
-set encoding=utf-8
-
-" Hide startup message
-set shortmess+=I
-
+" ================ MUST RUN FIRST ====================
+set nocompatible " Use Vim settings, rather then Vi settings
+set encoding=utf-8 " Use UTF-8
 " pathogen will load anything in .vim/bundle; must load before filetype
 filetype off
 execute pathogen#infect()
 filetype plugin indent on
+" ================ END MUST RUN FIRST ====================
 
 " ================ General Config ====================
+set shortmess+=I " Hide startup message
 let mapleader="," " change the mapleader from \ to ,
 set number "enable line numbering at paragraphs
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -34,8 +30,7 @@ set ttyfast
 autocmd FocusLost * :wa " Autosave
 set grepprg=ack\ -k " use ack instead of grep; doesn't change vimgrep
 let g:netrw_liststyle=1 " Use list style in Netrw :E
-
-" Remember last location in file
+" Remember last location in file:
 if has("autocmd")
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
@@ -46,7 +41,7 @@ set incsearch        " Find the next match as you type
 set hlsearch         " Highlight searches by default
 set viminfo='100,f1  " Save up to 100 marks, enable capital marks
 set ignorecase       " Ignore case when searching
-set smartcase     " Ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smartcase        " Ignore case if search is all lowercase, else case-sensitive
 " Use very magic search by default
 nnoremap / /\v
 vnoremap / /\v
@@ -72,7 +67,7 @@ set copyindent    " Copy the structure of the existing lines indent when autoind
 
 " ================ File Format ======================
 "set textwidth=80 " Changes actual width of text
-" set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
+"set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
 set whichwrap+=<,>,h,l,[,] " Movement keys wrap at beginning/end of line
 
 " Highlight trailing whitespace
@@ -80,7 +75,7 @@ set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
 set list " Setting list disables linebreak; never use with showbreak!
 set virtualedit=block " Visual select white space
 
-" Syntax of these languages can be fussy over tabs Vs spaces
+" Syntax of these languages can be fussy
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
@@ -135,17 +130,15 @@ highlight ColorColumn guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
 
-" stop typing commands in insert mode! These colors match zenburn
+" Stop typing commands in insert mode! These colors match zenburn
 autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
 autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
 
 " ================ CTags ======================
 noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
-" Load tags recursively from working directory
-set tags=./tags;
+set tags=./tags; " Load tags recursively from working directory
 
 " ================ Keyboard customization ======================
-
 " quick exit from insert mode
 :inoremap jk <esc>
 
