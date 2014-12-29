@@ -55,7 +55,6 @@ set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
 set autoindent    " Always autoindent and copy previous indentation on copy
-"set smartindent   " Automatically indent when adding a curly bracket, etc.
 set smarttab      " Insert tabs on the start of a line according to shiftwidth, not tabstop
 " You will nearly always want tabstop == softtabstop == shiftwidth
 set tabstop=4     " Width of tab character
@@ -66,8 +65,6 @@ set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent    " Copy the structure of the existing lines indent when autoindenting a new line. Uses spaces instead of tabs if expandtab is set
 
 " ================ File Format ======================
-"set textwidth=80 " Changes actual width of text
-"set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
 set whichwrap+=<,>,h,l,[,] " Movement keys wrap at beginning/end of line
 
 " Highlight trailing whitespace
@@ -147,7 +144,6 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Paste from system clipboard instead of global register gymnastics
 noremap <leader>v "+p
-"inoremap <leader>v <esc>"+gPi
 " And copy to system clipboard
 noremap <leader>c "+y
 
