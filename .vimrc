@@ -70,6 +70,20 @@ set shiftwidth=4  " Amount of white space to insert or remove in normal mode
 set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent    " Copy the structure of the existing lines indent when autoindenting a new line. Uses spaces instead of tabs if expandtab is set
 
+" ================ File Format ======================
+"set textwidth=80 " Changes actual width of text
+" set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
+set whichwrap+=<,>,h,l,[,] " Movement keys wrap at beginning/end of line
+
+" Highlight trailing whitespace
+set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
+set list " Setting list disables linebreak; never use with showbreak!
+set virtualedit=block " Visual select white space
+
+" Paste formatting
+set formatoptions=tcq " This is Vim's default
+set nopaste " No formatting is done when paste is ON
+
 " Syntax of these languages can be fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
@@ -80,26 +94,6 @@ autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
 autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
 autocmd FileType go setlocal nowrap
-
-" ================ File Format ======================
-"set textwidth=80 " Changes actual width of text
-" set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
-set whichwrap+=<,>,h,l,[,] " Movement keys wrap at beginning/end of line
-
-" Linebreak
-" set linebreak "break at word.
-"set showbreak=… "does what it says, but breaks cursor placement
-
-" Whitespace
-set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
-set list " Highlight trailing whitespace; setting list disables linebreaksetting list disables linebreaksetting list disables linebreaksetting list disables linebreak
-
-" Paste formatting
-set formatoptions=tcq " This is Vim's default
-set nopaste " No formatting is done when paste is ON
-
-"set nostartofline " Keep cursor at same position when scrolling
-set virtualedit=block " Visual select white space
 
 " ================ Folds ============================
 set foldmethod=indent   " Fold based on indent, can also be syntax
