@@ -80,10 +80,6 @@ set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
 set list " Setting list disables linebreak; never use with showbreak!
 set virtualedit=block " Visual select white space
 
-" Paste formatting
-set formatoptions=tcq " This is Vim's default
-set nopaste " No formatting is done when paste is ON
-
 " Syntax of these languages can be fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
