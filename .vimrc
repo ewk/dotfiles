@@ -82,11 +82,9 @@ autocmd BufNewFile,BufRead *.h setfiletype=c " Treat header files as c, not cpp
 autocmd FileType go setlocal nowrap
 
 " ================ File Format ======================
-" Margins and word wrapping
-set nowrap " Wrap sets how text is displayed based on window size. Default is on.
 "set textwidth=80 " Changes actual width of text
 " set wrapmargin=5 " Wordwrapping at right hand column; Ignored if textwidth is on
-set whichwrap+=<,>,h,l  " Backspace and cursor keys wrap to next/prev lines
+set whichwrap+=<,>,h,l,[,] " Movement keys wrap at beginning/end of line
 
 " Linebreak
 " set linebreak "break at word.
@@ -94,7 +92,7 @@ set whichwrap+=<,>,h,l  " Backspace and cursor keys wrap to next/prev lines
 
 " Whitespace
 set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
-set list " Highlight trailing whitespace; conflicts with linebreak
+set list " Highlight trailing whitespace; setting list disables linebreaksetting list disables linebreaksetting list disables linebreaksetting list disables linebreak
 
 " Paste formatting
 set formatoptions=tcq " This is Vim's default
