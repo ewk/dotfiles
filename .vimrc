@@ -28,10 +28,13 @@ colorscheme zenburn
 set modelines=0 " Vim default is on unless root; turn off for security
 set ttyfast
 autocmd FocusLost * :wa " Autosave
+set grepprg=ack\ -k " use ack instead of grep; doesn't change vimgrep
 let g:netrw_liststyle=1 " Use list style in Netrw :E
 " Remember last location in file:
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+if has("autocmd")
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
+endif
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
@@ -134,7 +137,7 @@ set tags=./tags; " Load tags recursively from working directory
 
 " ================ Keyboard customization ======================
 " quick exit from insert mode
-inoremap jk <esc>
+:inoremap jk <esc>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
