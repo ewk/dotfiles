@@ -30,10 +30,8 @@ set ttyfast
 autocmd FocusLost * :wa " Autosave
 let g:netrw_liststyle=1 " Use list style in Netrw :E
 " Remember last location in file:
-if has("autocmd")
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
-endif
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
@@ -136,7 +134,7 @@ set tags=./tags; " Load tags recursively from working directory
 
 " ================ Keyboard customization ======================
 " quick exit from insert mode
-:inoremap jk <esc>
+inoremap jk <esc>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
