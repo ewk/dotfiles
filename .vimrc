@@ -31,7 +31,7 @@ autocmd FocusLost * :wa " Autosave
 let g:netrw_liststyle=1 " Use list style in Netrw :E
 " Remember last location in file:
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+    \| execute "normal! g'\"" | endif
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
@@ -105,6 +105,7 @@ set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=%{fugitive#statusline()}     " Current branch, requires plugin
 set statusline+=%=                           " right align remainder
 set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, column
