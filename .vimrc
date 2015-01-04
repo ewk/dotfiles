@@ -27,11 +27,14 @@ syntax on " Enable syntax highlighting.
 colorscheme zenburn
 set modelines=0 " Vim default is on unless root; turn off for security
 set ttyfast
-autocmd FocusLost * :wa " Autosave
 let g:netrw_liststyle=1 " Use list style in Netrw :E
-" Remember last location in file:
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| execute "normal! g'\"" | endif
+augroup AutoSave
+    autocmd!
+    autocmd FocusLost * :wa " Autosave
+    " Remember last location in file:
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| execute "normal! g'\"" | endif
+augroup END
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
@@ -70,15 +73,18 @@ set list " Setting list disables linebreak; never use with showbreak!
 set virtualedit=block " Visual select white space
 
 " Syntax of these languages can be fussy
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
-autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab nowrap
-autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
-autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " Header files as C
-autocmd FileType go setlocal nowrap
+augroup Filetypes
+    autocmd!
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab nowrap
+    autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
+    autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " Header files as C
+    autocmd FileType go setlocal nowrap
+augroup END
 
 " ================ Folds ============================
 set foldmethod=indent   " Fold based on indent, can also be syntax
@@ -126,8 +132,11 @@ call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
 
 " Stop typing commands in insert mode! These colors match zenburn
-autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
-autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+augroup ModeAlert
+    autocmd!
+    autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
+    autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
+augroup END
 
 " ================ CTags ======================
 noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
