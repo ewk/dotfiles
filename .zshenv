@@ -5,11 +5,14 @@
 #for d in $HOME/bin/*; do
 #    PATH+=":$d"
 #done
-export GOROOT=$HOME/bin/go
-export GOPATH=$HOME/Projects/go
+export STUDIO_JDK=/usr/local/jdk1.8.0_25
+# Path to Go installation, since package manager is out of date
+export GOROOT=$HOME/bin/gosource
+# Go expects one directory for all source files
+export GOPATH=$HOME/Projects/goworkspace
 #PATH+=/usr/bin/vendor_perl: <- Only need this on Arch
 # The PATH+= syntax is brittle. Better to avoid it.
-PATH=$GOROOT/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 export PATH
 
 export EDITOR="vim"
