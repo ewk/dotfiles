@@ -23,8 +23,7 @@ set noerrorbells " I said no beeping!
 set title " change terminal title
 set autochdir "pwd is always same as current file
 set hidden " Hides buffers instead of closing them
-syntax on " Enable syntax highlighting.
-colorscheme zenburn
+syntax enable " Enable syntax highlighting.
 set modelines=0 " Vim default is on unless root; turn off for security
 set ttyfast
 let g:netrw_liststyle=1 " Use list style in Netrw :E
@@ -34,6 +33,24 @@ augroup AutoSave
     " Remember last location in file:
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| execute "normal! g'\"" | endif
+augroup END
+
+" ================ Visual clues ======================
+colorscheme zenburn
+"set background=dark
+"colorscheme solarized
+set startofline " Keep cursor at same position when scrolling
+set cursorline
+highlight CursorLine guibg=black
+highlight ColorColumn guibg=magenta
+call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
+set showmatch " highlight matching pairs
+
+" Stop typing commands in insert mode! These colors match zenburn
+augroup ModeAlert
+    autocmd!
+    autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
+    autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
 augroup END
 
 " ================ Search Settings  =================
@@ -122,21 +139,6 @@ set showmode                                 " Show editing mode
 " ================ Spell Checking ======================
 set spell
 set mousemodel=popup
-
-" ================ Visual clues ======================
-set startofline " Keep cursor at same position when scrolling
-set cursorline
-highlight CursorLine guibg=black
-highlight ColorColumn guibg=magenta
-call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
-set showmatch " highlight matching pairs
-
-" Stop typing commands in insert mode! These colors match zenburn
-augroup ModeAlert
-    autocmd!
-    autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
-    autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
-augroup END
 
 " ================ CTags ======================
 noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
