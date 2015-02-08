@@ -25,7 +25,8 @@
                           magit
                           marmalade
                           org
-                          solarized-theme)
+                          solarized-theme
+			  git-gutter)
   "Default packages")
 
 ;; Install packages if not present
@@ -67,14 +68,16 @@
   (load-theme 'wombat t))
 
 ;; Show filename in frame
-(when window-system
-  (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
-;;(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; Empty lines
 (setq-default indicate-empty-lines t)
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
+;; Whitespace
+(global-set-key (kbd "C-c w") 'whitespace-mode) ; view all whitespace characters
+(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 ;; Backups and autosave
 (setq make-backup-files nil) ; No backup files ~
@@ -95,7 +98,9 @@
 (global-hl-line-mode t) ; Highlight cursor line
 (blink-cursor-mode 0)
 (setq visible-bell t)
-(require 'autopair) ;; Close pairs automatically
+;;(require 'autopair) ;; Close pairs automatically
+;; turn on automatic bracket insertion by pairs.
+(electric-pair-mode 1)
 
 ; Interactive do things- find file auto complete
 (ido-mode 1)
@@ -126,11 +131,16 @@
 
 ;; Tabs and spaces
 ;(setq-default tab-width 8) ;; Set tab width
+(setq c-default-style "linux")
 ;(setq-default c-basic-offset 8) ;; Applies to C and most languages
 ;(setq-default cperl-indent-level 8) ;; Perl, of course, is different
 ;(setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
 ;(setq sentence-end-double-space nil) ; Sentences end with one space
-(global-set-key (kbd "C-c w") 'whitespace-mode) ; view all whitespace characters
-;; show unncessary whitespace that can mess up your diff
-(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
+
+;; Version control
+(global-git-gutter-mode t)
+(git-gutter:linum-setup)
+
+;; Golang
+(add-hook 'before-save-hook 'gofmt-before-save)
 
