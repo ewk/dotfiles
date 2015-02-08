@@ -37,21 +37,13 @@ augroup END
 
 " ================ Visual clues ======================
 colorscheme zenburn
-"set background=dark
-"colorscheme solarized
 set startofline " Keep cursor at same position when scrolling
 set cursorline
 highlight CursorLine guibg=black
 highlight ColorColumn guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
-
-" Stop typing commands in insert mode! These colors match zenburn
-augroup ModeAlert
-    autocmd!
-    autocmd InsertEnter * hi Normal ctermbg=234 guibg=#000000
-    autocmd InsertLeave * hi Normal ctermbg=232 guibg=#3f3f3f
-augroup END
+highlight MatchParen guifg=#f6f3e8 guibg=OliveDrab gui=none
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
