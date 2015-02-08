@@ -5,7 +5,7 @@
 --color
 
 # Use "less" as my pager
---pager=less -R
+#--pager=less -R
 
 # Example: type addition; treat .xs as a perl file
 # --type-add=perl:ext:xs
