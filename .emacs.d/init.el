@@ -42,10 +42,10 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-;; Turn off scrash screen and scratch mode message
+;; Turn off scratch screen and scratch mode message
 (setq inhibit-splash-screen t
       initial-scratch-message nil
-      initial-major-mode 'org-mode)
+      ;;initial-major-mode 'org-mode)
 
 ;; Appearance
 (set-default-font "Inconsolata-14" "Menlo-12")
