@@ -41,6 +41,7 @@ SAVEHIST=100
 HISTFILE=~/.bash_history
 
 alias pu=pushd
+alias ls='ls --color=auto'
 alias ll='ls -l'
 # alias rm='rm -i'
 # Load the function-based completion system 
