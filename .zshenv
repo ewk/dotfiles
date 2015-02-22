@@ -2,9 +2,9 @@
 # this file should not contain commands that produce output
 
 # /etc/zprofile usually does this for all users' home directories
-#for d in $HOME/bin/*; do
-#    PATH+=":$d"
-#done
+for d in $HOME/bin/*; do
+    PATH+=":$d"
+done
 export STUDIO_JDK=/usr/local/jdk1.8.0_25
 # Path to Go installation, since package manager is out of date
 export GOROOT=$HOME/bin/gosource
