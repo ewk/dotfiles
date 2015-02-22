@@ -17,6 +17,6 @@ date=`date "+%Y-%m-%d-%H:%M:%S"`
 # -r recurse into directories; implied by -a
 
 # include/exclude patterns are relative to $HOME
-# remove the -$date prefix to use incremental backups
-rsync -aPv --exclude-from=$EXCLUDE $SOURCE $DEST/backup-$date &> /dev/null
+# remove the -$date suffix to use incremental backups
+rsync -aPv --exclude-from=$EXCLUDE $SOURCE $DEST/backup-$date & > /dev/null
 
