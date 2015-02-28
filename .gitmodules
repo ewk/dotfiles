@@ -22,12 +22,6 @@
 [submodule ".nvim/bundle/vim-surround"]
 	path = .nvim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".nvim/bundle/ack.vim"]
-	path = .nvim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
-[submodule ".nvim/bundle/vim-gitgutter"]
-	path = .nvim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".nvim/bundle/vim-colors-solarized"]
 	path = .nvim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
