@@ -3,7 +3,7 @@
 
 # /etc/zprofile usually does this for all users' home directories
 for d in $HOME/bin/*; do
-    PATH+=":$d"
+    PATH+="$d:"
 done
 export STUDIO_JDK=/usr/local/jdk1.8.0_25
 # Path to Go installation, since package manager is out of date
@@ -12,7 +12,7 @@ export GOROOT=$HOME/bin/gosource
 export GOPATH=$HOME/Projects/GoWorkspace
 #PATH+=/usr/bin/vendor_perl: <- Only need this on Arch
 # The PATH+= syntax is brittle. Better to avoid it.
-PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
 export EDITOR="vim"
