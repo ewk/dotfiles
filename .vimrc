@@ -86,6 +86,7 @@ augroup Filetypes
     autocmd!
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd FileType sh setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
