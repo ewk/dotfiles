@@ -19,12 +19,6 @@ export EDITOR="vim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
-# GPG config
-# keychain starts the gpg daemon for us
-eval $(keychain --eval --quiet)
-GPG_TTY=$(tty)
-export GPG_TTY
-
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line

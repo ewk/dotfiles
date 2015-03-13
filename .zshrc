@@ -155,3 +155,6 @@ ACKRC=~/.ackrc
 alias grep='egrep --color'
 GREP_COLOR='1;30;43'
 
+# GPG config - will only ask for password once per shell
+eval "$(keychain --eval id_rsa --quiet --clear)"
+
