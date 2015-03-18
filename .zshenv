@@ -7,7 +7,6 @@
 for d in $HOME/bin/*; do
     PATH+="$d:"
 done
-export STUDIO_JDK=/usr/local/jdk1.8.0_25
 # Path to Go installation, since package manager is out of date
 export GOROOT=$HOME/bin/gosource
 # Go expects one directory for all source files
