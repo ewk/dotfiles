@@ -58,24 +58,34 @@ zstyle ':completion:::::' completer _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )' 
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
-# User specific aliases and functions
-alias sudo='sudo env PATH=$PATH'
-if [[ `uname` == 'Linux' ]]
-then
-  alias 'open'='xdg-open'
-fi
+# USER FUNCTIONS
+function sudo {
+	sudo env PATH=$PATH
+}
 
-if [[ `uname` == 'Darwin' ]]
-then
-    alias 'gitk'='gitx'
-else
-    alias 'gitk'='(gitk&)'
-fi
+function open {
+	if [[ $(uname) == 'Linux' ]]
+	then
+		xdg-open
+	fi
+}
 
-# Because Emacs already has this
-autoload -U tetris
-zle -N tetris
-bindkey KEYS tetris
+function gitk {
+	if [[ $(uname) == 'Darwin' ]]
+	then
+		gitx
+	else
+		(gitk&)
+	fi
+}
+
+function ls {
+	ls --color=auto
+}
+
+function grep {
+	egrep --color
+}
 
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
@@ -151,8 +161,7 @@ setopt pushdminus
 ACKRC=~/.ackrc
 #ACK_OPTIONS
 
-# Grep
-alias grep='egrep --color'
+# Grep settings
 GREP_COLOR='1;30;43'
 
 # GPG config - will only ask for password once per shell
