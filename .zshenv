@@ -1,6 +1,8 @@
-# set the command search path and environment variables;
-# this file should not contain commands that produce output
+# Set the command search path and environment variables.
+# This file is sourced on all invocations of the shell.
+# This file should not contain commands that produce output.
 
+# PATH
 # /etc/zprofile usually does this for all users' home directories
 for d in $HOME/bin/*; do
     PATH+="$d:"
@@ -15,18 +17,19 @@ export GOPATH=$HOME/Projects/GoWorkspace
 PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
-export EDITOR="vim"
+# EDITOR
+export EDITOR="gvim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
-# Enable Ctrl-x-e to edit command line
+# Enable Ctrl-x-e to edit command line; same as typing 'fc"
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 
 # Colors and rainbows
 export TERM=xterm-256color
-export CLICOLOR=1 # Enable colorized output; equivalent to ls -G on Darwin
+export CLICOLOR=1 # Enable colorized output
 
 # Colored man pages
 man() {
