@@ -46,32 +46,24 @@ zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFF
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # USER FUNCTIONS
-function sudo {
-	sudo env PATH=$PATH
-}
+alias ls='ls --color=auto'
+alias sudo='sudo env PATH=$PATH'
+alias grep='egrep --color'
 
-function open {
+open() {
 	if [[ $(uname) == 'Linux' ]]
 	then
-		xdg-open
+		command xdg-open $1
 	fi
 }
 
-function gitk {
+gitk() {
 	if [[ $(uname) == 'Darwin' ]]
 	then
-		gitx
+		command gitx
 	else
-		(gitk&)
+		command gitk&
 	fi
-}
-
-function ls {
-	ls --color=auto
-}
-
-function grep {
-	egrep --color
 }
 
 # Sets the Mail Environment Variable
