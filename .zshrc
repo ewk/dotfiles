@@ -1,4 +1,6 @@
 # .zshrc main configuration file
+# This file is sourced in interactive shells.
+# Commands to set up aliases, functions, options, key bindings, etc.
 
 # PROMPT
 # Prepare version control promp
@@ -29,22 +31,18 @@ HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 HISTFILE="$HOME/.history"
 
-alias pu=pushd
-alias ls='ls --color=auto'
-alias ll='ls -l'
-# alias rm='rm -i'
-# Load the function-based completion system 
-autoload -U compinit
+# AUTO COMPLETE
+autoload -U compinit # Load the function-based completion system
 compinit
 
 # Load pager for long list of completion options
 # Return advances one line, tab advances one page
-zmodload zsh/complist 
+zmodload zsh/complist
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
 # Load approximate completion for autocorrection
 zstyle ':completion:::::' completer _complete _approximate
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )' 
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )'
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # USER FUNCTIONS
@@ -79,13 +77,13 @@ function grep {
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
 
-# perlbrew config
+# Perlbrew config
 export PERLBREW_ROOT=~/bin/perl5
 source ~/bin/perl5/etc/bashrc
 
-# fix up zle; replaces readline
-# create a zkbd compatible hash;
-# to add other keys to this hash, see: man 5 terminfo
+# ZLE
+# fix up zsh line editor; zsh replaces readline
+# Create a zkbd hash; To add other keys to this hash see man 5 terminfo
 typeset -A key
 
 key[Home]=${terminfo[khome]}
@@ -112,7 +110,7 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
-# Finally, make sure the terminal is in application mode, when zle is
+# Finally, make sure the terminal is in application mode when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     function zle-line-init () {
@@ -125,8 +123,9 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
-# dirs -v Remember last visited folders
-# cd - TAB autcomplete
+# DIRSTACK
+# Remember last visited folders using 'dirs -v'
+# Autocomplete with 'cd - TAB'
 DIRSTACKSIZE=20
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -139,16 +138,15 @@ chpwd() {
 
 setopt autopushd pushdsilent pushdtohome
 
-# Remove duplicate entries
+# Remove duplicate dirstack entries
 #setopt pushdignoredups
 typeset -U dirstack
 
 # This reverts the +/- operators.
 setopt pushdminus
 
-# Ack
+# Ack settings
 ACKRC=~/.ackrc
-#ACK_OPTIONS
 
 # Grep settings
 GREP_COLOR='1;30;43'
