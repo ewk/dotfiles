@@ -43,7 +43,7 @@ highlight CursorLine guibg=black
 highlight ColorColumn guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
-highlight MatchParen guifg=#f6f3e8 guibg=SlateGray gui=none
+highlight MatchParen guifg=yellow guibg=black gui=bold
 
 " ================ Search Settings  =================
 set incsearch        " Find the next match as you type
