@@ -17,7 +17,7 @@ PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
 # EDITOR
-export EDITOR="gvim"
+export EDITOR="gvim -f"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
@@ -25,6 +25,7 @@ bindkey -e
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 # Colors and rainbows
 export TERM=xterm-256color
