@@ -3,6 +3,8 @@
 # make executable
 # copy this line into /etc/anacrontab
 # 1	5	backup.daily	su -c /home/ewk/Documents/dotfiles/backup.sh ewk
+# May need to install and enbale cronie
+# Verify 'cat /var/spool/anacron/backup.daily'
 
 SOURCE=$HOME
 DEST=/run/media/ewk/Backup
