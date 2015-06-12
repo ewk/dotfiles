@@ -84,15 +84,12 @@ set virtualedit=block " Visual select white space
 " Syntax of these languages can be fussy
 augroup Filetypes
     autocmd!
+    autocmd FileType c,perl,sh,zsh,mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType c setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-    autocmd FileType sh setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
-    autocmd FileType perl setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-    autocmd FileType mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
-    autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " Header files as C
+    autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType go setlocal nowrap
 augroup END
 
