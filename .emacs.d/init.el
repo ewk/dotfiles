@@ -45,7 +45,7 @@
 ;; Turn off scratch screen and scratch mode message
 (setq inhibit-splash-screen t
       initial-scratch-message nil
-      ;;initial-major-mode 'org-mode)
+      initial-major-mode 'org-mode)
 
 ;; Appearance
 (set-default-font "Inconsolata-14" "Menlo-12")
@@ -131,7 +131,7 @@
 
 ;; Tabs and spaces
 ;(setq-default tab-width 8) ;; Set tab width
-(setq c-default-style "linux")
+;;(setq c-default-style "linux")
 ;(setq-default c-basic-offset 8) ;; Applies to C and most languages
 ;(setq-default cperl-indent-level 8) ;; Perl, of course, is different
 ;(setq-default indent-tabs-mode t) ; nil will use spaces instead of tabs
