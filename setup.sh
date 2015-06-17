@@ -8,7 +8,6 @@ ln -s .emacs.d $HOME
 ln -s .gitconfig $HOME
 ln -s .gitignore $HOME
 ln -s .gvimrc $HOME
-ln -s .irbrc $HOME
 ln -s .rsyncignore $HOME
 ln -s .vim $HOME
 ln -s .vimrc $HOME
