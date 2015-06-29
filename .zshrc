@@ -24,12 +24,13 @@ setopt hist_ignore_dups # Ignore duplicates in command history
 setopt noclobber # Prevents redirected output from overwriting existing files
 setopt nobeep
 setopt nohashdirs # automatically find new executables
-setopt correctall # autocorrect typed commands
+#setopt correctall # autocorrect typed commands
 
 # Use 1000 history lines internally, save all of them to the file ~/.history
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 HISTFILE="$HOME/.history"
+setopt HIST_IGNORE_SPACE
 
 # AUTO COMPLETE
 autoload -U compinit # Load the function-based completion system
