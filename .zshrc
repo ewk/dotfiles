@@ -47,14 +47,26 @@ zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFF
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # USER FUNCTIONS
-alias ls='ls --color=auto'
 alias sudo='sudo env PATH=$PATH'
 alias grep='egrep --color'
+
+ls() {
+	if [[ $(uname) == 'Linux' ]]
+	then
+		command ls --color=auto $1
+	elif [[ $(uname) == 'Darwin' ]]
+	then
+		command ls -G $1
+	fi
+}
 
 open() {
 	if [[ $(uname) == 'Linux' ]]
 	then
 		command xdg-open $1
+	elif [[ $(uname) == 'Darwin' ]]
+	then
+		command open
 	fi
 }
 
