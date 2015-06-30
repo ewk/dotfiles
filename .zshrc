@@ -50,15 +50,10 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 alias sudo='sudo env PATH=$PATH'
 alias grep='egrep --color'
 
-ls() {
-	if [[ $(uname) == 'Linux' ]]
-	then
-		command ls --color=auto $1
-	elif [[ $(uname) == 'Darwin' ]]
-	then
-		command ls -G $1
-	fi
-}
+if [[ $(uname) == 'Linux' ]]
+then
+	alias ls='ls --color=auto'
+fi
 
 open() {
 	if [[ $(uname) == 'Linux' ]]

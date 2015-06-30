@@ -29,7 +29,7 @@ bindkey '^x^e' edit-command-line
 
 # Colors and rainbows
 export TERM=xterm-256color
-export CLICOLOR=1 # Enable colorized output
+export CLICOLOR=1 # Enable color output on OS X
 
 # Colored man pages
 man() {
