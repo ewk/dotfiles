@@ -8,6 +8,13 @@
 for d in $HOME/bin/*; do
     PATH="$d":$PATH
 done
+
+# Fix OS X path
+if [[ $(uname) == 'Darwin' ]]
+then
+	PATH=/usr/local/bin:$PATH
+fi
+
 # Path to Go installation, since package manager is out of date
 export GOROOT=$HOME/bin/gosource
 # Go expects one directory for all source files
