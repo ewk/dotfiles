@@ -61,7 +61,7 @@ open() {
 		command xdg-open $1
 	elif [[ $(uname) == 'Darwin' ]]
 	then
-		command open
+		command open $1
 	fi
 }
 
