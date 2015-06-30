@@ -4,15 +4,15 @@
 
 # PATH
 # /etc/zprofile usually does this for all users' home directories
+# The PATH+= syntax is brittle. Better to avoid it.
 for d in $HOME/bin/*; do
-    PATH+="$d:"
+    PATH="$d":$PATH
 done
 # Path to Go installation, since package manager is out of date
 export GOROOT=$HOME/bin/gosource
 # Go expects one directory for all source files
 export GOPATH=$HOME/Projects/GoWorkspace
 #PATH+=/usr/bin/vendor_perl: <- Only need this on Arch
-# The PATH+= syntax is brittle. Better to avoid it.
 PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
