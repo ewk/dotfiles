@@ -87,7 +87,6 @@ source ~/bin/perl5/etc/bashrc
 typeset -A key
 
 key[Home]=${terminfo[khome]}
-
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
 key[Delete]=${terminfo[kdch1]}
@@ -152,5 +151,5 @@ ACKRC=~/.ackrc
 GREP_COLOR='1;30;43'
 
 # GPG config - will only ask for password once per shell
-eval "$(keychain --eval id_rsa --quiet)"
+keychain --eval --quiet >/dev/null
 
