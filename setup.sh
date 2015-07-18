@@ -1,19 +1,26 @@
 #!/bin/bash
 
 HOME=/home/ewk
+CWD="$(pwd)"
 
 # Link home directory to config files in /dotfiles
-ln -s .ackrc $HOME
-ln -s .emacs.d $HOME
-ln -s .gitconfig $HOME
-ln -s .gitignore $HOME
-ln -s .gvimrc $HOME
-ln -s .rsyncignore $HOME
-ln -s .vim $HOME
-ln -s .vimrc $HOME
-ln -s .zprofile $HOME
-ln -s .zshenv $HOME
-ln -s .zshrc $HOME
+ln -s "$CWD"/.ackrc "$HOME"
+ln -s "$CWD"/.emacs.d "$HOME"
+ln -s "$CWD"/.gitconfig "$HOME"
+ln -s "$CWD"/.gitignore "$HOME"
+ln -s "$CWD"/.gvimrc "$HOME"
+ln -s "$CWD"/.rsyncignore "$HOME"
+ln -s "$CWD"/.vim "$HOME"
+ln -s "$CWD"/.vimrc "$HOME"
+ln -s "$CWD"/.zprofile "$HOME"
+ln -s "$CWD"/.zshenv "$HOME"
+ln -s "$CWD"/.zshrc "$HOME"
+ln -s "$CWD"/.mutt "$HOME"
+ln -s "$CWD"/.muttrc "$HOME"
+ln -s "$CWD"/.notmuch-config "$HOME"
+# Copy config and then enter password
+cp .offlineimaprc "$HOME"
 
+touch "$HOME"/.mutt/mutt_aliases
 # Initialize Vim plugins stored in submodules
 git submodule update --init --recursive
