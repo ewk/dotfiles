@@ -1,0 +1,5 @@
+text/html; firefox %s
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+#application/pdf; acroread %s
+image/*; xv %s > /dev/null
+application/msword; antiword %s ; copiousoutput

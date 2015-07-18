@@ -1,0 +1,108 @@
+# Keep email password in a separate, encrypted file
+# gpg decrypt must stay at top of config
+# source " gpg2 -dq $HOME/.mutt/.my-pwds.gpg |"
+
+# ================  IMAP w/ offlineimap ====================
+set folder = "$HOME/Mail"      # Root directory of local mailboxes
+set record = "+sent"           # Where to store sent messages, relative to folder
+set postponed = "+postponed"   # Where to store draft messages
+set mbox_type = Maildir        # Mailbox type
+set move = no                  # Do not ask to confirm moving mail from spool
+set spoolfile = "+INBOX"       # Usually value of $MAIL or $MAILDIR
+set mail_check = 120           # time in seconds
+set message_cachedir = "$HOME/.mutt/bodies"
+set tmpdir           = "$HOME/.mutt/temp"
+set certificate_file = "$HOME/.mutt/certificates"
+set header_cache = "$HOME/.mutt/mutt-headercache"
+
+# ================  SMTP  ====================
+set smtp_url = "smtps://ewk+edkovsky.org@box492.bluehost.com:465"
+set smtp_pass = $my_pw_personal
+set realname = "Eddie Kovsky"
+set from = "ewk@edkovsky.org"
+set use_from = yes
+set ssl_force_tls = yes # Require encrypted connection
+
+# ================  Inbox Configuration  ====================
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads       # Always sort mailboxes by thread
+#set sort_aux = reverse-last-date-received  # like gmail
+set markers = no         # Mark wrapped lines of text in the pager with a +
+set mark_old = no        # read/new is good enough
+set smart_wrap = yes     # Wrap at word boundary; 'no' wraps at screen edge
+set pager_context = 3    # Retain context lines when scrolling
+set pager_stop = yes     # don't go to next message automatically
+set status_on_top = yes  # Status bar on top.
+#push "<show-version>"    # Shows version at startup
+set delete = yes         # purge messages marked for deletion without asking
+set confirmappend = no   # do not confirm saving a message
+set mailcap_path = "$HOME/.mutt/mailcap" # locate helper file
+set beep = no            # I said no beeping!
+set implicit_autoview = yes # use any mailcap handler that defines 'copiousoutput'
+# Call urlview to extract URLs out of a message
+macro index \cb |urlview\n
+
+# ================  Status Bar  ====================
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# ================  Message Headers ====================
+ignore *
+unignore Date: From: User-Agent: X-Mailer X-Operating-System To: \
+         Cc: Reply-To: Subject: Mail-Followup-To:
+hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
+        Cc: Reply-To: Subject: Mail-Followup-To:
+
+# ================  Colors  ====================
+source "$HOME/.mutt/colors"
+
+# ================  Composition  ====================
+set editor = "gvim -f"
+set edit_headers = yes  # See the headers when editing
+set charset = UTF-8     # value of $LANG; also fallback for send_charset
+unset use_domain        # because joe@localhost is just embarassing
+set alias_file = "$HOME/.mutt/mutt_aliases" # Address book
+source "$HOME/.mutt/mutt_aliases"     # Source address book
+set sort_alias = alias                 # Sort alphabetically by name
+# set signature="$HOME/.mutt/signature"
+
+# ================  Encryption  ====================
+# GPG settings
+set crypt_autosign = no # sign all outgoing messages
+set crypt_replyencrypt = yes # encrypt replies to encrypted messages
+set crypt_replysignencrypted = yes # augments replyencrypt; see manual
+set crypt_replysign = yes # sign replies to signed messages
+set crypt_use_gpgme = yes # replace classic code
+set crypt_verify_sig = yes # alwasy verify signatures
+
+# PGP settings
+set pgp_auto_decode = yes # decrypt pgp messages automatically
+
+# ================  Filters and Lists  ====================
+lists     .+@driverdev.osuosl.org .+@linuxdriverproject.org \
+platform-driver-x86@[:alnum:] .+vger.kernel.org
+
+#subscribe .+@driverdev.osuosl.org .+@linuxdriverproject.org \
+#platform-driver-x86@[:alnum:] .+@vger.kernel.org
+
+# Filter kernel mailing list into a separate folder
+# Depends on 'set delete=yes' and 'set confirmappend=no' or extra '\n'
+folder-hook INBOX 'push "<tag-pattern> \
+~C devel@linuxdriverproject.org| \
+~C devel@driverdev.osuosl.org| \
+~C .+vger.kernel.org\n\
+<tag-prefix-cond><save-message>=kernel\n<sync-mailbox><end-cond>"'
+
+#macro index S "<tag-pattern>~C devel@driverdev.osuosl.org\n<tag-prefix-cond><save-message>=kernel\n\n<sync-mailbox>\n<end-cond>"
+
+# notmuch: F8 search all mail and F9 rebuild threads
+macro index <F8> \
+    "<enter-command>unset wait_key<enter><shell-escape>/usr/bin/notmuch-mutt --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" \
+          "search mail (using notmuch)"
+macro index <F9> \
+    "<enter-command>unset wait_key<enter><pipe-message>/usr/bin/notmuch-mutt thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" \
+          "search and reconstruct owning thread (using notmuch)"
+
+# Save all messages to folder "archive"
+macro index,pager A  "<save-message>=archive<enter>"  "mark message as Archived"

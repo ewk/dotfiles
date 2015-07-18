@@ -1,0 +1,47 @@
+# https://wiki.archlinux.org/index.php/OfflineIMAP#Using_GPG
+# add 'systemctl disable offlineimap@ewk.service' to start daemon
+# doesn't always play nice with gpg
+[general]
+# List of accounts to be synced, separated by a comma.
+accounts = ewk
+ui = TTYUI
+pythonfile = ~/.mutt/offlineimap.py
+fsync = False
+
+[Account ewk]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = ewk-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = ewk-remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+status_backend = sqlite
+postsynchook = notmuch new
+# Minutes between syncs
+autorefresh = 5
+# Number of quick-syncs between autorefreshes.
+quick = 10
+
+[Repository ewk-local]
+# offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Mail
+
+[Repository ewk-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+maxconnections = 1
+#remoteport = 993
+remotehost = box492.bluehost.com
+remoteuser = ewk@edkovsky.org
+#remotepasseval = get_pass()
+#remotepasseval = "MYPASSWORD"
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda folder: folder in ['INBOX' ]
+realdelete = yes
+# setting has no effect if autorefresh and holdconnectionopen are not both set.
+keepalive = 60
+# If you wish it to keep the connection open, set this to true.
+# This setting has no effect if autorefresh is not set.
+holdconnectionopen = yes
