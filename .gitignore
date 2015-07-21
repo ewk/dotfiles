@@ -42,3 +42,4 @@ log/*.log
 tmp/**/*
 tags
 .vim/.netrwhist
+.my-pwds.gpg
