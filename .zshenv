@@ -9,11 +9,9 @@ for d in $HOME/bin/*; do
     PATH="$d":$PATH
 done
 
-# Path to Go installation, since package manager is out of date
-export GOROOT=$HOME/bin/gosource
 # Go expects one directory for all source files
 export GOPATH=$HOME/Projects/GoWorkspace
-PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$PATH
+PATH=$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
 # EDITOR
