@@ -3,43 +3,47 @@
 #    You can end patterns with a forward slash (/) to specify a directory.
 #    You can negate a pattern by starting it with an exclamation point (!).
 
+# File suffixes
+*.DS_Store
 *.DS_Store
 *.bundle
-*.tmproj
-*.swp
 *.mix
-.DS_Store
+*.pyc
+*.swp
+*.tmproj
+db/*.sqlite3
+
+# Directories
 .Trash/
-.appletviewer
-.autotest
 .bundle/
 .bundler/
 .cups/
 .dvdcss/
 .emacs.d/auto-save-list/*
 .emacs.d/elpa/*
-.emacs.d/ac-comphist.dat
-.emacs.d/ido.last
 .filezilla/
 .fontconfig/
 .fonts/
 .gem/
-.mysql_history
 .putty/
-.redcar
 .ri/
-.scala_history
-.sqlite_history
 .ssh/
 .subversion/
+/tmp/
+
+# Files
+.appletviewer
+.autotest
+.emacs.d/ac-comphist.dat
+.emacs.d/ido.last
+.my-pwds.gpg
+.mysql_history
+.scala_history
+.sqlite_history
 .tolb3755.bin
+.vim/.netrwhist
 .viminfo
-/tmp/*
-db/*.sqlite3
 doc/api
 doc/app
 log/*.log
-tmp/**/*
 tags
-.vim/.netrwhist
-.my-pwds.gpg
