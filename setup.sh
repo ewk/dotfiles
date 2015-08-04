@@ -21,6 +21,6 @@ ln -s "$CWD"/.notmuch-config "$HOME"
 # Copy config and then enter password
 cp .offlineimaprc "$HOME"
 
-touch "$HOME"/.mutt/mutt_aliases
+touch "$HOME"/.mutt/mutt-headercache
 # Initialize Vim plugins stored in submodules
 git submodule update --init --recursive

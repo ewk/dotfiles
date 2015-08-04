@@ -40,6 +40,7 @@ set confirmappend = no   # do not confirm saving a message
 set mailcap_path = "$HOME/.mutt/mailcap" # locate helper file
 set beep = no            # I said no beeping!
 set implicit_autoview = yes # use any mailcap handler that defines 'copiousoutput'
+# set auto_tag = yes       # Automatically apply functions to tagged messages
 # Call urlview to extract URLs out of a message
 macro index \cb |urlview\n
 
