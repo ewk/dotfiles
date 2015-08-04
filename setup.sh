@@ -16,11 +16,13 @@ ln -s "$CWD"/.zprofile "$HOME"
 ln -s "$CWD"/.zshenv "$HOME"
 ln -s "$CWD"/.zshrc "$HOME"
 ln -s "$CWD"/.mutt "$HOME"
-ln -s "$CWD"/.muttrc "$HOME"
 ln -s "$CWD"/.notmuch-config "$HOME"
+
 # Copy config and then enter password
+cp .muttrc "$HOME"
 cp .offlineimaprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
+
 # Initialize Vim plugins stored in submodules
 git submodule update --init --recursive
