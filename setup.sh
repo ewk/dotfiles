@@ -1,6 +1,5 @@
 #!/bin/bash
 
-HOME=/home/ewk
 CWD="$(pwd)"
 
 # Link home directory to config files in /dotfiles
