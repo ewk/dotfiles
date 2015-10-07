@@ -6,13 +6,14 @@
 # May need to install and enbale cronie
 # Verify 'cat /var/spool/anacron/backup.daily'
 
-SOURCE=$HOME
-DEST=/run/media/ewk/Backup
-EXCLUDE=$HOME/.rsyncignore
+source=$HOME
 postfix=/etc/postfix
 logwatch=/etc/logwatch
+dest=/run/media/ewk/Backup
+exclude=$HOME/.rsyncignore
 
 date="$(date "+%Y-%m-%d-%H:%M:%S")"
+
 # -a files are archived, characteristics are preserved
 # -z compress data during transfer
 # -v verbose
@@ -22,7 +23,7 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
-rsync -aPv --exclude-from="$EXCLUDE" "$SOURCE" "$DEST"/backup-"$date" > /dev/null &
+rsync -aPv --exclude-from="$exclude" "$SOURCE" "$dest"/backup-"$date" > /dev/null &
 # Skips /etc/postfix/sasl_passwd
 rsync -aPv --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
 rsync -aPv --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
