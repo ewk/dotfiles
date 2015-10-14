@@ -19,3 +19,4 @@ bin
 .gnome
 .gnome2
 .gradle
+/etc/sasl_passwd*
