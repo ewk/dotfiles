@@ -47,3 +47,4 @@ doc/api
 doc/app
 log/*.log
 tags
+.mutt/mutt-headercache
