@@ -34,6 +34,7 @@ augroup AutoSave
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| execute "normal! g'\"" | endif
 augroup END
+set lazyredraw " redraw only when we need to for faster macros
 
 " ================ Visual clues ======================
 colorscheme zenburn
