@@ -12,6 +12,10 @@
     pager = less
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
 
+[format]
+    signOff = True # enable --signoff for format-patch
+    coverLetter = auto # generate a cover letter for multiple patches
+
 [alias]
     g = grep -P --break --heading --line-number
     co = checkout
