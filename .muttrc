@@ -92,7 +92,7 @@ platform-driver-x86@[:alnum:] .+vger.kernel.org
 folder-hook INBOX 'push "<tag-pattern> \
 ~C devel@linuxdriverproject.org| \
 ~C devel@driverdev.osuosl.org| \
-~C .+vger.kernel.org\n\
+~C .+vger.kernel.org ~p\n\
 <tag-prefix-cond><save-message>=kernel\n<sync-mailbox><end-cond>"'
 
 #macro index S "<tag-pattern>~C devel@driverdev.osuosl.org\n<tag-prefix-cond><save-message>=kernel\n\n<sync-mailbox>\n<end-cond>"
