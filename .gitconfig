@@ -9,8 +9,10 @@
     excludesfile = ~/.gitignore
     editor = gvim -f
     abbrev = 12 # default 7 char abbreviations may collide
-    pager = less
+    pager = less # default is less
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
+    #template = ~/.gitmessage # commit message template
+    #autocrlf = true # autoconvert Windows carriage return brain damage
 
 [format]
     signOff = True # enable --signoff for format-patch
