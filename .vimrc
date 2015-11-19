@@ -35,6 +35,7 @@ augroup AutoSave
                 \| execute "normal! g'\"" | endif
 augroup END
 set lazyredraw " redraw only when we need to for faster macros
+set nrformats= " treat all numerals as decimal instead of octal
 
 " ================ Visual clues ======================
 colorscheme zenburn
