@@ -16,6 +16,7 @@ export PATH
 
 # EDITOR
 export EDITOR="gvim -f"
+export CSCOPE_EDITOR="view"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
