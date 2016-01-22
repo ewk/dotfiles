@@ -15,7 +15,8 @@ PATH=$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
 # EDITOR
-export EDITOR="gvim -f"
+export EDITOR="emacsclient"
+export CSCOPE_EDITOR="vim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
@@ -40,3 +41,4 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
