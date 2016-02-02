@@ -1,8 +1,8 @@
 # Always sort the files
 --sort-files
 
-# Always color, even if piping to a another program
---color
+# Color is on by default. Setting it here confuses piped output.
+#--color
 
 # Use "less" as my pager
 #--pager=less -R
