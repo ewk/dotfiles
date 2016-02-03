@@ -3,7 +3,9 @@ if has('gui_running')
   if has('macunix') "Mac must come first or it will try to load unix font
     set guifont=Menlo:h14 
   elseif has('unix')
-    set guifont=Inconsolata\ Medium\ 14
+    silent! set guifont=Droid\ Sans\ Mono\ 14
+    "silent! set guifont=Deja\ Vu\ Sans\ Mono\ 14
+    "silent! set guifont=Inconsolata\ Medium\ 14
   elseif has('win32')
     set guifont=Consolas:h11:cANSI
   endif
