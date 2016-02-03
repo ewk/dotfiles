@@ -116,7 +116,7 @@ set sidescroll=1
 " ================ Status line ======================
 set laststatus=2                             "Always show status line
 set statusline=
-set statusline+=%-3.3n\                      " buffer number
+"set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
