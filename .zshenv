@@ -15,7 +15,7 @@ PATH=$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
 # EDITOR
-export EDITOR="emacsclient"
+export EDITOR="gvim -f"
 export CSCOPE_EDITOR="vim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e

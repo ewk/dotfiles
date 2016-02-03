@@ -39,6 +39,8 @@
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
 (global-hl-line-mode t) ; Highlight cursor line
+(set-face-background 'hl-line "#3e4446") ; Set highlight color
+(set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 (blink-cursor-mode 0)
 (setq visible-bell t)
 ;;(require 'autopair) ;; Close pairs automatically

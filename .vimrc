@@ -102,7 +102,7 @@ set nofoldenable        " Don't fold by default
 set foldcolumn=2        " Display fold depth
 
 " ================ Completion =======================
-set wildmode=full
+set wildmode=list:longest
 set wildmenu                " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignorecase          " Ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
@@ -116,7 +116,7 @@ set sidescroll=1
 " ================ Status line ======================
 set laststatus=2                             "Always show status line
 set statusline=
-set statusline+=%-3.3n\                      " buffer number
+"set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
