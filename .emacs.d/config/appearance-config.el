@@ -16,7 +16,13 @@
                             (width . 90) (height . 50)))
 
 ;; Appearance
-(set-default-font "Inconsolata-14" "Menlo-12")
+(if (eq system-type 'darwin)
+    (set-default-font "Menlo-14")
+  (set-default-font "Inconsolata-14"))
+;(add-to-list 'default-frame-alist
+;	     '(font . "Inconsolata-14")
+;            '(font . "Menlo-14"))
+
 (column-number-mode 1) ; Show column number in mode-line
 (global-linum-mode 1) ; Line numbers in all buffers
 (delete-selection-mode t)
