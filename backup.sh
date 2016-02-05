@@ -9,6 +9,7 @@
 source=$HOME
 postfix=/etc/postfix
 logwatch=/etc/logwatch
+rsyslog=/etc/rsyslog.conf
 dest=/run/media/ewk/Backup
 exclude=$HOME/.rsyncignore
 
@@ -27,4 +28,5 @@ rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/nul
 # Skips /etc/postfix/sasl_passwd
 rsync -Pvr --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
 rsync -Pvr --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
+rsync -Pv --exclude-from="$exclude" "$rsyslog" "$dest" > /dev/null &
 
