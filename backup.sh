@@ -25,6 +25,6 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 # remove the -$date suffix to use incremental backups
 rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
 # Skips /etc/postfix/sasl_passwd
-rsync -Pv --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
-rsync -Pv --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
+rsync -Pvr --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
+rsync -Pvr --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
 
