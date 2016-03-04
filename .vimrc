@@ -94,8 +94,6 @@ augroup Filetypes
     autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType go setlocal nowrap
 augroup END
-" Auto format Rust source code; requires rust.vim plugin
-let g:rustfmt_autosave = 1
 
 " ================ Folds ============================
 set foldmethod=indent   " Fold based on indent, can also be syntax
