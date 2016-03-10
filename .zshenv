@@ -14,10 +14,6 @@ export GOPATH=$HOME/Projects/GoWorkspace
 PATH=$GOPATH/bin:$HOME/bin:$PATH
 export PATH
 
-# Rust uses Cargo to manage dependencies
-PATH=$HOME/.cargo/bin:$PATH
-export PATH
-
 # EDITOR
 export EDITOR="gvim -f"
 export CSCOPE_EDITOR="vim"
