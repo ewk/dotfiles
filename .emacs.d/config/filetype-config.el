@@ -3,3 +3,6 @@
   (append
     '(("\\.hdl$" . vhdl-mode))
     auto-mode-alist))
+
+;; Enable global syntax check
+(global-flycheck-mode)
