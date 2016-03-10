@@ -3,7 +3,7 @@
 #    You can end patterns with a forward slash (/) to specify a directory.
 #    You can negate a pattern by starting it with an exclamation point (!).
 
-# File suffixes
+# File prefixes and suffixes
 *.DS_Store
 *.DS_Store
 *.bundle
@@ -11,6 +11,7 @@
 *.pyc
 *.swp
 *.tmproj
+\#*
 db/*.sqlite3
 
 # Directories
@@ -25,6 +26,7 @@ db/*.sqlite3
 .fontconfig/
 .fonts/
 .gem/
+.mutt/temp/
 .putty/
 .ri/
 .ssh/
@@ -37,6 +39,7 @@ db/*.sqlite3
 .emacs.d/ac-comphist.dat
 .emacs.d/ido.last
 .emacs.d/recentf
+.mutt/mutt-headercache
 .my-pwds.gpg
 .mysql_history
 .scala_history
@@ -48,4 +51,4 @@ doc/api
 doc/app
 log/*.log
 tags
-.mutt/mutt-headercache
+
