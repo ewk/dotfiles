@@ -22,6 +22,8 @@ cp .muttrc "$HOME"
 cp .offlineimaprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
+mkdir ~/.cache/zsh
+touch ~/.cache/zsh/dirs
 
 # Initialize Vim plugins stored in submodules
 git submodule update --init --recursive
