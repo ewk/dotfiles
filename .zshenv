@@ -2,18 +2,6 @@
 # This file is sourced on all invocations of the shell.
 # This file should not contain commands that produce output.
 
-# PATH
-# /etc/zprofile usually does this for all users' home directories
-# The PATH+= syntax is brittle. Better to avoid it.
-for d in $HOME/bin/*; do
-    PATH="$d":$PATH
-done
-
-# Go expects one directory for all source files
-export GOPATH=$HOME/Projects/GoWorkspace
-PATH=$GOPATH/bin:$HOME/bin:$PATH
-export PATH
-
 # EDITOR
 export EDITOR="gvim -f"
 export CSCOPE_EDITOR="vim"
