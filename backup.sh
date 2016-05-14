@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# make executable
-# copy this line into /etc/anacrontab
+# Make this file executable
+# Copy this line into /etc/anacrontab
 # 1	5	backup.daily	su -c /home/ewk/Documents/dotfiles/backup.sh ewk
 # May need to install and enbale cronie
-# Verify 'cat /var/spool/anacron/backup.daily'
+# Test with anacron -f
+# Verify the timestamp file with 'cat /var/spool/anacron/backup.daily'
 
 source=$HOME
 postfix=/etc/postfix
