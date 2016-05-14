@@ -78,10 +78,6 @@ gitk() {
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
 
-# Perlbrew config
-export PERLBREW_ROOT=~/bin/perl5
-source ~/bin/perl5/etc/bashrc
-
 # ZLE
 # fix up zsh line editor; zsh replaces readline
 # Create a zkbd hash; To add other keys to this hash see man 5 terminfo
