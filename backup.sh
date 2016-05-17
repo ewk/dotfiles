@@ -30,4 +30,5 @@ rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/nul
 rsync -Pvr --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
 rsync -Pvr --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
 rsync -Pv --exclude-from="$exclude" "$rsyslog" "$dest" > /dev/null &
+rsync -Pvr --exclude-from="$exclude" /etc "$dest"/backup-"$date" > /dev/null &
 

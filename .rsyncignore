@@ -20,3 +20,16 @@ bin
 .gnome2
 .gradle
 postfix/sasl_passwd*
+/etc/.*
+/etc/NetworkManager
+/etc/crypttab
+/etc/gshadow*
+/etc/libvirt
+/etc/libvirtd
+/etc/lvm
+/etc/pacman
+/etc/pacman.d
+/etc/polkit
+/etc/polkit-1
+/etc/shadow*
+/etc/sudoers*
