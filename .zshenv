@@ -4,6 +4,8 @@
 
 # EDITOR
 export EDITOR="gvim -f"
+# sudoedit
+export SUDO_EDITOR="vim"
 export CSCOPE_EDITOR="vim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
