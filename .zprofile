@@ -6,7 +6,7 @@
 # To prevent your $PATH being overwritten, set it in ~/.zprofile.
 
 # PATH
-# /etc/zprofile usually does this for all users' home directories
+# /etc/zsh/zprofile usually does this for all users' home directories
 # The PATH+= syntax is brittle. Better to avoid it.
 for d in $HOME/bin/*; do
     PATH="$d":$PATH
