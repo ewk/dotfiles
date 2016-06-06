@@ -13,7 +13,6 @@ Projects/git-src
 bin
 .AndroidStudio
 .android
-.config
 .cpanm
 .gem
 .gnome
