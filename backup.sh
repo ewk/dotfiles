@@ -8,9 +8,6 @@
 # Verify the timestamp file with 'cat /var/spool/anacron/backup.daily'
 
 source=$HOME
-postfix=/etc/postfix
-logwatch=/etc/logwatch
-rsyslog=/etc/rsyslog.conf
 dest=/run/media/ewk/Backup
 exclude=$HOME/.rsyncignore
 
@@ -26,9 +23,5 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
 rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
-# Skips /etc/postfix/sasl_passwd
-rsync -Pvr --exclude-from="$exclude" "$postfix" "$dest" > /dev/null &
-rsync -Pvr --exclude-from="$exclude" "$logwatch" "$dest" > /dev/null &
-rsync -Pv --exclude-from="$exclude" "$rsyslog" "$dest" > /dev/null &
-rsync -Pvr --exclude-from="$exclude" /etc "$dest"/backup-"$date" > /dev/null &
+rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
 
