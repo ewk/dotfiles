@@ -18,7 +18,6 @@ ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
 
 # Copy config and then enter password
-cp .muttrc "$HOME"
 cp .offlineimaprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
