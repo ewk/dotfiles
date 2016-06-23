@@ -78,7 +78,8 @@ set crypt_use_gpgme = yes # replace classic code
 set crypt_verify_sig = yes # alwasy verify signatures
 
 # PGP settings
-set pgp_auto_decode = yes # decrypt pgp messages automatically
+source "$HOME/.mutt/pgprc"
+#set pgp_auto_decode = yes # decrypt pgp messages automatically
 
 # ================  Filters and Lists  ====================
 lists     .+@driverdev.osuosl.org .+@linuxdriverproject.org \
