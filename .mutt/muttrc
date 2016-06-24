@@ -56,7 +56,7 @@ hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
         Cc: Reply-To: Subject: Mail-Followup-To:
 
 # ================  Colors  ====================
-source "$HOME/.mutt/colors"
+source "$HOME/.mutt/colorsrc"
 
 # ================  Composition  ====================
 set editor = `echo \$EDITOR`

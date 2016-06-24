@@ -19,8 +19,7 @@
 #   * tilde     (the '~' used to pad blank lines in the pager)
 #   * tree      (thread tree drawn in the message index and attachment menu)
 #   * underline (hiliting underlined patterns in the body of messages)
-#
-#
+
 # foreground and background can be one of the following:
 #   * white
 #   * black
@@ -33,6 +32,23 @@
 #   * default
 # foreground can optionally be prefixed with the keyword bright to make the
 # foreground color boldfaced (e.g., brightred).
+
+## Default color definitions
+color hdrdefault white green
+color signature brightmagenta black
+color indicator black cyan
+color attachment black green
+color error brightred black
+color message white black
+color search brightwhite magenta
+color status brightyellow blue
+color tree brightblue black
+#color normal white black
+color tilde green black
+color bold brightyellow black
+#color underline magenta black
+color markers brightcyan black
+
 ## Colours for items in the index
 color index brightcyan black ~N
 color index brightred black ~O
@@ -91,40 +107,3 @@ color quoted4 cyan black
 color quoted5 yellow black
 color quoted6 red black
 color quoted7 green black
-
-## Default color definitions
-#color hdrdefault white green
-color signature brightmagenta black
-color indicator black cyan
-color attachment black green
-color error red black
-color message white black
-color search brightwhite magenta
-color status brightyellow blue
-color tree brightblue black
-color normal white black
-color tilde green black
-color bold brightyellow black
-#color underline magenta black
-color markers brightcyan black
-
-# color normal        white default
-# #color normal        default default
-# color attachment    brightyellow default
-# color hdrdefault    cyan default
-# color indicator     black cyan
-# color markers       brightred default
-# color quoted        green default
-# color signature     cyan default
-# color status        brightgreen blue
-# color tilde         blue default
-# color tree          red default
-# color header        brightgreen default ^From:
-# color header        brightcyan default ^To:
-# color header        brightcyan default ^Reply-To:
-# color header        brightcyan default ^Cc:
-# color header        brightblue default ^Subject:
-# color body          cyan default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-# color body          brightblue default (https?|ftp|git)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
-
-
