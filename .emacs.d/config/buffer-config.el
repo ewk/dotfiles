@@ -1,3 +1,6 @@
+;;; Code
+
+(set-language-environment "UTF-8")
 
 ;; Backups and autosave
 (setq make-backup-files nil) ; No backup files ~
