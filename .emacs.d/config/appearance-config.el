@@ -1,3 +1,5 @@
+;;; Commentary
+
 ;; Turn off splash screen and scratch mode message
 (setq inhibit-splash-screen t
       initial-scratch-message nil)
@@ -8,8 +10,9 @@
 
 ;; Themes
 (if window-system
-    (load-theme 'monokai t)
-  (load-theme 'wombat t))
+    (load-theme 'zenburn t)
+      ;;(load-theme 'monokai t)
+    (load-theme 'wombat t))
 
 ;; Window size
 (setq initial-frame-alist '((top . 10) (left . 30)
@@ -18,7 +21,7 @@
 ;; Appearance
 (if (eq system-type 'darwin)
     (set-default-font "Menlo-14")
-  (set-default-font "Inconsolata-14"))
+  (set-default-font "Droid Sans Mono-14"))
 ;(add-to-list 'default-frame-alist
 ;	     '(font . "Inconsolata-14")
 ;            '(font . "Menlo-14"))
@@ -39,7 +42,8 @@
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
 (global-hl-line-mode t) ; Highlight cursor line
-(set-face-background 'hl-line "#3e4446") ; Set highlight color
+(set-face-background 'hl-line "black") ; Set highlight color
+;;(set-face-background 'hl-line "#3e4446") ; Set highlight color
 (set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 (blink-cursor-mode 0)
 (setq visible-bell t)
