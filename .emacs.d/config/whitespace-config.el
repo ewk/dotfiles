@@ -1,11 +1,12 @@
-;; Empty lines
-(setq-default indicate-empty-lines t)
-(when (not indicate-empty-lines)
-  (toggle-indicate-empty-lines))
+;;; Commentary
 
-;; Whitespace
+;; Enable whitespace mode globally
+(require 'whitespace)
+ (setq whitespace-style '(face empty tabs tab-mark empty lines-tail trailing))
+(global-whitespace-mode t)
+
+;; But provide an off switch
 (global-set-key (kbd "C-c w") 'whitespace-mode) ; view all whitespace characters
-(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 ;; Tabs and spaces
 (setq-default tab-width 8) ;; Set tab width
@@ -18,3 +19,11 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 ;; Add blank line to end of buffer
 (setq next-line-add-newlines t)
+
+;; Empty lines
+;(setq-default indicate-empty-lines t)
+;(when (not indicate-empty-lines)
+;  (toggle-indicate-empty-lines))
+
+;; This is likely to interfere with version control and next-line-add-newlines
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
