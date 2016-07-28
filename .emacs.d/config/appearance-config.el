@@ -8,6 +8,14 @@
 (tool-bar-mode -1) ;; Hide toolbar buttons
 (define-key menu-bar-tools-menu [games] nil)
 
+;; Show filename in frame
+(setq frame-title-format
+      ;;(list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b")));;)
+;;(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+;;(setq frame-title-format "%b - emacs") ; Use buffer name as frame title
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 ;; Themes
 (if window-system
     (load-theme 'zenburn t)
