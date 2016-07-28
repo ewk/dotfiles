@@ -23,7 +23,7 @@
     (load-theme 'wombat t))
 
 ;; Window size
-(setq initial-frame-alist '((top . 10) (left . 30)
+(setq initial-frame-alist '((top . 00) (left . 00)
                             (width . 90) (height . 50)))
 
 ;; Appearance
