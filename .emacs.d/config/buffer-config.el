@@ -5,6 +5,7 @@
 ;; Backups and autosave
 (setq make-backup-files nil) ; No backup files ~
 (setq auto-save-timeout 30) ; Autosave every 30 seconds; also the default
+(global-auto-revert-mode t) ; Reload files changed outside Emacs
 
 ;; Buffer management
 (setq pop-up-frame t) ; Buffers in separate frames
