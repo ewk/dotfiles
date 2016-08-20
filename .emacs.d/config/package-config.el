@@ -1,25 +1,26 @@
+;;; package-config --- Summary
+
+;;; Commentary:
+;; Add additional sources for package-list
+
+;;; Code:
+
 ;; Add marmalade and melpa repositories
-(load "package")
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.milkbox.net/packages/") t)
 
-(setq package-archive-enable-alist '(("melpa" deft magit)))
-
-;; Default pacakges
+;; Default packages
 (defvar ewk/packages '(ac-slime
-                          auto-complete
-                          ;;autopair
+			  company
                           flycheck
                           go-mode
-                          ;;magit
-                          marmalade
                           org
-                          ;;solarized-theme
 			  zenburn-theme
-			  monokai-theme
 			  git-gutter)
   "Default packages")
 
@@ -35,3 +36,6 @@
   (dolist (pkg ewk/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
+
+(provide 'package-config)
+;;; package-config ends here
