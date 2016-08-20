@@ -6,3 +6,7 @@
 
 ;; Enable global syntax check
 (global-flycheck-mode)
+
+;; Go plugin
+;;(require go-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
