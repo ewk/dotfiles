@@ -1,5 +1,12 @@
+;;; init.el --- Summary
+
+;;; Commentary:
+;;  All configuration is maintained in separate files.
+
+;;; Code:
+
 ;; Use Common Lisp
-(require 'cl)
+(require 'cl-lib)
 (set-language-environment "UTF-8")
 
 (load "~/.emacs.d/config/package-config.el")
@@ -13,3 +20,5 @@
 (load "~/.emacs.d/config/alias-config.el")
 (load "~/.emacs.d/config/client-config.el")
 
+(provide 'init)
+;;; init ends here
