@@ -176,3 +176,5 @@ nnoremap gk k
 nnoremap ; :
 nnoremap : ;
 
+" Open the quickfix window automatically after any grep invocation:
+autocmd QuickFixCmdPost *grep* cwindow
