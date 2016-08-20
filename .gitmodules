@@ -4,21 +4,6 @@
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule ".nvim/bundle/supertab"]
-	path = .nvim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule ".nvim/bundle/vim-autoclose"]
-	path = .nvim/bundle/vim-autoclose
-	url = https://github.com/Townk/vim-autoclose.git
-[submodule ".nvim/bundle/vim-surround"]
-	path = .nvim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule ".nvim/bundle/vim-colors-solarized"]
-	path = .nvim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/bundle/.vim/bundle"]
-	path = .vim/bundle/.vim/bundle
-	url = git://github.com/tpope/vim-fugitive.git
