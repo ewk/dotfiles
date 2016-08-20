@@ -1,4 +1,10 @@
-;;; Code
+;;; buffer-config --- Summary
+
+;;; Commentary:
+
+;;;
+
+;;; Code:
 
 (set-language-environment "UTF-8")
 
@@ -17,7 +23,6 @@
 (if (eq system-type 'darwin)
     (setq-default ispell-program-name "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/bin/aspell"))
-
 (setq-default ispell-list-command "list")
 
 ;; Enable spell checking
@@ -27,3 +32,6 @@
 ;; Avoid backslash madness
 (require 're-builder)
 (setq reb-re-syntax 'string)
+
+(provide 'buffer-config)
+;;; buffer-config ends here
