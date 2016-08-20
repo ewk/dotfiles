@@ -54,7 +54,6 @@
 ;;(set-face-background 'hl-line "#3e4446") ; Set highlight color
 (set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 (blink-cursor-mode 0)
-(setq visible-bell t)
 ;;(require 'autopair) ;; Close pairs automatically
 ;; turn on automatic bracket insertion by pairs.
 (electric-pair-mode 1)
