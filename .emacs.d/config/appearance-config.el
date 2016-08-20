@@ -19,8 +19,7 @@
 ;; Themes
 (if window-system
     (load-theme 'zenburn t)
-      ;;(load-theme 'monokai t)
-    (load-theme 'wombat t))
+  (load-theme 'wombat t))
 
 ;; Window size
 (setq initial-frame-alist '((top . 00) (left . 00)
@@ -30,9 +29,6 @@
 (if (eq system-type 'darwin)
     (set-default-font "Menlo-14")
   (set-default-font "Droid Sans Mono-14"))
-;(add-to-list 'default-frame-alist
-;	     '(font . "Inconsolata-14")
-;            '(font . "Menlo-14"))
 
 (column-number-mode 1) ; Show column number in mode-line
 (global-linum-mode 1) ; Line numbers in all buffers
