@@ -3,6 +3,8 @@
   (append
     '(("\\.hdl$" . vhdl-mode))
     auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.gitconfig$" . conf-mode))
+(add-to-list 'auto-mode-alist '("rc$" . conf-mode))
 
 ;; Enable global syntax check
 (global-flycheck-mode)
