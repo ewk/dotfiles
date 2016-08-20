@@ -146,7 +146,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Paste from system clipboard instead of global register gymnastics
 noremap <leader>v "+p
 " And copy to system clipboard
-noremap <leader>c "+y
+noremap <leader>c "+y$
 
 " Easy window navigation
 noremap <C-h> <C-w>h
