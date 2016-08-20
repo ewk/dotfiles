@@ -1,6 +1,16 @@
+;;; Package --- Summary
+
 ;; Turn on autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+;(require 'auto-complete-config)
+;(ac-config-default)
+;(global-auto-complete-mode t)
+;(require 'go-autocomplete)
+
+;; Turn on company mode
+(add-hook 'after-init-hook 'global-company-mode)
+;; Trigger completion with TAB
+;(global-set-key "\t" 'company-complete-common)
 
 ; Interactive do things- find file auto complete
 (ido-mode 1)
