@@ -1,4 +1,10 @@
-;;; Commentary
+;;; appearance-config --- Summary
+
+;;; Commentary:
+
+;;;
+
+;;; Code:
 
 ;; Turn off splash screen and scratch mode message
 (setq inhibit-splash-screen t
@@ -30,29 +36,30 @@
     (set-default-font "Menlo-14")
   (set-default-font "Droid Sans Mono-14"))
 
+;; TODO keep cursor at same point when scrolling; use C-l for now
+
+;; Modeline
 (column-number-mode 1) ; Show column number in mode-line
+
 (global-linum-mode 1) ; Line numbers in all buffers
 (delete-selection-mode t)
 (transient-mark-mode t)
-(setq x-select-enable-clipboard t)
+(setq x-select-enable-clipboard t) ;; Interact with system clipboard
 
 ;; Turn off beeping and improve keyboard response
 (setq echo-keystrokes 0.1
       use-dialog-box nil
-      visible-bell t)
+      visible-bell t) ;; I am not a robot. I mean, the humans are dead.
 
 ;; Highlighting
-(show-paren-mode 1) ; Highlight parenthesis pairs
+(electric-pair-mode t) ;; Close pairs automatically
+(show-paren-mode t) ; Highlight parenthesis pairs
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
 (global-hl-line-mode t) ; Highlight cursor line
-(set-face-background 'hl-line "black") ; Set highlight color
-;;(set-face-background 'hl-line "#3e4446") ; Set highlight color
+(set-face-background 'hl-line "black") ; Set line highlight color
 (set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 (blink-cursor-mode 0)
-;;(require 'autopair) ;; Close pairs automatically
-;; turn on automatic bracket insertion by pairs.
-(electric-pair-mode 1)
 
 ;; fix terminal output characters
 (require 'ansi-color)
@@ -60,3 +67,6 @@
   (let ((buffer-read-only nil))
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
+
+(provide 'appearance-config)
+;;; appearance-config ends here
