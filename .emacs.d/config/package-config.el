@@ -26,7 +26,7 @@
 
 ;; Install packages if not present
 (defun ewk/packages-installed-p ()
-  (loop for pkg in ewk/packages
+  (cl-loop for pkg in ewk/packages
         when (not (package-installed-p pkg)) do (return nil)
         finally (return t)))
 
