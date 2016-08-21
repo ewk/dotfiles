@@ -18,7 +18,7 @@
 (load "~/.emacs.d/config/filetype-config.el")
 (load "~/.emacs.d/config/vc-config.el")
 (load "~/.emacs.d/config/alias-config.el")
-(load "~/.emacs.d/config/client-config.el")
+(load "~/.emacs.d/config/emacsclient-config.el")
 
 (provide 'init)
 ;;; init ends here
