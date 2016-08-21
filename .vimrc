@@ -175,6 +175,9 @@ nnoremap gk k
 nnoremap ; :
 nnoremap : ;
 
+" Vim looks for keywords based on values specified by this variable.
+" This is the default. See :help "'complete'"
+" set complete=.,w,b,u,t,i
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -183,7 +186,7 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
-
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
 " Open the quickfix window automatically after any grep invocation:
 autocmd QuickFixCmdPost *grep* cwindow
