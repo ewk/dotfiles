@@ -21,12 +21,13 @@ then
 fi
 
 # Set PATH so it includes user's private bin if it exists
-if [ -d "HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]
+then
 	PATH="$HOME/bin:$PATH"
 fi
 
 # Go expects one directory for all source files
 export GOPATH=$HOME/Projects/GoWorkspace
-PATH=$GOPATH/bin:$HOME/bin:$PATH
+PATH=$GOPATH/bin:$PATH
 
 export PATH
