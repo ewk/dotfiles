@@ -190,3 +190,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Open the quickfix window automatically after any grep invocation:
 autocmd QuickFixCmdPost *grep* cwindow
+
+"Enable goimports to automatically insert import paths instead of gofmt:
+let g:go_fmt_command = "goimports"
