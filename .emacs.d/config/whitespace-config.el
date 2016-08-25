@@ -1,12 +1,11 @@
 ;;; Commentary
 
 ;; Enable whitespace mode globally
-(require 'whitespace)
  (setq whitespace-style '(face empty tabs tab-mark empty lines-tail trailing))
-(global-whitespace-mode t)
-
+;(require 'whitespace)
+;(global-whitespace-mode t)
 ;; But provide an off switch
-(global-set-key (kbd "C-c w") 'whitespace-mode) ; view all whitespace characters
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 ;; Empty lines
 (setq-default indicate-empty-lines t)
 (when (not indicate-empty-lines)
