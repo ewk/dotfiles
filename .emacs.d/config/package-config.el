@@ -15,10 +15,10 @@
 (package-initialize)
 
 ;; Default packages
-(defvar ewk/packages '(ac-slime
-			  company
+(defvar ewk/packages '(company
                           flycheck
                           go-mode
+			  company-go
                           org
 			  zenburn-theme
 			  git-gutter)
