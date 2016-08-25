@@ -6,6 +6,7 @@
 # File prefixes and suffixes
 *.DS_Store
 *.DS_Store
+*.asc
 *.bundle
 *.mix
 *.pyc
