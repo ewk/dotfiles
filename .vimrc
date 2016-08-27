@@ -39,6 +39,7 @@ augroup AutoSave
 augroup END
 set lazyredraw " redraw only when we need to for faster macros
 set nrformats= " treat all numerals as decimal instead of octal
+set fileformats=unix,dos,mac " Prefer Unix over Windows over OS 9 formats
 
 " ================ Visual clues ======================
 colorscheme zenburn
