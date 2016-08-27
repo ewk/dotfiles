@@ -22,6 +22,7 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
-rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
-rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
-
+if [ -d "$dest" ]; then
+	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
+	rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
+fi
