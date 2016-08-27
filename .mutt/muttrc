@@ -1,6 +1,6 @@
 # Keep email password in a separate, encrypted file
 # gpg decrypt must stay at top of config
-source " gpg2 -dq $HOME/.mutt/.my-pwds.gpg |"
+source " gpg2 -dq $HOME/.mutt/.my-pwds.asc |"
 
 # ================  IMAP w/ offlineimap ====================
 set folder = "$HOME/Mail"      # Root directory of local mailboxes
