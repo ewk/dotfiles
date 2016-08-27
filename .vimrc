@@ -156,12 +156,6 @@ noremap <C-l> <C-w>l
 " When you forget to open a file with sudo
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-" Command mode: Ctrl+p
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z
 
