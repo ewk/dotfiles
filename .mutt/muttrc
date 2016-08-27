@@ -16,8 +16,8 @@ set certificate_file = "$HOME/.mutt/certificates"
 set header_cache = "$HOME/.mutt/mutt-headercache"
 
 # ================  SMTP  ====================
-set smtp_url = "smtps://ewk+edkovsky.org@box492.bluehost.com:465"
-set smtp_pass = $my_pw_personal
+#set smtp_url = "smtp://edkovsky.org:587"
+#set smtp_pass = $my_pw_personal
 set realname = "Eddie Kovsky"
 set from = "ewk@edkovsky.org"
 set use_from = yes
