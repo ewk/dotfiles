@@ -31,13 +31,6 @@
 ;; FileType c,perl,sh,zsh,mmix inherit CC mode
 ;; Make must always uses tabs, never spaces.
 
-;; Go uses 4 space tabs and no wrapping; should be set by plugin
-;;(setq go-indent-offset 4)
-(add-hook 'go-mode-hook
-          (lambda ()
-            (setq tab-width 4)
-            (setq indent-tabs-mode 1)))
-
 ;; 2 soft spaces
 (setq html-indent-level 2)
 
