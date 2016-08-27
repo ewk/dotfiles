@@ -171,8 +171,11 @@ nnoremap ; :
 nnoremap : ;
 
 " Vim looks for keywords based on values specified by this variable.
-" This is the default. See :help "'complete'"
+" See :help "'complete'" Default is:
 " set complete=.,w,b,u,t,i
+set completeopt=longest,menuone
+
+" Use Tab to trigger completion
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
