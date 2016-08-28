@@ -43,7 +43,7 @@ color message white black
 color search brightwhite magenta
 color status brightyellow blue
 color tree brightblue black
-#color normal white black
+color normal white black # Fix background on Fedora
 color tilde green black
 color bold brightyellow black
 #color underline magenta black
