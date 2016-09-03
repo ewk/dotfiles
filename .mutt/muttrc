@@ -16,12 +16,14 @@ set certificate_file = "$HOME/.mutt/certificates"
 set header_cache = "$HOME/.mutt/mutt-headercache"
 
 # ================  SMTP  ====================
-#set smtp_url = "smtp://edkovsky.org:587"
-#set smtp_pass = $my_pw_personal
+set ssl_force_tls = yes # Require encrypted connection
+set ssl_starttls = yes
+set my_user = "ewk@edkovsky.org"
+set smtp_pass = $my_pw_personal
+set smtp_url = "smtp://$my_user@edkovsky.org:587"
 set realname = "Eddie Kovsky"
 set from = "ewk@edkovsky.org"
 set use_from = yes
-set ssl_force_tls = yes # Require encrypted connection
 
 # ================  Inbox Configuration  ====================
 set date_format = "%m/%d"
