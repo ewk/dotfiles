@@ -88,16 +88,6 @@ platform-driver-x86@[:alnum:] .+vger.kernel.org
 #subscribe .+@driverdev.osuosl.org .+@linuxdriverproject.org \
 #platform-driver-x86@[:alnum:] .+@vger.kernel.org
 
-# Filter kernel mailing list into a separate folder
-# Depends on 'set delete=yes' and 'set confirmappend=no' or extra '\n'
-folder-hook INBOX 'push "<tag-pattern> \
-~C devel@linuxdriverproject.org| \
-~C devel@driverdev.osuosl.org| \
-~C .+vger.kernel.org !~p\n\
-<tag-prefix-cond><save-message>=kernel\n<sync-mailbox><end-cond>"'
-
-#macro index S "<tag-pattern>~C devel@driverdev.osuosl.org\n<tag-prefix-cond><save-message>=kernel\n\n<sync-mailbox>\n<end-cond>"
-
 # notmuch: F8 search all mail and F9 rebuild threads
 macro index <F8> \
     "<enter-command>unset wait_key<enter><shell-escape>/usr/bin/notmuch-mutt --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" \
