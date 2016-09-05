@@ -1,7 +1,3 @@
-# Keep email password in a separate, encrypted file
-# gpg decrypt must stay at top of config
-source " gpg2 -dq $HOME/.mutt/.my-pwds.asc |"
-
 # ================  IMAP w/ offlineimap ====================
 set folder = "$HOME/Mail"      # Root directory of local mailboxes
 set record = "+sent"           # Where to store sent messages, relative to folder
@@ -16,11 +12,7 @@ set certificate_file = "$HOME/.mutt/certificates"
 set header_cache = "$HOME/.mutt/mutt-headercache"
 
 # ================  SMTP  ====================
-set ssl_force_tls = yes # Require encrypted connection
-set ssl_starttls = yes
-set my_user = "ewk@edkovsky.org"
-set smtp_pass = $my_pw_personal
-set smtp_url = "smtp://$my_user@edkovsky.org:587"
+set sendmail="/usr/bin/msmtp"
 set realname = "Eddie Kovsky"
 set from = "ewk@edkovsky.org"
 set use_from = yes
