@@ -110,7 +110,11 @@ set wildmode=list:longest
 set wildmenu                " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignorecase          " Ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
-set ofu=syntaxcomplete#Complete " Turn on omnicompletion
+set omnifunc=syntaxcomplete#Complete " Turn on omnicompletion
+" Vim looks for keywords based on values specified by this variable.
+" See :help "'complete'" Default is:
+" set complete=.,w,b,u,t,i
+set completeopt=longest,menuone
 
 " ================ Scrolling ========================
 set scrolloff=8         " Start scrolling when we're 8 lines away from margins
@@ -169,11 +173,6 @@ nnoremap gk k
 " Swap ; and :
 nnoremap ; :
 nnoremap : ;
-
-" Vim looks for keywords based on values specified by this variable.
-" See :help "'complete'" Default is:
-" set complete=.,w,b,u,t,i
-set completeopt=longest,menuone
 
 " Use Tab to trigger completion
 function! InsertTabWrapper()
