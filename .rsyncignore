@@ -22,6 +22,8 @@ postfix/sasl_passwd*
 /etc/.*
 /etc/NetworkManager
 /etc/crypttab
+/etc/cups
+/etc/brlapi.key
 /etc/gshadow*
 /etc/libvirt
 /etc/libvirtd
