@@ -3,9 +3,6 @@
 " ================ MUST RUN FIRST ====================
 set nocompatible " Use Vim settings, rather then Vi settings
 set encoding=utf-8 " Use UTF-8
-" pathogen will load anything in .vim/bundle; must load before filetype
-filetype off
-execute pathogen#infect()
 filetype plugin indent on
 " ================ END MUST RUN FIRST ====================
 

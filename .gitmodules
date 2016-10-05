@@ -1,9 +1,9 @@
 [submodule ".vim/bundle/vim-autoclose"]
-	path = .vim/bundle/vim-autoclose
+	path = .vim/pack/bundle/start/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
 [submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+	path = .vim/pack/bundle/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
+	path = .vim/pack/bundle/start/vim-go
 	url = https://github.com/fatih/vim-go.git
