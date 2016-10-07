@@ -44,7 +44,7 @@
 (global-linum-mode 1) ; Line numbers in all buffers
 (delete-selection-mode t)
 (transient-mark-mode t)
-(setq x-select-enable-clipboard t) ;; Interact with system clipboard
+(setq select-enable-clipboard t) ;; Interact with system clipboard
 
 ;; Turn off beeping and improve keyboard response
 (setq echo-keystrokes 0.1
