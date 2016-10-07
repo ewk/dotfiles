@@ -3,7 +3,7 @@
 # Make this file executable
 # Copy this line into /etc/anacrontab
 # 1	5	backup.daily	su -c /home/ewk/Documents/dotfiles/backup.sh ewk
-# May need to install and enbale cronie
+# May need to install and enable cronie
 # Test with anacron -f
 # Verify the timestamp file with 'cat /var/spool/anacron/backup.daily'
 
