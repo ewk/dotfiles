@@ -1,6 +1,6 @@
 # ================  Colors  ====================
 # object can be one of:
-#   * attachment
+#   * attachment (including PGP text)
 #   * body      (match regexp in the body of messages)
 #   * bold      (hiliting bold patterns in the body of messages)
 #   * error     (error messages printed by Mutt)
@@ -40,14 +40,17 @@ color indicator black cyan
 color attachment black green
 color error brightred black
 color message white black
-color search brightwhite magenta
+color search white black
+#color status brightgreen blue
 color status brightyellow blue
 color tree brightblue black
-color normal white black # Fix background on Fedora
+color normal white black
 color tilde green black
-color bold brightyellow black
+#color bold brightyellow black
 #color underline magenta black
-color markers brightcyan black
+color markers red black
+#color markers brightcyan black
+color prompt brightmagenta black
 
 ## Colours for items in the index
 color index brightcyan black ~N
