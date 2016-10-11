@@ -25,4 +25,5 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 if [ -d "$dest" ]; then
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
+	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/Music > /dev/null &
 fi
