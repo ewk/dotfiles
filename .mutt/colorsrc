@@ -36,6 +36,8 @@
 
 # Format:
 # color object foreground background [ regexp ]
+# color index blue black ~F
+# color index red black "~N|~O"
 
 ## Default color definitions
 color hdrdefault white green
