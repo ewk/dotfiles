@@ -6,6 +6,10 @@
 ;;; Code:
 
 ;; Use Common Lisp
+
+;; Initialize must come before configurations installed packages.
+(package-initialize)
+
 (require 'cl-lib)
 (set-language-environment "UTF-8")
 

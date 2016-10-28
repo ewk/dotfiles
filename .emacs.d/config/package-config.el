@@ -12,8 +12,6 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-;; Initialize must come before configurations installed packages.
-(package-initialize)
 
 ;; Default packages
 (defvar ewk/packages '(company
