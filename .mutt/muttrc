@@ -90,5 +90,9 @@ macro index <F9> \
     "<enter-command>unset wait_key<enter><pipe-message>/usr/bin/notmuch-mutt thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" \
           "search and reconstruct owning thread (using notmuch)"
 
-# Save all messages to folder "archive"
+# Save message to folder "archive"
 macro index,pager A  "<save-message>=archive<enter>"  "mark message as Archived"
+
+# NOTE CONFLICT WITH 'archive'!!!
+# Apply message as patch to local repo
+#macro index,pager A '| git am -s'
