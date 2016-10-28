@@ -56,7 +56,7 @@ color tilde green black
 #color underline magenta black
 color markers red black
 #color markers brightcyan black
-color prompt brightmagenta black
+color prompt white black
 
 ## Colours for items in the index
 color index brightcyan black ~N
