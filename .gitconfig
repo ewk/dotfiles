@@ -20,12 +20,9 @@
 
 [alias]
     g = grep -P --break --heading --line-number
-    view = grep -Ogvim
+    view = grep -Ogvim # open all grep results in editor
     hist = log --color --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    title = show -s --abbrev-commit --abbrev=12 --pretty=format:"%h (\"%s\")%n"
 
 [credential]
     helper = cache --timeout=3600
