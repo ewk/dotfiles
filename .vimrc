@@ -187,3 +187,5 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 "Enable goimports to automatically insert import paths instead of gofmt:
 let g:go_fmt_command = "goimports"
+" Presentation mode - white background w/o syntax highlighting and list chars
+command! Present colorscheme default | set syntax=off nolist
