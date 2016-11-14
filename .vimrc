@@ -27,9 +27,6 @@ let g:netrw_liststyle=1 " Use list style in Netrw :E
 augroup AutoSave
     autocmd!
     autocmd FocusLost * :wa " Autosave
-    " Strip trailing whitespace before saving. Can restrict to certain
-    " filetypes with: *.{md,pl,pl6,rb,t,xml,yaml,go}
-    autocmd BufWritePre * :%s/\s\+$//e
     " Remember last location in file:
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
                 \| execute "normal! g'\"" | endif
@@ -143,6 +140,9 @@ set tags=./tags; " Load tags recursively from working directory
 " ================ Keyboard customization ======================
 " quick exit from insert mode
 inoremap jk <esc>
+
+" Strip all trailing whitespace in the current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Paste from system clipboard instead of global register gymnastics
 noremap <leader>v "+p
