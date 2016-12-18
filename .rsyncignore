@@ -1,5 +1,5 @@
-Projects/linux_src
-Projects/linux-src
+#Projects/linux_src
+#Projects/linux-src
 Projects/neovim
 Music
 Downloads
@@ -19,8 +19,9 @@ bin
 .gnome
 .gnome2
 .gradle
+.pwd*
 
-# Patterns are relative to /etc
+# Patterns are relative to root directory (/etc usually)
 NetworkManager
 brlapi.key
 crypttab
@@ -44,4 +45,5 @@ polkit
 polkit-1
 sasl_passwd*
 shadow*
+ssh
 sudoers*
