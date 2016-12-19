@@ -12,7 +12,7 @@ if has('gui_running')
 endif
 
 " Size of GVim window
-set lines=50 columns=90
+set lines=50 columns=100
 
 " Visual mode selection is available to system clipboard.
 " Use console dialogs instead of popup windows.
