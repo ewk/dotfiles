@@ -1,0 +1,36 @@
+# 'mbsync user' to run manually
+#
+# mbsync does not have a built in timer or post-hooks.
+# You will also need to create a new systemd unit to automate syncing.
+
+# ACCOUNT INFORMATION
+IMAPAccount user
+Host
+User
+Pass
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# REMOTE STORAGE
+IMAPStore user-remote
+Account user
+
+# LOCAL STORAGE
+MaildirStore user-local
+Path ~/Mail/
+Inbox ~/Mail/INBOX
+
+# CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIL
+# FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
+# "*" TO MATCH EVERYTHING
+# "!DIR" TO EXCLUDE "DIR"
+# "DIR" TO MATCH DIR
+
+Channel user
+Master :user-remote:
+Slave :user-local:
+Patterns "INBOX" "INBOX.Junk"
+Create Both
+Expunge Both
+SyncState *
