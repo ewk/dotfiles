@@ -1,0 +1,1 @@
+/home/ewk/Documents/dotfiles/.vimrc

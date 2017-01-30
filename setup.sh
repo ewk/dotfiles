@@ -10,6 +10,7 @@ ln -s "$cwd"/.gitignore "$HOME"
 ln -s "$cwd"/.gvimrc "$HOME"
 ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.vim "$HOME"
+ln -s "$cwd"/.vim "$HOME"/.config/nvim
 ln -s "$cwd"/.vimrc "$HOME"
 ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile
