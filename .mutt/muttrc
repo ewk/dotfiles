@@ -18,7 +18,7 @@ set from = "ewk@edkovsky.org"
 set use_from = yes
 
 # ================  Inbox Configuration  ====================
-set date_format = "%m/%d"
+set date_format = "%m/%d/%y"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads       # Always sort mailboxes by thread
 #set sort_aux = reverse-last-date-received  # like gmail
@@ -40,7 +40,7 @@ macro index \cb |urlview\n
 
 # ================  Status Bar  ====================
 set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)?]───%>─%?p?( %p postponed )?─── -- (%P)"
 
 # ================  Message Headers ====================
 ignore *
