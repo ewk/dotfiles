@@ -82,6 +82,9 @@ platform-driver-x86@[:alnum:] .+vger.kernel.org
 #subscribe .+@driverdev.osuosl.org .+@linuxdriverproject.org \
 #platform-driver-x86@[:alnum:] .+@vger.kernel.org
 
+# delete duplicate list messages in folder
+folder-hook kernel push "<delete-pattern>~=<enter>"
+
 # notmuch: F8 search all mail and F9 rebuild threads
 macro index <F8> \
     "<enter-command>unset wait_key<enter><shell-escape>/usr/bin/notmuch-mutt --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>" \
