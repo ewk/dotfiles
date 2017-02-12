@@ -13,6 +13,9 @@
 (setq auto-save-timeout 30) ; Autosave every 30 seconds; also the default
 (global-auto-revert-mode t) ; Reload files changed outside Emacs
 
+;; Remember cursor position in each file- .emacs.d/places must exist
+(save-place-mode 1)
+
 ;; Buffer management
 (setq pop-up-frame t) ; Buffers in separate frames
 (setq enable-recursive-minibuffers t) ; Stack minibuffers

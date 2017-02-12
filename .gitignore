@@ -40,6 +40,7 @@ db/*.sqlite3
 .emacs.d/ac-comphist.dat
 .emacs.d/ido.last
 .emacs.d/recentf
+.emacs.d/places
 .mutt/mutt-headercache
 .my-pwds.gpg
 .mysql_history
