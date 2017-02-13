@@ -8,33 +8,30 @@
 ;; Add marmalade and melpa repositories
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 ;; Default packages
-(defvar ewk/packages '(company
-                          flycheck
-                          go-mode
-			  company-go
-                          org
-			  zenburn-theme
-			  git-gutter)
-  "Default packages")
+(defvar my-packages
+  '(company
+    company-go
+    flycheck
+    git-gutter
+    go-mode
+    material-theme
+    org
+    rust-mode
+    zenburn-theme)
+  "Default packages to install on startup.")
 
-;; Install packages if not present
-(defun ewk/packages-installed-p ()
-  (cl-loop for pkg in ewk/packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
-
-(unless (ewk/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg ewk/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+(package-install p)))
 
 (provide 'package-config)
 ;;; package-config ends here
