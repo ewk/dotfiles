@@ -16,6 +16,7 @@ ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile
 ln -s "$cwd"/.zshenv "$HOME"
 ln -s "$cwd"/.zshrc "$HOME"
+ln -s "$cwd"/.zlogout "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
 
