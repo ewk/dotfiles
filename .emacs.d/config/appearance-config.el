@@ -20,7 +20,8 @@
 
 ;; Themes
 (if window-system
-    (load-theme 'zenburn t)
+    ;;(load-theme 'zenburn t)
+    (load-theme 'material t)
   (load-theme 'wombat t))
 
 ;; Window size
