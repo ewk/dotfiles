@@ -21,6 +21,7 @@ set use_from = yes
 set date_format = "%m/%d/%y"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads       # Always sort mailboxes by thread
+set duplicate_threads=yes # If sort=threads, duplicates are flagged with equals sign
 #set sort_aux = reverse-last-date-received  # like gmail
 set markers = no         # Mark wrapped lines of text in the pager with a +
 set mark_old = no        # read/new is good enough
@@ -76,14 +77,17 @@ source "$HOME/.mutt/pgprc"
 set pgp_auto_decode = yes # decrypt pgp messages automatically
 
 # ================  Filters and Lists  ====================
-lists     .+@driverdev.osuosl.org .+@linuxdriverproject.org \
-platform-driver-x86@[:alnum:] .+vger.kernel.org
+lists .+vger.kernel.org
+lists kernel-hardening@lists.openwall.com
+
+subscribe .+vger.kernel.org
+subscribe kernel-hardening@lists.openwall.com
 
 #subscribe .+@driverdev.osuosl.org .+@linuxdriverproject.org \
 #platform-driver-x86@[:alnum:] .+@vger.kernel.org
 
 # delete duplicate list messages in folder
-folder-hook kernel push "<delete-pattern>~=<enter>"
+folder-hook . 'push <delete-pattern>~=<enter>'
 
 # notmuch: F8 search all mail and F9 rebuild threads
 macro index <F8> \
