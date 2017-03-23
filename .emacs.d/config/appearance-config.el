@@ -30,8 +30,8 @@
 
 ;; Appearance
 (if (eq system-type 'darwin)
-    (set-default-font "Menlo-14")
-  (set-default-font "Droid Sans Mono-14"))
+    (set-frame-font "Menlo-14")
+  (set-frame-font "Droid Sans Mono-14"))
 
 ;; TODO keep cursor at same point when scrolling; use C-l for now
 
