@@ -40,3 +40,12 @@
 
 [merge]
     tool = gvimdiff
+
+[sendemail]
+    from = Eddie Kovsky <ewk@edkovsky.org>
+    smtpserver = "/usr/bin/msmtp"
+    smtpencryption = tls
+    chainreplyto = false # Default is false
+    confirm = always #auto
+    suppress-cc = self,author
+    suppressFrom = true
