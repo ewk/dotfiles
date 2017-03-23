@@ -75,13 +75,14 @@ set noswapfile " No more swap files for git to ignore; turn this on for large fi
 set nowb       " Prevents automatic write backup before overwriting file
 
 " ================ Indentation ======================
+" You will nearly always want tabstop == softtabstop == shiftwidth
+set tabstop=4     " Number of visual spaces per TAB
+set softtabstop=4 " Number of spaces inserted per TAB; higher precedence than tabstop
+set shiftwidth=4  " Amount of white space to insert or remove in normal mode
+"set expandtab     " Turn TAB into spaces using value of softtabstop
+
 set autoindent    " Always autoindent and copy previous indentation on copy
 set smarttab      " Insert tabs on the start of a line according to shiftwidth, not tabstop
-" You will nearly always want tabstop == softtabstop == shiftwidth
-set tabstop=4     " Width of tab character
-set softtabstop=4 " Fine tune amount of white space to be inserted; higher precedence than tabstop
-set expandtab     " Use spaces in place of tab characters using softtabstop value
-set shiftwidth=4  " Amount of white space to insert or remove in normal mode
 set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent    " Copy the structure of the existing lines indent when autoindenting a new line. Uses spaces instead of tabs if expandtab is set
 
