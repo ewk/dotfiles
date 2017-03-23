@@ -6,8 +6,6 @@
 
 ;;; Code:
 
-(set-language-environment "UTF-8")
-
 ;; Backups and autosave
 (setq make-backup-files nil) ; No backup files ~
 (setq auto-save-timeout 30) ; Autosave every 30 seconds; also the default
