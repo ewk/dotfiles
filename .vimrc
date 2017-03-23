@@ -37,6 +37,19 @@ set fileformats=unix,dos,mac " Prefer Unix over Windows over OS 9 formats
 
 " ================ Visual clues ======================
 colorscheme zenburn
+if has("gui_running")
+	silent! set guioptions=+aceigmrL
+	set lines=50 columns=100
+endif
+
+if has('macunix')
+	silent! set guifont=Menlo:h14
+elseif has('unix')
+	silent! set guifont=Droid\ Sans\ Mono\ 14
+	"silent! set guifont=Deja\ Vu\ Sans\ Mono\ 14
+	"silent! set guifont=Inconsolata\ Medium\ 14
+endif
+
 set startofline " Keep cursor at same position when scrolling
 set cursorline
 highlight CursorLine guibg=black
