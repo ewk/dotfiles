@@ -36,7 +36,6 @@ set nrformats= " treat all numerals as decimal instead of octal
 set fileformats=unix,dos,mac " Prefer Unix over Windows over OS 9 formats
 
 " ================ Visual clues ======================
-colorscheme zenburn
 if has("gui_running")
 	silent! set guioptions=+aceigmrL
 	set lines=50 columns=100
@@ -50,9 +49,9 @@ elseif has('unix')
 	"silent! set guifont=Inconsolata\ Medium\ 14
 endif
 
+colorscheme OceanicNext
 set startofline " Keep cursor at same position when scrolling
 set cursorline
-highlight CursorLine guibg=black
 highlight ColorColumn guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
