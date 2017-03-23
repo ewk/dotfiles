@@ -10,10 +10,6 @@
 (setq inhibit-splash-screen t
       initial-scratch-message nil)
 
-;; Menu bar
-(tool-bar-mode -1) ;; Hide toolbar buttons
-(define-key menu-bar-tools-menu [games] nil)
-
 ;; Show filename in frame
 (setq frame-title-format
       ;;(list (format "%s %%S: %%j " (system-name))

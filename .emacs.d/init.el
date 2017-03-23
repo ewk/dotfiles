@@ -6,6 +6,11 @@
 ;;; Code:
 
 ;; Use Common Lisp
+;; Turn off scrollbars early in startup to avoid window width weirdness.
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(define-key menu-bar-tools-menu [games] nil)
+
 
 ;; Initialize must come before configurations installed packages.
 (package-initialize)
