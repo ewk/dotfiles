@@ -205,11 +205,14 @@
 (icomplete-mode t) ; Completion in mini-buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
+;;
+;; Alias customization
+;;
+(load "~/.emacs.d/config/alias-config.el")
 
 (load "~/.emacs.d/config/buffer-config.el")
 (load "~/.emacs.d/config/autocomplete-config.el")
 (load "~/.emacs.d/config/org-config.el")
-(load "~/.emacs.d/config/alias-config.el")
 (load "~/.emacs.d/config/emacsclient-config.el")
 
 (provide 'init)

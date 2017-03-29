@@ -1,3 +1,12 @@
+;;; alias-config --- Summary
+
+;;; Commentary:
+
+;;;
+
+;;; Code:
+
+
 ;; Aliases
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -18,3 +27,6 @@
     (shell-command
      (format "etags -f %s -e -R %s" path-to-ctags (directory-file-name dir-name)))
     )
+
+(provide 'alias-config)
+;;; alias-config ends here
