@@ -206,6 +206,21 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 
 ;;
+;;
+;; Spell checking
+;;
+
+;; Where is aspell?
+(setq flyspell-issue-welcome-flag nil)
+(if (eq system-type 'darwin)
+    (setq-default ispell-program-name "/usr/local/bin/aspell")
+  (setq-default ispell-program-name "/usr/bin/aspell"))
+(setq-default ispell-list-command "list")
+
+;; Enable spell checking
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ;; Alias customization
 ;;
 (load "~/.emacs.d/config/alias-config.el")
