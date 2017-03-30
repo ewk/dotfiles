@@ -24,9 +24,7 @@
     git-gutter
     go-mode
     material-theme
-    org
-    rust-mode
-    zenburn-theme)
+    org)
   "Default packages to install on startup.")
 
 (dolist (p my-packages)
