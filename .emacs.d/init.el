@@ -45,6 +45,12 @@
 ;;(setq frame-title-format "%b - emacs") ; Use buffer name as frame title
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
+;; Buffer management
+(setq pop-up-frame t) ; Buffers in separate frames
+(setq enable-recursive-minibuffers t) ; Stack minibuffers
+(setq large-file-warning-threshold nil) ; Don't warn opening large files
+(savehist-mode 1) ; Save minibuffer history
+
 ;; Themes
 (if window-system
     (load-theme 'material t)
@@ -67,6 +73,19 @@
 (show-paren-mode t) ; Highlight parenthesis pairs
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
+(transient-mark-mode t) ;; Highlight mark selection
+
+;; Editing
+(delete-selection-mode t) ;; Replace selected text
+(setq select-enable-clipboard t) ;; Interact with system clipboard
+
+;; Fix terminal output characters
+(require 'ansi-color)
+(defun my/ansi-colorize-buffer ()
+  (let ((buffer-read-only nil))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+(add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
+
 
 ;;
 ;; Backups and autosave

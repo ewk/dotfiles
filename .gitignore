@@ -23,6 +23,7 @@ db/*.sqlite3
 .dvdcss/
 .emacs.d/auto-save-list/*
 .emacs.d/elpa/*
+.emacs.d/history
 .filezilla/
 .fontconfig/
 .fonts/
