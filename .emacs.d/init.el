@@ -7,7 +7,6 @@
 ;;
 ;; General Config
 ;;
-(load "~/.emacs.d/config/appearance-config.el")
 
 ;; Turn off scrollbars early in startup to avoid window width weirdness.
 (scroll-bar-mode -1)
@@ -268,7 +267,6 @@
     (set-mouse-pixel-position (selected-frame) 4 4)
     ))
 (add-hook 'server-switch-hook 'px-raise-frame-and-give-focus)
-
 
 (provide 'init)
 ;;; init ends here
