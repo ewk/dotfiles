@@ -238,7 +238,8 @@
 
 ;; Enable spell checking
 (add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode) ;; Only checks comments
+(add-hook 'diff-mode-hook 'flyspell-mode)
 
 ;;
 ;; Ctags
