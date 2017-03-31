@@ -62,6 +62,8 @@ set alias_file = "$HOME/.mutt/mutt_aliases" # Address book
 source "$HOME/.mutt/mutt_aliases"     # Source address book
 set sort_alias = alias                 # Sort alphabetically by name
 # set signature="$HOME/.mutt/signature"
+set followup_to = no # do not insert Mail-Followup-To header in list replies
+set honor_followup_to = no # do not honor Mail-Followup-To header
 
 # ================  Encryption  ====================
 # GPG settings
