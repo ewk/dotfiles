@@ -23,6 +23,8 @@
     view = grep -Ogvim # open all grep results in editor
     hist = log --color --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    b = branch -v
+    fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
 
 [credential]
     helper = cache --timeout=3600
