@@ -49,7 +49,7 @@ elseif has('unix')
 	"silent! set guifont=Inconsolata\ Medium\ 14
 endif
 
-colorscheme OceanicNext
+colorscheme apprentice
 set startofline " Keep cursor at same position when scrolling
 set cursorline
 highlight ColorColumn guibg=magenta
