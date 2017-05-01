@@ -10,3 +10,6 @@
 [submodule ".vim/pack/bundle/start/vim-fugitive"]
 	path = .vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/colors/blue_in_green"]
+	path = .vim/colors/blue_in_green
+	url = https://github.com/ewk/blue_in_green.git

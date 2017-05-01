@@ -49,10 +49,10 @@ elseif has('unix')
 	"silent! set guifont=Inconsolata\ Medium\ 14
 endif
 
-colorscheme apprentice
+colorscheme blue_in_green
 set startofline " Keep cursor at same position when scrolling
 set cursorline
-highlight ColorColumn guibg=magenta
+highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%81v', 100) " highlight lines past 80 columns
 set showmatch " highlight matching pairs
 highlight MatchParen guifg=yellow guibg=black gui=bold
