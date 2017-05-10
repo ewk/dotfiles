@@ -82,12 +82,17 @@ set pgp_auto_decode = yes # decrypt pgp messages automatically
 # ================  Filters and Lists  ====================
 lists .+vger.kernel.org
 lists kernel-hardening@lists.openwall.com
+lists .+kernelnewbies.org
+lists .+archlinux.org
+lists .+lists.fedoraproject.org
+lists .+lists.nclug.org
 
 subscribe .+vger.kernel.org
 subscribe kernel-hardening@lists.openwall.com
-
-#subscribe .+@driverdev.osuosl.org .+@linuxdriverproject.org \
-#platform-driver-x86@[:alnum:] .+@vger.kernel.org
+subscribe .+kernelnewbies.org
+subscribe .+archlinux.org
+subscribe .+lists.fedoraproject.org
+subscribe .+lists.nclug.org
 
 # delete duplicate list messages in folder
 folder-hook . 'push <delete-pattern>~=<enter>'
