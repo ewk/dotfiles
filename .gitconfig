@@ -49,5 +49,5 @@
     smtpencryption = tls
     chainreplyto = false # Default is false
     confirm = always #auto
-    suppress-cc = self,author
+	#suppress-cc = author, self
     suppressFrom = true
