@@ -263,6 +263,9 @@
 ;;
 (load "~/.emacs.d/config/alias-config.el")
 
+;;
+;; Org mode
+;;
 (load "~/.emacs.d/config/org-config.el")
 
 ;;
