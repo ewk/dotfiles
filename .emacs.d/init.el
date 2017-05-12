@@ -85,11 +85,23 @@
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
 
+;;
+;; Search settings
+;;
+;set incsearch        " Find the next match as you type
+;set hlsearch         " Highlight searches by default
+;set viminfo='100,f1  " Save up to 100 marks, enable capital marks
+;set ignorecase       " Ignore case when searching
+;set smartcase        " Ignore case if search is all lowercase, else case-sensitive
+;; Avoid backslash madness
+(require 're-builder)
+(setq reb-re-syntax 'string)
 
 ;;
 ;; Backups and autosave
 ;;
 (setq make-backup-files nil) ; No backup files ~
+;; TODO do this on lost focus like in Vim
 (setq auto-save-timeout 30) ; Autosave every 30 seconds; also the default
 (global-auto-revert-mode t) ; Reload files changed outside Emacs
 
@@ -224,6 +236,9 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 
 ;;
+;; Mode line
+;;
+
 ;;
 ;; Spell checking
 ;;
