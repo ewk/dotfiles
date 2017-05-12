@@ -39,6 +39,7 @@ alternative_order text/plain text/enriched text/html
 # set auto_tag = yes       # Automatically apply functions to tagged messages
 # Call urlview to extract URLs out of a message
 macro index \cb |urlview\n
+bind pager \c? previous-line # Fix scrollback; Mutt assumes <backspace> is ^h
 
 # ================  Status Bar  ====================
 set status_chars  = " *%A"
