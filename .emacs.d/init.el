@@ -171,13 +171,12 @@
     auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.gitconfig$" . conf-mode))
 (add-to-list 'auto-mode-alist '("rc$" . conf-mode))
-(require 'log-edit)
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . vc-git-log-edit-mode))
 
 ;; Version control
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
 (add-to-list 'vc-handled-backends 'Git)
+(global-git-commit-mode) ; Recognize commit_editmsg for 'git commit'
 
 ;;
 ;; Whitespace
