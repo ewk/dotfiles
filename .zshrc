@@ -46,6 +46,9 @@ zstyle ':completion:::::' completer _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )'
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
+# Substitute xargs
+autoload zargs
+
 # USER FUNCTIONS
 alias sudo='sudo env PATH=$PATH'
 alias grep='egrep --color'
