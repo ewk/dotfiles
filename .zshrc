@@ -2,8 +2,6 @@
 # This file is sourced in interactive shells.
 # Commands to set up aliases, functions, options, key bindings, etc.
 
-# PROMPT
-# Prepare version control promp
 #
 # Standard shell
 #
@@ -48,6 +46,10 @@ GREP_COLOR='1;30;43'
 # GPG config - will only ask for password once per shell
 keychain --eval --quiet >/dev/null
 
+#
+# Zsh specific goodies
+#
+# Prepare version control prompt
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
@@ -93,9 +95,11 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 # Substitute xargs
 autoload zargs
 
-# ZLE
-# fix up zsh line editor; zsh replaces readline
-# Create a zkbd hash; To add other keys to this hash see man 5 terminfo
+#
+# Zsh Line Editor
+#
+# ZLE replaces readline; Fix it up to match readline
+# Create a zkbd hash. To add other keys to this hash see man 5 terminfo
 typeset -A key
 
 key[Home]=${terminfo[khome]}
@@ -124,27 +128,31 @@ key[PageDown]=${terminfo[knp]}
 # Finally, make sure the terminal is in application mode when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-    function zle-line-init () {
-        printf '%s' "${terminfo[smkx]}"
-    }
-    function zle-line-finish () {
-        printf '%s' "${terminfo[rmkx]}"
-    }
-    zle -N zle-line-init
-    zle -N zle-line-finish
+	function zle-line-init () {
+		printf '%s' "${terminfo[smkx]}"
+	}
+	function zle-line-finish () {
+		printf '%s' "${terminfo[rmkx]}"
+	}
+	zle -N zle-line-init
+	zle -N zle-line-finish
 fi
 
-# DIRSTACK
+#
+# Dirstack
+#
 # Remember last visited folders using 'dirs -v'
 # Autocomplete with 'cd - TAB'
 DIRSTACKSIZE=20
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+	dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+	[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
 fi
+
 chpwd() {
-  print -l $PWD ${(u)dirstack} >>$DIRSTACKFILE
+	print -l $PWD ${(u)dirstack} >>$DIRSTACKFILE
 }
 
 setopt autopushd pushdsilent pushdtohome
