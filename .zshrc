@@ -4,6 +4,50 @@
 
 # PROMPT
 # Prepare version control promp
+#
+# Standard shell
+#
+# User functions
+alias grep='egrep --color'
+alias emacsclient='emacsclient --no-wait'
+alias ll='ls -ahlF'
+
+if [[ $(uname) == 'Linux' ]]
+then
+	alias ls='ls --color=auto'
+fi
+
+open() {
+	if [[ $(uname) == 'Linux' ]]
+	then
+		command xdg-open $1
+	elif [[ $(uname) == 'Darwin' ]]
+	then
+		command open $1
+	fi
+}
+
+gitk() {
+	if [[ $(uname) == 'Darwin' ]]
+	then
+		command gitx
+	else
+		command gitk&
+	fi
+}
+
+# Sets the Mail Environment Variable
+MAIL=/var/spool/mail/ewk && export MAIL
+
+# Ack settings
+ACKRC=~/.ackrc
+
+# Grep settings
+GREP_COLOR='1;30;43'
+
+# GPG config - will only ask for password once per shell
+keychain --eval --quiet >/dev/null
+
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
@@ -48,38 +92,6 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 
 # Substitute xargs
 autoload zargs
-
-# USER FUNCTIONS
-alias grep='egrep --color'
-alias emacsclient='emacsclient --no-wait'
-alias ll='ls -ahlF'
-
-if [[ $(uname) == 'Linux' ]]
-then
-	alias ls='ls --color=auto'
-fi
-
-open() {
-	if [[ $(uname) == 'Linux' ]]
-	then
-		command xdg-open $1
-	elif [[ $(uname) == 'Darwin' ]]
-	then
-		command open $1
-	fi
-}
-
-gitk() {
-	if [[ $(uname) == 'Darwin' ]]
-	then
-		command gitx
-	else
-		command gitk&
-	fi
-}
-
-# Sets the Mail Environment Variable
-MAIL=/var/spool/mail/ewk && export MAIL
 
 # ZLE
 # fix up zsh line editor; zsh replaces readline
@@ -143,13 +155,3 @@ typeset -U dirstack
 
 # This reverts the +/- operators.
 setopt pushdminus
-
-# Ack settings
-ACKRC=~/.ackrc
-
-# Grep settings
-GREP_COLOR='1;30;43'
-
-# GPG config - will only ask for password once per shell
-keychain --eval --quiet >/dev/null
-
