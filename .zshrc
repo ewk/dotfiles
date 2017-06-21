@@ -50,7 +50,6 @@ zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
 autoload zargs
 
 # USER FUNCTIONS
-alias sudo='sudo env PATH=$PATH'
 alias grep='egrep --color'
 alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
