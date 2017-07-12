@@ -16,3 +16,6 @@
 [submodule ".vim/pack/bundle/neomake"]
 	path = .vim/pack/bundle/start/neomake
 	url = https://github.com/neomake/neomake.git
+[submodule ".vim/pack/bundle/start/deoplete.nvim"]
+	path = .vim/pack/bundle/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git

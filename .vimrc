@@ -7,6 +7,9 @@ filetype plugin indent on
 " ================ END MUST RUN FIRST ====================
 
 " ================ General Config ====================
+if has('nvim')
+	let g:deoplete#enable_at_startup = 1
+endif
 set shortmess+=I " Hide startup message
 let mapleader="," " change the mapleader from \ to ,
 set number "enable line numbering at paragraphs
