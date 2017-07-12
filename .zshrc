@@ -80,7 +80,7 @@ setopt HIST_IGNORE_SPACE
 
 # AUTO COMPLETE
 autoload -U compinit # Load the function-based completion system
-compinit
+compinit -u
 
 # Load pager for long list of completion options
 # Return advances one line, tab advances one page
