@@ -13,3 +13,6 @@
 [submodule ".vim/colors/blue_in_green"]
 	path = .vim/colors/blue_in_green
 	url = https://github.com/ewk/blue_in_green.git
+[submodule ".vim/pack/bundle/neomake"]
+	path = .vim/pack/bundle/start/neomake
+	url = https://github.com/neomake/neomake.git

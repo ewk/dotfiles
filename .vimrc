@@ -199,10 +199,12 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Open the quickfix window automatically
 "autocmd QuickFixCmdPost *grep* cwindow
-autocmd QuickFixCmdPost * copen
+"autocmd QuickFixCmdPost * copen
 
 "Enable goimports to automatically insert import paths instead of gofmt:
 let g:go_fmt_command = "goimports"
+
+autocmd! BufWritePost,BufEnter * Neomake
 
 " Call command to create a scratch buffer
 command! Scratch enew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
