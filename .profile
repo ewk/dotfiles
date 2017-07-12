@@ -15,14 +15,12 @@
 # Debian sets the default PATH for standard users from /etc/profile:
 # /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 # Fix it:
-if [[ $(uname -a) == *'Debian'* ]]
-then
+if [[ $(uname -a) == *'Debian'* ]]; then
 	PATH=$PATH:/sbin:/usr/sbin
 fi
 
 # Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ]
-then
+if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 

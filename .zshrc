@@ -10,24 +10,20 @@ alias grep='egrep --color'
 alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
 
-if [[ $(uname) == 'Linux' ]]
-then
+if [[ $(uname) == 'Linux' ]]; then
 	alias ls='ls --color=auto'
 fi
 
 open() {
-	if [[ $(uname) == 'Linux' ]]
-	then
+	if [[ $(uname) == 'Linux' ]]; then
 		command xdg-open $1
-	elif [[ $(uname) == 'Darwin' ]]
-	then
+	elif [[ $(uname) == 'Darwin' ]]; then
 		command open $1
 	fi
 }
 
 gitk() {
-	if [[ $(uname) == 'Darwin' ]]
-	then
+	if [[ $(uname) == 'Darwin' ]]; then
 		command gitx
 	else
 		command gitk&
