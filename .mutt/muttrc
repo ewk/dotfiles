@@ -87,6 +87,7 @@ lists .+kernelnewbies.org
 lists .+archlinux.org
 lists .+lists.fedoraproject.org
 lists .+lists.nclug.org
+lists .+lists.debian.org
 
 subscribe .+vger.kernel.org
 subscribe kernel-hardening@lists.openwall.com
@@ -94,6 +95,7 @@ subscribe .+kernelnewbies.org
 subscribe .+archlinux.org
 subscribe .+lists.fedoraproject.org
 subscribe .+lists.nclug.org
+subscribe .+lists.debian.org
 
 # delete duplicate list messages in folder
 folder-hook . 'push <delete-pattern>~=<enter>'
