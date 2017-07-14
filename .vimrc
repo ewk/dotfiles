@@ -163,6 +163,7 @@ inoremap jk <esc>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Paste from system clipboard instead of global register gymnastics
+set clipboard=unnamed
 noremap <leader>v "+p
 " And copy to system clipboard
 noremap <leader>c "+y$
