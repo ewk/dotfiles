@@ -22,8 +22,10 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
-if [ -d "$dest" ]; then
+if [ -e "$dest" ]; then
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/Music > /dev/null &
+else
+	echo "Backup drive not available."
 fi
