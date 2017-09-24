@@ -1,10 +1,12 @@
 # .zshrc main configuration file
 # This file is sourced in interactive shells.
-# Commands to set up aliases, functions, options, key bindings, etc.
+# Used to set up aliases, functions, options, key bindings and
+# executing commands
 
 #
 # Standard shell
 #
+
 # User functions
 alias grep='egrep --color'
 alias emacsclient='emacsclient --no-wait'
@@ -45,6 +47,7 @@ keychain --eval --quiet >/dev/null
 #
 # Zsh specific goodies
 #
+
 # Prepare version control prompt
 setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info

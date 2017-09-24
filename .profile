@@ -1,5 +1,6 @@
 #~/.zprofile
 # This file is generally used for automatic execution of user scripts.
+# It will be sourced when starting a login shell.
 
 # Arch expects to find .zprofile. Create a symbolic link:
 # ln -s dotfiles/.profile ~/.zprofile

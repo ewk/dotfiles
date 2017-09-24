@@ -1,6 +1,6 @@
-# Set the command search path and environment variables.
 # This file is sourced on all invocations of the shell.
 # This file should not contain commands that produce output.
+# Used for setting system-wide environment variables.
 
 # EDITOR
 export EDITOR="gvim -f"
@@ -31,4 +31,3 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
-
