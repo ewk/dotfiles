@@ -99,8 +99,8 @@ set virtualedit=block " Visual select white space
 " Syntax of these languages can be fussy
 augroup Filetypes
     autocmd!
-    autocmd FileType python setlocal formatoptions+=r " Insert comment on newline
     autocmd FileType c,cpp,perl,sh,zsh,mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd FileType python setlocal formatoptions+=ro " Insert comment on newline
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType html,css setlocal ts=4 sts=4 sw=4 noexpandtab nowrap
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
