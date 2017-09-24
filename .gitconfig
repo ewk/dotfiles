@@ -18,6 +18,11 @@
     signOff = True # enable --signoff for format-patch
     coverLetter = auto # generate a cover letter for multiple patches
 
+# Change format of git-lg, git-show
+# Usage: git show --format=fixes aa3bf2bd8f15
+[pretty]
+	fixes = Fixes: %h (\"%s\")
+
 [alias]
     g = grep -P --break --heading --line-number
     view = grep -Ogvim # open all grep results in editor
