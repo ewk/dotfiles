@@ -8,7 +8,7 @@
 #
 
 # User functions
-alias grep='egrep --color'
+alias grep='egrep --color --ignore-case'
 alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
 
