@@ -56,3 +56,6 @@
     confirm = always #auto
 	#suppress-cc = author, self
     suppressFrom = true
+
+[gpg]
+	program = gpg2
