@@ -11,6 +11,7 @@
 alias grep='egrep --color --ignore-case'
 alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
+alias gpg=gpg2
 
 if [[ $(uname) == 'Linux' ]]; then
 	alias ls='ls --color=auto'
