@@ -38,7 +38,7 @@
     default = matching
 
 [color]
-    ui = true
+    ui = auto
 
 [grep]
     #extendRegexp = true # ignored when patternType is set
