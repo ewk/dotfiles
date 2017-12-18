@@ -49,9 +49,9 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # ================  Message Headers ====================
 ignore *
 unignore Date: From: User-Agent: X-Mailer X-Operating-System To: \
-         Cc: Reply-To: Subject: Mail-Followup-To:
+         Cc: Reply-To: Subject: Mail-Followup-To: Resent-From:
 hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
-        Cc: Reply-To: Subject: Mail-Followup-To:
+        Cc: Reply-To: Subject: Mail-Followup-To: Resent-From:
 
 # ================  Colors  ====================
 source "$HOME/.mutt/colorsrc"
