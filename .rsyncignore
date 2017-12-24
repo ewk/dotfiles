@@ -21,6 +21,9 @@ bin
 .gnome2
 .gradle
 .pwd*
+.cargo
+.multirust
+.rustup
 
 # Patterns are relative to root directory (/etc usually)
 NetworkManager
