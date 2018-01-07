@@ -10,6 +10,7 @@
 source=$HOME
 dest=/run/media/ewk/Backup
 exclude=$HOME/.rsyncignore
+host="$(hostname)"
 
 date="$(date "+%Y-%m-%d-%H:%M:%S")"
 
@@ -23,9 +24,9 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
 if [ -e "$dest" ]; then
-	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/backup-"$date" > /dev/null &
-	rsync -Pvr --exclude-from="$exclude" /etc "$dest" > /dev/null &
-	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/Music > /dev/null &
+	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/"$host"/backup-"$date" > /dev/null &
+	rsync -Pvr --exclude-from="$exclude" /etc "$dest"/"$host" > /dev/null &
+	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/"$host"/Music > /dev/null &
 else
 	echo "Backup drive not available."
 fi
