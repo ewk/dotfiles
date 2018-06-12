@@ -8,7 +8,9 @@
 ;; General Config
 ;;
 
-;; Turn off scrollbars early in startup to avoid window width weirdness.
+(require 'cl-lib)
+
+;; Turn off scrollbars early in startup
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (define-key menu-bar-tools-menu [games] nil)
@@ -24,7 +26,6 @@
 (package-initialize)
 (load "~/.emacs.d/config/package-config.el")
 
-(require 'cl-lib)
 (set-language-environment "UTF-8")
 
 (column-number-mode 1) ; Show column number in mode-line
