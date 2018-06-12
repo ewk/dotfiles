@@ -28,7 +28,7 @@
 (set-language-environment "UTF-8")
 
 (column-number-mode 1) ; Show column number in mode-line
-(global-linum-mode 1) ; Line numbers in all buffers
+(global-display-line-numbers-mode t) ; Line numbers in all buffers
 
 ;; Turn off beeping and improve keyboard response
 (blink-cursor-mode 0) ; Disable cursor blinking
