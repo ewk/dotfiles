@@ -24,6 +24,8 @@
     git-gutter
     go-mode
     material-theme
+    flycheck-rust
+    rust-mode
     org)
   "Default packages to install on startup.")
 

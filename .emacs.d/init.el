@@ -165,6 +165,9 @@
             (setq tab-width 4)
             (setq indent-tabs-mode 1)))
 
+;; Rust mode
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
 ;; Set major mode for additional file types
 (setq auto-mode-alist
   (append
