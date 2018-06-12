@@ -168,6 +168,15 @@
 ;; Rust mode
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
+(require 'asm-mode)
+(add-hook 'asm-mode-hook
+	  (lambda ()
+	    (setq indent-tabs-mode nil) ; use spaces to indent
+	    (electric-indent-mode -1) ; indentation in asm-mode is annoying
+	    (setq tab-stop-list (number-sequence 2 60 2))))
+(define-key asm-mode-map (kbd "<ret>") 'newline-and-indent)
+(define-key asm-mode-map (kbd "<backtab>") 'company-complete) ; complete with Shift-TAB
+
 ;; Set major mode for additional file types
 (setq auto-mode-alist
   (append
