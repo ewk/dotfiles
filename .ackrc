@@ -4,6 +4,9 @@
 # Color is on by default. Setting it here confuses piped output.
 #--color
 
+# Ignore case in pattern
+--ignore-case
+
 # Use "less" as my pager
 #--pager=less -R
 
