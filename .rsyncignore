@@ -2,8 +2,12 @@
 #Projects/linux-src
 Projects/buildroot
 Projects/neovim
+Projects/GoWorkspace/src/github.com/google/syzkaller
 Music
 Downloads
+Documents/hacks/kernel/syzkaller/vmlinux
+Documents/hacks/kernel/syzkaller/bzImage
+VirtualBox*
 .local/share/gnome-boxes
 .local/share/Trash
 Projects/git-src
