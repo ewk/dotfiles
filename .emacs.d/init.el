@@ -275,5 +275,8 @@
     ))
 (add-hook 'server-switch-hook 'px-raise-frame-and-give-focus)
 
+;; Prevent package-selected-packages from writing to init.el
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 (provide 'init)
 ;;; init ends here
