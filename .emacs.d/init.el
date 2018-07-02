@@ -160,7 +160,7 @@
 (add-hook 'go-mode-hook
           (lambda ()
 	    (require 'company-go)
-	    (setq gofmt-command "goimports")
+	    (setq-default gofmt-command "goimports")
 	    (add-hook 'before-save-hook 'gofmt-before-save)
             (setq tab-width 4)
             (setq indent-tabs-mode 1)))
@@ -211,16 +211,16 @@
 
 ;; Trigger completion with TAB
 ;(global-set-key "\t" 'company-complete)
-(setq company-tooltip-limit 15)
-(setq company-idle-delay 0)
-(setq company-echo-delay 0)
-(setq company-begin-commands '(self-insert-command))
+;(setq-default company-tooltip-limit 15)
+;(setq-default company-idle-delay 0)
+;(setq-default company-echo-delay 0)
+;(setq-default company-begin-commands '(self-insert-command))
 
 ; Interactive do things- find file auto complete
 (ido-mode 1)
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t
-      ido-use-virtual-buffers t)
+;(setq-default ido-everywhere t)
+;(setq-default ido-enable-flex-matching t
+      ;ido-use-virtual-buffers t)
 (icomplete-mode t) ; Completion in mini-buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
@@ -233,7 +233,7 @@
 ;;
 
 ;; Where is aspell?
-(setq flyspell-issue-welcome-flag nil)
+(setq-default flyspell-issue-welcome-flag nil)
 (if (eq system-type 'darwin)
     (setq-default ispell-program-name "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/bin/aspell"))
