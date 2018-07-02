@@ -29,4 +29,6 @@ fi
 export GOPATH=$HOME/Projects/GoWorkspace
 PATH=$GOPATH/bin:$PATH
 
+PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH
