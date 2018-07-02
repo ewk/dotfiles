@@ -201,8 +201,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Open the quickfix window automatically
-"autocmd QuickFixCmdPost *grep* cwindow
-"autocmd QuickFixCmdPost * copen
+autocmd QuickFixCmdPost * cwindow
 
 "Enable goimports to automatically insert import paths instead of gofmt:
 let g:go_fmt_command = "goimports"
