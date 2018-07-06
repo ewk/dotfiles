@@ -106,7 +106,7 @@ augroup Filetypes
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType go setlocal nowrap
-    autocmd FileType text setlocal formatoptions+=tcql textwidth=80
+    autocmd FileType text,rst setlocal formatoptions+=tcql textwidth=80
 augroup END
 
 " ================ Folds ============================
