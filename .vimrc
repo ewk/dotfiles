@@ -81,7 +81,7 @@ set nowb       " Prevents automatic write backup before overwriting file
 set tabstop=4     " Number of visual spaces per TAB
 set softtabstop=4 " Number of spaces inserted per TAB; higher precedence than tabstop
 set shiftwidth=4  " Amount of white space to insert or remove in normal mode
-"set expandtab     " Turn TAB into spaces using value of softtabstop
+set expandtab     " Turn TAB into spaces using value of softtabstop
 
 set autoindent    " Always autoindent and copy previous indentation on copy
 set smarttab      " Insert tabs on the start of a line according to shiftwidth, not tabstop
