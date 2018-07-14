@@ -22,7 +22,7 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 # -r recurse into directories; implied by -a
 
 # fetch database backups from the server
-rsync -chavzP --stats zeus@72.14.187.238:SQLbackup $HOME/Documents/olympus/backup-"$date"
+rsync -chavzP --stats zeus@72.14.187.238:SQLbackup $HOME/Documents/olympus/
 
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
