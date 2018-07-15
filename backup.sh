@@ -27,6 +27,10 @@ rsync -chavzP --stats zeus@72.14.187.238:SQLbackup $HOME/Documents/olympus/
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
 if [ -e "$dest" ]; then
+	# Delete backup folders older than 6 months
+	cd "$dest"
+	find /run/media/ewk/Backup/"$host"/* -maxdepth 0 -type d -ctime +180 -not \( -name etc \) -exec rm -rf {} \;
+
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/"$host"/backup-"$date" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" /etc "$dest"/"$host" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/"$host"/Music > /dev/null &
