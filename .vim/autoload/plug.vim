@@ -1,0 +1,1 @@
+../pack/bundle/vim-plug/plug.vim

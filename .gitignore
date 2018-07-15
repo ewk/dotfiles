@@ -50,6 +50,7 @@ db/*.sqlite3
 .sqlite_history
 .tolb3755.bin
 .vim/.netrwhist
+.vim/plugged
 .viminfo
 doc/api
 doc/app

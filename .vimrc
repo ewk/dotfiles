@@ -3,13 +3,23 @@
 " ================ MUST RUN FIRST ====================
 set nocompatible " Use Vim settings, rather then Vi settings
 set encoding=utf-8 " Use UTF-8
-filetype plugin indent on
 " ================ END MUST RUN FIRST ====================
+
+call plug#begin('~/.vim/plugged')
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim'
+Plug 'rust-lang/rust.vim'
+Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+call plug#end()
 
 " ================ General Config ====================
 if has('nvim')
 	let g:deoplete#enable_at_startup = 1
 endif
+
 set shortmess+=I " Hide startup message
 let mapleader="," " change the mapleader from \ to ,
 set number "enable line numbering at paragraphs
@@ -23,7 +33,6 @@ set noerrorbells " I said no beeping!
 set title " change terminal title
 set autochdir "pwd is always same as current file
 set hidden " Hides buffers instead of closing them
-syntax enable " Enable syntax highlighting.
 set modelines=0 " Vim default is on unless root; turn off for security
 set ttyfast
 let g:netrw_liststyle=1 " Use list style in Netrw :E
