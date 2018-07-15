@@ -215,8 +215,6 @@ autocmd QuickFixCmdPost * cwindow
 "Enable goimports to automatically insert import paths instead of gofmt:
 let g:go_fmt_command = "goimports"
 
-autocmd! BufWritePost,BufEnter * Neomake
-
 " Call command to create a scratch buffer
 command! Scratch enew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
