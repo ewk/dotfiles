@@ -6,6 +6,7 @@ set encoding=utf-8 " Use UTF-8
 " ================ END MUST RUN FIRST ====================
 
 call plug#begin('~/.vim/plugged')
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim'
 Plug 'rust-lang/rust.vim'
@@ -17,7 +18,7 @@ call plug#end()
 
 " ================ General Config ====================
 if has('nvim')
-	let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 1
 endif
 
 set shortmess+=I " Hide startup message
