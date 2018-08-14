@@ -177,6 +177,9 @@
 (define-key asm-mode-map (kbd "<ret>") 'newline-and-indent)
 (define-key asm-mode-map (kbd "<backtab>") 'company-complete) ; complete with Shift-TAB
 
+;; Use Guile as our Scheme
+(setq-default scheme-program-name "guile")
+
 ;; Set major mode for additional file types
 (setq auto-mode-alist
   (append
