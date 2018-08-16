@@ -70,7 +70,6 @@
 
 ;; Highlighting
 (electric-pair-mode t) ;; Close pairs automatically
-(show-paren-mode t) ; Highlight parenthesis pairs
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
 (setq show-paren-style 'expression) ; Highlight text between parens
 (transient-mark-mode t) ;; Highlight mark selection
