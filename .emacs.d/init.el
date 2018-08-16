@@ -88,11 +88,7 @@
 ;;
 ;; Search settings
 ;;
-;set incsearch        " Find the next match as you type
-;set hlsearch         " Highlight searches by default
-;set viminfo='100,f1  " Save up to 100 marks, enable capital marks
-;set ignorecase       " Ignore case when searching
-;set smartcase        " Ignore case if search is all lowercase, else case-sensitive
+
 ;; Avoid backslash madness
 (require 're-builder)
 (setq reb-re-syntax 'string)
