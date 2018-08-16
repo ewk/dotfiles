@@ -1,17 +1,14 @@
 ;;; package-config --- Summary
 
 ;;; Commentary:
-;; Add additional sources for package-list
+;;; Add additional sources for package-list
 
 ;;; Code:
 
-;; Add marmalade and melpa repositories
+;; Add melpa repository
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
