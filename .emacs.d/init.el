@@ -124,6 +124,13 @@
 (setq-default cperl-indent-level 8) ;; Perl, of course, is different
 ;;(setq c-default-style "linux")
 
+;; These languages can be fussy about whitespace
+;; C, Perl, sh, zsh, and mmix inherit CC mode
+;; Make must always use tabs, never spaces.
+(setq-default html-indent-level 2) ;; 2 soft spaces
+(setq-default ruby-indent-level 2) ;; 2 soft spaces
+(setq-default css-indent-offset 4) ;; 4 space tabs
+
 ;; Sentences end with one space
 (setq sentence-end-double-space nil)
 
@@ -145,13 +152,6 @@
 ;; Syntax and filetype
 ;;
 (global-flycheck-mode) ;; Enable global syntax check
-
-;; Syntax of these languages can be fussy
-;; C, Perl, sh, zsh, and mmix inherit CC mode
-;; Make must always use tabs, never spaces.
-(setq html-indent-level 2) ;; 2 soft spaces
-(setq ruby-indent-level 2) ;; 2 soft spaces
-(setq css-indent-offset 4) ;; 4 space tabs
 
 ;; Go mode
 (add-hook 'go-mode-hook
