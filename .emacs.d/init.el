@@ -127,9 +127,6 @@
 ;; Sentences end with one space
 (setq sentence-end-double-space nil)
 
-;; Auto indent on newline - Ctrl-j
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; Add blank line to end of buffer
 (setq next-line-add-newlines t)
 
