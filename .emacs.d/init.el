@@ -97,8 +97,8 @@
 ;; Backups and autosave
 ;;
 (setq make-backup-files nil) ; No backup files ~
-;; TODO do this on lost focus like in Vim
-(setq auto-save-timeout 30) ; Autosave every 30 seconds; also the default
+;; Write all buffers when frame focus is lost, just like gVim
+(add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 (global-auto-revert-mode t) ; Reload files changed outside Emacs
 
 ;; Remember last position in each file- .emacs.d/places must exist
