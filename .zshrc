@@ -54,11 +54,15 @@ setopt prompt_subst # use substitutions in prompts
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 
+parse_git_stash () {
+	[[ $(git stash list 2> /dev/null | tail -n1) != "" ]] && echo -e '\U1F95E '
+}
+
 # Simple vcs prompt
 zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}]%f '
 precmd () { vcs_info }
-PS1='%n@%m %F{3}%c ${vcs_info_msg_0_}%f%% '
+PROMPT='%n@%m %F{3}%c ${vcs_info_msg_0_}$(parse_git_stash)%f%% '
 
 # OPTIONS
 ulimit -S -n 1024 # resource limits for the shell
