@@ -67,6 +67,8 @@ set sort_alias = alias                 # Sort alphabetically by name
 # set signature="$HOME/.mutt/signature"
 set followup_to = no # do not insert Mail-Followup-To header in list replies
 set honor_followup_to = yes # do not honor Mail-Followup-To header
+set query_command="goobook query '%s'" # Access google contacts
+bind editor <Tab> complete-query
 
 # ================  Encryption  ====================
 # GPG settings
