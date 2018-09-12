@@ -23,7 +23,6 @@
       initial-scratch-message nil)
 
 ;; Initialize must come before configurations installed packages.
-(package-initialize)
 (load "~/.emacs.d/config/package-config.el")
 
 (set-language-environment "UTF-8")
