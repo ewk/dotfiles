@@ -45,7 +45,6 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; Buffer management
-(setq pop-up-frame t) ; Buffers in separate frames
 (setq enable-recursive-minibuffers t) ; Stack minibuffers
 (setq large-file-warning-threshold nil) ; Don't warn opening large files
 (savehist-mode 1) ; Save minibuffer history
