@@ -27,6 +27,10 @@
 
 (set-language-environment "UTF-8")
 
+;; Enable evil mode
+(require 'evil)
+(evil-mode 1)
+
 (column-number-mode 1) ; Show column number in mode-line
 (global-display-line-numbers-mode t) ; Line numbers in all buffers
 
