@@ -30,6 +30,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     b = branch -v
     fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
+    diff = diff --check # check if patch introduces whitespace errors
 
 [credential]
     helper = cache --timeout=3600
@@ -59,3 +60,6 @@
 
 [gpg]
 	program = gpg2
+
+[commit]
+    verbose = true # show full patch when editing the commit message
