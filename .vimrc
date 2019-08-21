@@ -6,9 +6,7 @@ set encoding=utf-8 " Use UTF-8
 " ================ END MUST RUN FIRST ====================
 
 call plug#begin('~/.vim/plugged')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
@@ -54,13 +52,7 @@ if has("gui_running")
 	set lines=50 columns=100
 endif
 
-if has('macunix')
-	silent! set guifont=Menlo:h14
-elseif has('unix')
-	silent! set guifont=Droid\ Sans\ Mono\ 14
-	"silent! set guifont=Deja\ Vu\ Sans\ Mono\ 14
-	"silent! set guifont=Inconsolata\ Medium\ 14
-endif
+silent! set guifont=Droid\ Sans\ Mono\ Regular\ 14
 
 colorscheme blue_in_green
 set startofline " Keep cursor at same position when scrolling
