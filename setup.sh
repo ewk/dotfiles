@@ -7,7 +7,6 @@ ln -s "$cwd"/.ackrc "$HOME"
 ln -s "$cwd"/.emacs.d "$HOME"
 ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
-ln -s "$cwd"/.gvimrc "$HOME"
 ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.vim "$HOME"
 ln -s "$cwd"/.vim "$HOME"/.config/nvim
@@ -30,6 +29,3 @@ cp .msmtprc "$HOME"
 touch "$HOME"/.mutt/mutt-headercache
 mkdir ~/.cache/zsh
 touch ~/.cache/zsh/dirs
-
-# Initialize Vim plugins stored in submodules
-git submodule update --init --recursive
