@@ -7,18 +7,15 @@
 
 # The zsh package in Debian ignores ~/.zprofile and expects to load the
 # PATH from ~/.profile
-
-# Arch sets the default PATH from /etc/profile:
-# PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
-# /sbin is aliased to /bin on Arch systems
-# Arch will also source additional paths (such as Perl) from /etc/profiles.d
+# If ~/.bash_profile does not exist, ~/.bash_login and ~/.profile are checked
+# in that order.
 
 # Debian sets the default PATH for standard users from /etc/profile:
 # /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 # Fix it:
-if [[ $(uname -a) == *'Debian'* ]]; then
-	PATH=$PATH:/sbin:/usr/sbin
-fi
+#if [[ $(uname -a) == *'Debian'* ]]; then
+	PATH="/sbin:/usr/sbin:$PATH"
+#fi
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then

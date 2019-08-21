@@ -20,6 +20,8 @@ ln -s "$cwd"/.zlogout "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
 ln -s "$cwd"/.tmux.conf "$HOME"
+ln -s "$cwd"/.bashrc "$HOME"
+ln -s "$cwd"/.bash_logout "$HOME"
 
 # Copy config and then enter password
 cp .mbsyncrc "$HOME"
