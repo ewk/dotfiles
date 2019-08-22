@@ -24,7 +24,7 @@ let mapleader="," " change the mapleader from \ to ,
 set number "enable line numbering at paragraphs
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=50 " number of commands and searches to keep in history
-set undolevels=50 "many levels of undo
+set undolevels=1000 "many levels of undo
 set gcr=a:blinkon0              "Disable cursor blink
 set autoread                    "Reload files changed outside vim
 set visualbell " no beeping
