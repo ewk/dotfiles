@@ -48,6 +48,14 @@
 
 [merge]
     tool = gvimdiff
+    # exit failed merge with :cq
+    trustExitCode = true
+
+[mergetool "gvimdiff"]
+    cmd = gvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[mergetool "gfugitive"]
+    cmd = gvim -f -c "Gdiff" "$MERGED"
 
 [sendemail]
     from = Eddie Kovsky <ewk@edkovsky.org>

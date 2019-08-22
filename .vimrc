@@ -213,3 +213,9 @@ command! Scratch enew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswa
 
 " Presentation mode - white background w/o syntax highlighting and list chars
 command! Present colorscheme default | set syntax=off nolist
+
+" Better diff output?
+set diffopt+=algorithm:patience
+
+" Highlight merge conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
