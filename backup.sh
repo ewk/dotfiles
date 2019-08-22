@@ -28,6 +28,9 @@ if [ -e "$dest" ]; then
 	rsync -chavzP --stats zeus@72.14.187.238:SQLbackup $HOME/Documents/olympus/
 
 	# Delete backup folders older than 6 months
+	echo
+	echo "Deleting old backups ..."
+	echo
 	cd "$dest"
 	find "$dest"/"$host"/* -maxdepth 0 -type d -ctime +180 -not \( -name etc \) -exec rm -rf {} \;
 
