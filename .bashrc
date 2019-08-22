@@ -43,6 +43,7 @@ PROMPT_COMMAND='history -a' # Record each line as it gets issued
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 shopt -s histappend # Append to the history file, don't overwrite it
+shopt -s histverify # expand and verify command from history
 HISTCONTROL=ignoreboth # ignore duplicate commands and leading spaces
 HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:reset:"
 
