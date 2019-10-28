@@ -11,8 +11,11 @@ ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.vim "$HOME"
 ln -s "$cwd"/.vim "$HOME"/.config/nvim
 ln -s "$cwd"/.vimrc "$HOME"
+rm "$HOME"/profile
+rm "$HOME"/.bash_profile
 ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile
+ln -s "$cwd"/.profile "$HOME"/.bash_profile
 ln -s "$cwd"/.zshenv "$HOME"
 ln -s "$cwd"/.zshrc "$HOME"
 ln -s "$cwd"/.zlogout "$HOME"
