@@ -90,11 +90,13 @@ compinit -u
 # Return advances one line, tab advances one page
 zmodload zsh/complist
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' rehash true # look for new commands in PATH
 
 # Load approximate completion for autocorrection
 zstyle ':completion:::::' completer _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )'
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Substitute xargs
 autoload zargs
