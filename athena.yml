@@ -23,241 +23,61 @@
             shell: /bin/zsh
             groups: wheel
 
-      - name: install aspell
+      - name: Install some packages
+        ignore_errors: yes
         package:
-            name:  aspell-en
-            state: present
-
-      - name: install bison
-        package:
-            name:  bison
-            state: present
-
-      - name: install bc
-        package:
-            name:  bc
-            state: present
-
-      - name: install clang
-        package:
-            name:  clang
-            state: present
-
-      - name: install chromium
-        package:
-            name:  chromium
-            state: present
-
-      - name: install elf tools
-        package:
-            name:  elfutils-libelf-devel
-            state: present
-
-      - name: install emacs
-        package:
-            name:  emacs
-            state: present
-
-      - name: install flex
-        package:
-            name:  flex
-            state: present
-
-      - name: install gnome-tweaks
-        package:
-            name:  gnome-tweaks
-            state: present
-
-      - name: install git
-        package:
-            name:  git
-            state: present
-
-      - name: install google-droid-sans-mono-fonts
-        package:
-            name:  google-droid-sans-mono-fonts
-            state: present
-
-      - name: install google-noto-emoji-fonts
-        package:
-            name:  google-noto-emoji-fonts
-            state: present
-
-      - name: install goobook
-        package:
-            name:  goobook
-            state: present
-
-      - name: install isync
-        package:
-            name:  isync
-            state: present
-
-      - name: install keepassx
-        package:
-            name:  keepassx
-            state: present
-
-      - name: install keychain
-        package:
-            name:  keychain
-            state: present
-
-      - name: install msmtp
-        package:
-            name:  msmtp
-            state: present
-
-      - name: install mutt
-        package:
-            name:  mutt
-            state: present
-
-      - name: install notmuch
-        package:
-            name:  notmuch
-            state: present
-
-      - name: install openssl-devel
-        package:
-            name:  openssl-devel
-            state: present
-
-      - name: install python3-markdown
-        package:
-            name:  python3-markdown
-            state: present
-
-      - name: install ripgrep
-        package:
-            name:  ripgrep
-            state: present
-
-      - name: install rsync
-        package:
-            name:  rsync
-            state: present
-
-      - name: install strace
-        package:
-            name:  strace
-            state: present
-
-      - name: install sysstat
-        package:
-            name:  sysstat
-            state: present
-
-      - name: install texlive
-        package:
-            name: texlive
-            state: present
-
-      - name: install texlive-biblatex-socialscienceshuberlin
-        package:
-            name: texlive-biblatex-socialscienceshuberlin
-            state: present
-
-      - name: install texlive-isodate
-        package:
-            name: texlive-isodate
-            state: present
-
-      - name: install texlive-latex
-        package:
-            name: texlive-latex
-            state: present
-
-      - name: install texlive-latex
-        package:
-            name: texlive-latex
-            state: present
-
-      - name: install texlive-textpos
-        package:
-            name: texlive-textpos
-            state: present
-
-      - name: install texlive-xetex
-        package:
-            name: texlive-xetex
-            state: present
-
-      - name: install tk
-        package:
-            name:  tk
-            state: present
-
-      - name: install tmux
-        package:
-            name:  tmux
-            state: present
-
-      - name: install valgrind
-        package:
-            name:  valgrind
-            state: present
-
-      - name: install gVim
-        package:
-            name:  vim-X11
-            state: present
-
-      - name: install terminal Vim
-        package:
-            name:  vim-enhanced
-            state: present
-
-      - name: install w3m
-        package:
-            name:  w3m
-            state: present
-
-      - name: install weechat
-        package:
-            name:  weechat
-            state: present
-
-      - name: install xclip
-        package:
-            name:  xclip
+            name:
+                - aspell-en
+                - bison
+                - bc
+                - clang
+                - chromium
+                - elfutils-libelf-devel
+                - emacs
+                - flex
+                - gnome-tweaks
+                - git
+                - google-droid-sans-mono-fonts
+                - google-noto-emoji-fonts
+                - goobook
+                - isync
+                - keepassx
+                - keychain
+                - msmtp
+                - mutt
+                - notmuch
+                - openssl-devel
+                - python3-markdown
+                - ripgrep
+                - rsync
+                - strace
+                - sysstat
+                - tk
+                - tmux
+                - valgrind
+                - vim-X11
+                - vim-enhanced
+                - w3m
+                - weechat
+                - xclip
+                - texlive
+                - texlive-isodate
+                - texlive-latex
+                - texlive-latex
+                - texlive-textpos
+                - texlive-xetex
             state: present
 
 # Usually requires rpmfusion
-
-      - name: install gstreamer1-libav
+      - name: Install RPMFusion packages
         ignore_errors: yes
         package:
-            name:  gstreamer1-libav
-            state: present
-
-      - name: install gstreamer1-plugins-bad-free-extras
-        ignore_errors: yes
-        package:
-            name:  gstreamer1-plugins-bad-free-extras
-            state: present
-
-      - name: install gstreamer1-plugins-bad-freeworld
-        ignore_errors: yes
-        package:
-            name:  gstreamer1-plugins-bad-freeworld
-            state: present
-
-      - name: install gstreamer1-plugins-bad-nonfree
-        ignore_errors: yes
-        package:
-            name:  gstreamer1-plugins-bad-nonfree
-            state: present
-
-      - name: install gstreamer1-plugins-ugly
-        ignore_errors: yes
-        package:
-            name:  gstreamer1-plugins-ugly
-            state: present
-
-      - name: install vlc
-        ignore_errors: yes
-        package:
-            name:  vlc
+            name:
+                - gstreamer1-libav
+                - gstreamer1-plugins-bad-free-extras
+                - gstreamer1-plugins-bad-freeworld
+                - gstreamer1-plugins-bad-nonfree
+                - gstreamer1-plugins-ugly
+                - vlc
             state: present
 
