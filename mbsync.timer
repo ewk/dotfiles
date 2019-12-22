@@ -1,0 +1,17 @@
+# Enable this unit:
+#   $ systemctl daemon-reload
+# If the unit can't be found after reloading systemd, just reboot.
+#   $ systemctl --user start mbsync.timer
+#   $ systemctl --user enable mbsync.timer
+[Unit]
+Description=Mailbox synchronization timer
+After=network.target network-online.target dbus.socket
+
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=10m
+Unit=mbsync.service
+
+[Install]
+WantedBy=timers.target
+

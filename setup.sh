@@ -32,3 +32,16 @@ cp .msmtprc "$HOME"
 touch "$HOME"/.mutt/mutt-headercache
 mkdir ~/.cache/zsh
 touch ~/.cache/zsh/dirs
+
+# Set up systemd timer for mbsync
+mkdir -p "$HOME"/.config/systemd/user
+ln -s "cwd"/mbsync.service  "$HOME"/.config/systemd/user
+ln -s "cwd"/mbsync.timer "$HOME"/.config/systemd/user
+
+echo
+echo 'Reload the systemd daemon to load mbsync.timer'
+echo '	$ systemctl daemon-reload'
+echo
+echo 'Then enable the timer:'
+echo '	$ systemctl --user start mbsync.timer'
+echo '	$ systemctl --user enable mbsync.timer'
