@@ -26,8 +26,8 @@ ln -s "$cwd"/.bashrc "$HOME"
 ln -s "$cwd"/.bash_logout "$HOME"
 
 # Copy config and then enter password
-cp .mbsyncrc "$HOME"
-cp .msmtprc "$HOME"
+cp -n .mbsyncrc "$HOME"
+cp -n .msmtprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
 mkdir ~/.cache/zsh
