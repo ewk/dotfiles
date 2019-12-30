@@ -11,7 +11,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
 call plug#end()
 
 " ================ General Config ====================
@@ -105,7 +104,6 @@ augroup Filetypes
     autocmd FileType python setlocal formatoptions+=ro " Insert comment on newline
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType html,css,javascript setlocal ts=2 sts=2 sw=2 expandtab nowrap
-    autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab nowrap
     autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType go setlocal nowrap
     autocmd FileType text,rst setlocal formatoptions+=tcql textwidth=80
@@ -204,9 +202,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Open the quickfix window automatically
 autocmd QuickFixCmdPost * cwindow
-
-"Enable goimports to automatically insert import paths instead of gofmt:
-let g:go_fmt_command = "goimports"
 
 " Call command to create a scratch buffer
 command! Scratch enew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile

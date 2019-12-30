@@ -16,10 +16,8 @@
 ;; Default packages
 (defvar my-packages
   '(company
-    company-go
     flycheck
     git-gutter
-    go-mode
     material-theme
     flycheck-rust
     rust-mode

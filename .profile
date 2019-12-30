@@ -22,10 +22,6 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-# Go expects one directory for all source files
-export GOPATH=$HOME/Projects/GoWorkspace
-PATH=$GOPATH/bin:$PATH
-
 PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH
