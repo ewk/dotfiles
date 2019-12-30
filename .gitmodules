@@ -1,6 +1,3 @@
-[submodule ".vim/colors/blue_in_green"]
-	path = .vim/colors/blue_in_green
-	url = https://github.com/ewk/blue_in_green.git
 [submodule ".vim/pack/bundle/vim-plug"]
 	path = .vim/pack/bundle/vim-plug
 	url = https://github.com/junegunn/vim-plug.git

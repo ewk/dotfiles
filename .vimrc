@@ -11,6 +11,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'ewk/blue_in_green'
 call plug#end()
 
 " ================ General Config ====================
