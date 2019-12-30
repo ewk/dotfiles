@@ -12,25 +12,10 @@ alias grep='egrep --color --ignore-case'
 alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
 alias gpg=gpg2
-
-if [[ $(uname) == 'Linux' ]]; then
-	alias ls='ls --color=auto'
-fi
+alias ls='ls --color=auto'
 
 open() {
-	if [[ $(uname) == 'Linux' ]]; then
-		command xdg-open $1
-	elif [[ $(uname) == 'Darwin' ]]; then
-		command open $1
-	fi
-}
-
-gitk() {
-	if [[ $(uname) == 'Darwin' ]]; then
-		command gitx
-	else
-		command gitk&
-	fi
+	command xdg-open $1
 }
 
 # Sets the Mail Environment Variable

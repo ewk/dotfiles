@@ -60,9 +60,7 @@
 (set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 
 ;; Font
-(if (eq system-type 'darwin)
-    (set-frame-font "Menlo-14")
-  (set-frame-font "Droid Sans Mono-14"))
+(set-frame-font "Droid Sans Mono-14")
 
 ;; TODO keep cursor at same point when scrolling; use C-l for now
 
@@ -212,9 +210,7 @@
 
 ;; Where is aspell?
 (setq-default flyspell-issue-welcome-flag nil)
-(if (eq system-type 'darwin)
-    (setq-default ispell-program-name "/usr/local/bin/aspell")
-  (setq-default ispell-program-name "/usr/bin/aspell"))
+(setq-default ispell-program-name "/usr/bin/aspell")
 (setq-default ispell-list-command "list")
 
 ;; Enable spell checking
