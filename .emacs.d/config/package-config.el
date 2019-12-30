@@ -21,7 +21,6 @@
     material-theme
     flycheck-rust
     rust-mode
-    evil
     org)
   "Default packages to install on startup.")
 
