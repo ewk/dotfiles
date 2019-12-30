@@ -84,7 +84,6 @@ zstyle ':completion:*' rehash true # look for new commands in PATH
 zstyle ':completion:::::' completer _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) )'
 zstyle ':completion:*corrections' format '%B%d (errors: %e)%b'
-source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Substitute xargs
 autoload zargs
