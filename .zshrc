@@ -135,29 +135,3 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	zle -N zle-line-init
 	zle -N zle-line-finish
 fi
-
-#
-# Dirstack
-#
-# Remember last visited folders using 'dirs -v'
-# Autocomplete with 'cd - TAB'
-DIRSTACKSIZE=20
-DIRSTACKFILE="$HOME/.cache/zsh/dirs"
-
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-	dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-	[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
-fi
-
-chpwd() {
-	print -l $PWD ${(u)dirstack} >>$DIRSTACKFILE
-}
-
-setopt autopushd pushdsilent pushdtohome
-
-# Remove duplicate dirstack entries
-#setopt pushdignoredups
-typeset -U dirstack
-
-# This reverts the +/- operators.
-setopt pushdminus
