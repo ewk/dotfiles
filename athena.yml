@@ -45,8 +45,10 @@
                 - keychain
                 - msmtp
                 - mutt
+                - neovim
                 - notmuch
                 - openssl-devel
+                - perf
                 - python3-markdown
                 - ripgrep
                 - rsync
@@ -62,7 +64,6 @@
                 - xclip
                 - texlive
                 - texlive-isodate
-                - texlive-latex
                 - texlive-latex
                 - texlive-textpos
                 - texlive-xetex
