@@ -38,10 +38,7 @@
 
 ;; Show filename in frame
 (setq frame-title-format
-      ;;(list (format "%s %%S: %%j " (system-name))
-        '(buffer-file-name "%f" (dired-directory dired-directory "%b")));;)
-;;(setq frame-title-format '(buffer-file-name "%f" ("%b")))
-;;(setq frame-title-format "%b - emacs") ; Use buffer name as frame title
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b")))
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; Buffer management
@@ -113,7 +110,6 @@
 ;; Indentation in CC mode applies to C as well as most other languages
 (setq-default c-basic-offset 8)
 (setq-default cperl-indent-level 8) ;; Perl, of course, is different
-;;(setq c-default-style "linux")
 
 ;; These languages can be fussy about whitespace
 ;; C, Perl, sh, zsh, and mmix inherit CC mode
@@ -130,12 +126,6 @@
 ;; Do not wrap text in programming mode
 (add-hook 'c-mode-hook (lambda () (setq truncate-lines t)))
 
-;; Soft wrap plain text
-;;(add-hook 'text-mode-hook
-;;	  (lambda ()
-;;	    ;;(setq visual-line-mode 1)
-;;	    'turn-on-auto-fill
-;;	    ))
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;;
@@ -185,18 +175,8 @@
 ;; Turn on company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; Trigger completion with TAB
-;(global-set-key "\t" 'company-complete)
-;(setq-default company-tooltip-limit 15)
-;(setq-default company-idle-delay 0)
-;(setq-default company-echo-delay 0)
-;(setq-default company-begin-commands '(self-insert-command))
-
 ; Interactive do things- find file auto complete
 (ido-mode 1)
-;(setq-default ido-everywhere t)
-;(setq-default ido-enable-flex-matching t
-      ;ido-use-virtual-buffers t)
 (icomplete-mode t) ; Completion in mini-buffer
 (setq confirm-nonexistent-file-or-buffer nil)
 
