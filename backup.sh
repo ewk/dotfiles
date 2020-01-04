@@ -24,9 +24,6 @@ date="$(date "+%Y-%m-%d-%H:%M:%S")"
 # include/exclude patterns are relative to $HOME
 # remove the -$date suffix to use incremental backups
 if [ -e "$dest" ]; then
-	# fetch database backups from the server
-	rsync -chavzP --stats zeus@72.14.187.238:SQLbackup $HOME/Documents/olympus/
-
 	# Delete backup folders older than 6 months
 	echo
 	echo "Deleting old backups ..."
