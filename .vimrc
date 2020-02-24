@@ -6,7 +6,6 @@ set encoding=utf-8 " Use UTF-8
 " ================ END MUST RUN FIRST ====================
 
 call plug#begin('~/.vim/plugged')
-Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
