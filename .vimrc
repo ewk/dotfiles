@@ -38,6 +38,7 @@ augroup AutoSave
                 \| execute "normal! g'\"" | endif
 augroup END
 set lazyredraw " redraw only when we need to for faster macros
+set updatetime=100
 set nrformats= " treat all numerals as decimal instead of octal
 set fileformats=unix,dos,mac " Prefer Unix over Windows over OS 9 formats
 
