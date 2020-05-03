@@ -184,6 +184,9 @@ nnoremap gk k
 nnoremap ; :
 nnoremap : ;
 
+" Do not capture newline with '$' in visual mode
+vnoremap $ g_
+
 " Use Tab to trigger completion
 function! InsertTabWrapper()
     let col = col('.') - 1
