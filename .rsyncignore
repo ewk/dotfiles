@@ -16,7 +16,7 @@ Projects/git-src
 .devassistant
 .java
 .mdk
-bin
+#bin
 .AndroidStudio
 .android
 .cpanm
