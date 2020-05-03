@@ -47,7 +47,6 @@ precmd () { vcs_info }
 PROMPT='%n@%m %F{3}%c ${vcs_info_msg_0_}$(parse_git_stash)%f%% '
 
 # OPTIONS
-ulimit -S -n 1024 # resource limits for the shell
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features.
 setopt histverify # Turn on verbose history substitution
