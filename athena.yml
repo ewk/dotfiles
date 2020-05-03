@@ -52,6 +52,7 @@
                 - openssl-devel
                 - perf
                 - python3-markdown
+                - python3-sphinx
                 - ripgrep
                 - rsync
                 - strace
@@ -69,6 +70,7 @@
                 - texlive-latex
                 - texlive-textpos
                 - texlive-xetex
+                - virtualenv
             state: present
 
 # Usually requires rpmfusion
