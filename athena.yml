@@ -30,8 +30,10 @@
                 - aspell-en
                 - bison
                 - bc
+                - ccache
                 - clang
                 - chromium
+                - ctags
                 - elfutils-libelf-devel
                 - emacs
                 - flex
