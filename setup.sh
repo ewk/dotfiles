@@ -3,7 +3,6 @@
 cwd="$(pwd)"
 
 # Link home directory to config files in /dotfiles
-ln -s "$cwd"/.ackrc "$HOME"
 ln -s "$cwd"/.emacs.d "$HOME"
 ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
