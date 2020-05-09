@@ -30,8 +30,6 @@ cp -n .mbsyncrc "$HOME"
 cp -n .msmtprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
-mkdir ~/.cache/zsh
-touch ~/.cache/zsh/dirs
 
 # Set up systemd timer for mbsync
 mkdir -p "$HOME"/.config/systemd/user
