@@ -11,18 +11,14 @@ ln -s "$cwd"/.vim "$HOME"
 ln -s "$cwd"/.vim "$HOME"/.config/nvim
 ln -s "$cwd"/.vimrc "$HOME"
 rm "$HOME"/profile
-rm "$HOME"/.bash_profile
 ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile
-ln -s "$cwd"/.profile "$HOME"/.bash_profile
 ln -s "$cwd"/.zshenv "$HOME"
 ln -s "$cwd"/.zshrc "$HOME"
 ln -s "$cwd"/.zlogout "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
 ln -s "$cwd"/.tmux.conf "$HOME"
-ln -s "$cwd"/.bashrc "$HOME"
-ln -s "$cwd"/.bash_logout "$HOME"
 
 # Copy config and then enter password
 cp -n .mbsyncrc "$HOME"
