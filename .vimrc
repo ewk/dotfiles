@@ -2,7 +2,6 @@ set nocompatible
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
-Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
