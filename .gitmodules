@@ -1,3 +1,0 @@
-[submodule ".vim/pack/bundle/vim-plug"]
-	path = .vim/pack/bundle/vim-plug
-	url = https://github.com/junegunn/vim-plug.git
