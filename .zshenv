@@ -3,7 +3,7 @@
 # Used for setting system-wide environment variables.
 
 # EDITOR
-export EDITOR="gvim -f"
+export EDITOR="vim"
 # sudoedit
 export SUDO_EDITOR="vim"
 export CSCOPE_EDITOR="vim"

@@ -57,7 +57,7 @@ hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
 source "$HOME/.mutt/colorsrc"
 
 # ================  Composition  ====================
-set editor = `echo \$EDITOR`
+set editor = "gvim -f"
 set edit_headers = yes  # See the headers when editing
 set charset = UTF-8     # value of $LANG; also fallback for send_charset
 unset use_domain        # because joe@localhost is just embarassing

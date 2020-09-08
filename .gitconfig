@@ -7,7 +7,7 @@
 
 [core]
     excludesfile = ~/.gitignore
-    editor = $EDITOR
+    editor = gvim -f
     abbrev = 12 # default 7 char abbreviations may collide
     pager = less # default is less
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
