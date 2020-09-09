@@ -10,6 +10,8 @@ export CSCOPE_EDITOR="vim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
+export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+
 # Enable Ctrl-x-e to edit command line; same as typing 'fc"
 autoload -U edit-command-line
 zle -N edit-command-line
