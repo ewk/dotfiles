@@ -10,7 +10,7 @@ ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.vim "$HOME"
 ln -s "$cwd"/.vim "$HOME"/.config/nvim
 ln -s "$cwd"/.vimrc "$HOME"
-rm "$HOME"/profile
+rm "$HOME"/.profile || true
 ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile
 ln -s "$cwd"/.zshenv "$HOME"
