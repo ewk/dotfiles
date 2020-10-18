@@ -54,7 +54,7 @@ hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
         Cc: Reply-To: Subject: Mail-Followup-To: Resent-From:
 
 # ================  Colors  ====================
-source "$HOME/.mutt/colorsrc"
+source "$HOME/.mutt/gruvbox.muttrc"
 
 # ================  Composition  ====================
 set editor = "gvim -f"
