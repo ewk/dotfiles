@@ -34,6 +34,7 @@ db/*.sqlite3
 .ri/
 .ssh/
 .subversion/
+.vim/autoload/
 /tmp/
 
 # Files
