@@ -74,3 +74,6 @@
 
 [commit]
     verbose = true # show full patch when editing the commit message
+
+[pull]
+	rebase = false # default behavior (fast-forward if possible, else merge
