@@ -57,7 +57,7 @@
 (set-face-foreground 'highlight nil) ; Keep syntax highlighitng on highlighted line
 
 ;; Font
-(set-frame-font "Droid Sans Mono-14")
+(set-frame-font "Droid Sans Mono-15")
 
 ;; TODO keep cursor at same point when scrolling; use C-l for now
 
