@@ -104,6 +104,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Visual clues
 silent! set guifont=Droid\ Sans\ Mono\ Regular\ 15
 colorscheme blue_in_green
+set termguicolors
 set startofline                 " Keep cursor at same position when scrolling
 set showmatch                   " highlight matching pairs
 set cursorline
