@@ -1,6 +1,3 @@
-set nocompatible
-set encoding=utf-8
-
 " Automatically install vim-plug if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -17,18 +14,14 @@ call plug#end()
 
 set shortmess+=I                " hide startup message
 set number                      " enable line numbering at paragraphs
-set backspace=indent,eol,start  " allow backspace in insert mode
-set history=50                  " number of commands and searches to keep in history
 set undolevels=1000             " many levels of undo
 set gcr=a:blinkon0              " disable cursor blink
-set autoread                    " reload files changed outside vim
 set visualbell                  " no beeping
 set noerrorbells                " I said no beeping!
 set title                       " change terminal title
 set autochdir                   " pwd is always same as current file
 set hidden                      " hide buffers instead of closing them
 set nomodeline                  " turn them off
-set ttyfast
 set lazyredraw                  " redraw only when we need to for faster macros
 set updatetime=100
 set nrformats=                  " treat all numerals as decimal
@@ -71,11 +64,10 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Strip all trailing whitespace in the current buffer
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Paste from system clipboard instead of global register gymnastics
-set clipboard=unnamed
-noremap <leader>v "+p
-" And copy to system clipboard
-noremap <leader>c "+y$
+" Use system clipboard
+set clipboard+=unnamedplus
+" Copy to system clipboard
+noremap <leader>c "+y
 
 " Easy window navigation
 noremap <C-h> <C-w>h
@@ -124,8 +116,6 @@ set list                " Setting list disables linebreak; never use with showbr
 set virtualedit=block   " Visual select white space
 
 " Search
-set incsearch           " Find the next match as you type
-set hlsearch            " Highlight searches by default
 set viminfo='100,f1     " Save up to 100 marks, enable capital marks
 set ignorecase          " Ignore case when searching
 set smartcase           " Ignore case if search is all lowercase, else case-sensitive
@@ -137,7 +127,6 @@ set softtabstop=4   " Number of spaces inserted per TAB; higher precedence than 
 set shiftwidth=4    " Amount of white space to insert or remove in normal mode
 set expandtab       " Turn TAB into spaces using value of softtabstop
 set autoindent      " Always autoindent and copy previous indentation on copy
-set smarttab        " Insert tabs on the start of a line according to shiftwidth, not tabstop
 set shiftround      " Use multiple of shiftwidth when indenting with '<' and '>'
 set copyindent      " Copy the existing lines indent when autoindenting a new line.
 
@@ -155,7 +144,6 @@ augroup END
 " Autocompletion
 set omnifunc=syntaxcomplete#Complete    " Turn on omnicompletion
 set wildmode=list:longest
-set wildmenu                            " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignorecase                      " Ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
 set completeopt=longest,menuone
@@ -163,10 +151,8 @@ set completeopt=longest,menuone
 " Scrolling
 set scrolloff=8
 set sidescrolloff=15
-set sidescroll=1
 
 " Status line
-set laststatus=2                                " Always show status line
 set statusline=
 set statusline+=%f\                             " filename
 set statusline+=%h%m%r%w                        " status flags
@@ -176,13 +162,8 @@ set statusline+=%=                              " right align remainder
 set statusline+=0x%-8B                          " character value
 set statusline+=%-14(%l,%c%V%)                  " line, column
 set statusline+=%<%P                            " file position
-set showcmd                                     " Display incomplete commands
 set showmode                                    " Show editing mode
 
 " Write good
 set spell
 set mousemodel=popup
-
-" ctags
-set tags=./tags;        " Load tags recursively from working directory
-noremap <Leader>t :!ctags --extra=+f -R *<CR><CR>
