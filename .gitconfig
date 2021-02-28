@@ -27,7 +27,7 @@
 	fixes = Fixes: %h (\"%s\")
 
 [alias]
-    g = grep -P --break --heading --line-number
+    g = grep -P --break --heading --line-number --function-context
     view = grep -Ogvim # open all grep results in editor
     hist = log --color --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
