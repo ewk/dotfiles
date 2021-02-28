@@ -37,6 +37,8 @@ if has("gui_running")
     set lines=50 columns=100
 endif
 
+autocmd FocusGained * silent! checktime     " force autoread to update buffer
+
 " Automatically write out buffer and save location in file
 augroup AutoSave
     autocmd!
