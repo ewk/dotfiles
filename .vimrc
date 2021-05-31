@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'ewk/blue_in_green'
+Plug 'huyvohcmc/atlas.vim'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -105,7 +105,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
 silent! set guifont=Droid\ Sans\ Mono\ Regular\ 15
-colorscheme blue_in_green
+colorscheme atlas
 set termguicolors
 set startofline                 " Keep cursor at same position when scrolling
 set showmatch                   " highlight matching pairs
