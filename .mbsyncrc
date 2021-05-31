@@ -28,8 +28,8 @@ Inbox ~/Mail/INBOX
 # "DIR" TO MATCH DIR
 
 Channel user
-Master :user-remote:
-Slave :user-local:
+Far :user-remote:
+Near :user-local:
 Patterns "INBOX" "INBOX.Junk"
 Create Both
 Expunge Both
