@@ -3,10 +3,10 @@
 # Used for setting system-wide environment variables.
 
 # EDITOR
-export EDITOR="vim"
+export EDITOR="nvim"
 # sudoedit
-export SUDO_EDITOR="vim"
-export CSCOPE_EDITOR="vim"
+export SUDO_EDITOR="nvim"
+export CSCOPE_EDITOR="nvim"
 # But use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 

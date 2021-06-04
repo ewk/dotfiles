@@ -60,8 +60,6 @@
                 - tk
                 - tmux
                 - valgrind
-                - vim-X11
-                - vim-enhanced
                 - w3m
                 - weechat
                 - xclip
