@@ -3,6 +3,7 @@
 Projects/buildroot
 Projects/neovim
 Projects/GoWorkspace/src/github.com/google/syzkaller
+go
 Music
 Downloads
 Documents/hacks/kernel/syzkaller/vmlinux
