@@ -15,7 +15,6 @@
     pager = less # default is less
     whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
     #template = ~/.gitmessage # commit message template
-    #autocrlf = true # autoconvert Windows carriage return brain damage
 
 [format]
     signOff = True # enable --signoff for format-patch
@@ -28,10 +27,7 @@
 
 [alias]
     g = grep -P --break --heading --line-number --function-context
-    view = grep -Ogvim # open all grep results in editor
-    hist = log --color --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    b = branch -v
     fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
     diff = diff --check # check if patch introduces whitespace errors
 
@@ -48,17 +44,6 @@
     #extendRegexp = true # ignored when patternType is set
     lineNumber = true
     patternType = perl
-
-[merge]
-    tool = gvimdiff
-    # exit failed merge with :cq
-    trustExitCode = true
-
-[mergetool "gvimdiff"]
-    cmd = gvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-
-[mergetool "gfugitive"]
-    cmd = gvim -f -c "Gdiff" "$MERGED"
 
 [sendemail]
     from = Eddie Kovsky <ewk@edkovsky.org>
