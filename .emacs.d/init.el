@@ -47,9 +47,7 @@
 (savehist-mode 1) ; Save minibuffer history
 
 ;; Themes
-(if window-system
-    (load-theme 'material t)
-  (load-theme 'wombat t))
+(load-theme 'material t)
 
 ;; Cursorline
 (global-hl-line-mode t) ; Highlight cursor line
@@ -64,7 +62,6 @@
 ;; Highlighting
 (electric-pair-mode t) ;; Close pairs automatically
 (setq blink-matching-paren t) ; Blinking parenthesis, on by default
-;(setq show-paren-style 'expression) ; Highlight text between parens
 (transient-mark-mode t) ;; Highlight mark selection
 
 ;; Editing
@@ -155,7 +152,6 @@
 ;; Version control
 (global-git-gutter-mode t)
 (add-to-list 'vc-handled-backends 'Git)
-(global-git-commit-mode) ; Recognize commit_editmsg for 'git commit'
 
 ;;
 ;; Whitespace
