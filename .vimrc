@@ -106,7 +106,7 @@ set startofline                 " Keep cursor at same position when scrolling
 set showmatch                   " highlight matching pairs
 set cursorline
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
-call matchadd('ColorColumn', '\%81v', 100)   " highlight lines past 80 columns
+call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 
 " Highlight trailing whitespace
 set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
