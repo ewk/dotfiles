@@ -99,7 +99,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
-silent! set guifont=Droid\ Sans\ Mono\ Regular\ 15
+silent! set guifont=Droid\ Sans\ Mono\ Regular\ 16
 colorscheme atlas
 set termguicolors
 set startofline                 " Keep cursor at same position when scrolling
