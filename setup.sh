@@ -3,13 +3,11 @@
 cwd="$(pwd)"
 
 # Link home directory to config files in /dotfiles
+ln -s "$cwd"/nvim "$HOME"/.config
 ln -s "$cwd"/.emacs.d "$HOME"
 ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
 ln -s "$cwd"/.rsyncignore "$HOME"
-ln -s "$cwd"/.vim "$HOME"
-ln -s "$cwd"/.vim "$HOME"/.config/nvim
-ln -s "$cwd"/.vimrc "$HOME"
 rm "$HOME"/.profile || true
 ln -s "$cwd"/.profile "$HOME"
 ln -s "$cwd"/.profile "$HOME"/.zprofile

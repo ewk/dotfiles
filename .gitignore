@@ -35,6 +35,9 @@ db/*.sqlite3
 .ssh/
 .subversion/
 .vim/autoload/
+.vim/plugged/
+nvim/autoload/
+nvim/plugged/
 /tmp/
 
 # Files
@@ -51,10 +54,10 @@ db/*.sqlite3
 .sqlite_history
 .tolb3755.bin
 .vim/.netrwhist
-.vim/plugged
 .viminfo
 doc/api
 doc/app
 log/*.log
+nvim/.netrwhist
 tags
 
