@@ -72,9 +72,6 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-" When you forget to open a file with sudo
-cnoremap w!! w !sudo tee % >/dev/null
-
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z
 
