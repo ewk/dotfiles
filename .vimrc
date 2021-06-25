@@ -20,7 +20,7 @@ set visualbell                  " no beeping
 set noerrorbells                " I said no beeping!
 set title                       " change terminal title
 set autochdir                   " pwd is always same as current file
-set hidden                      " hide buffers instead of closing them
+"set hidden                      " hide buffers instead of closing them
 set nomodeline                  " turn them off
 set lazyredraw                  " redraw only when we need to for faster macros
 set updatetime=100
@@ -76,10 +76,10 @@ noremap <C-l> <C-w>l
 nnoremap J mzJ`z
 
 " Move by rows rather than lines
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+"nnoremap j gj
+"nnoremap k gk
+"nnoremap gj j
+"nnoremap gk k
 
 " Do not capture newline with '$' in visual mode
 vnoremap $ g_
