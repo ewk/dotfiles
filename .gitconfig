@@ -26,7 +26,7 @@
 	fixes = Fixes: %h (\"%s\")
 
 [alias]
-    g = grep -P --break --heading --line-number --function-context
+    g = grep -P --break --heading --line-number
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
     diff = diff --check # check if patch introduces whitespace errors
