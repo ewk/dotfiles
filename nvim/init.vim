@@ -20,7 +20,7 @@ set visualbell                  " no beeping
 set noerrorbells                " I said no beeping!
 set title                       " change terminal title
 set autochdir                   " pwd is always same as current file
-"set hidden                      " hide buffers instead of closing them
+set hidden                      " hide buffers instead of closing them
 set nomodeline                  " turn them off
 set lazyredraw                  " redraw only when we need to for faster macros
 set updatetime=100
