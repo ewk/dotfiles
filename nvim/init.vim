@@ -6,7 +6,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'Townk/vim-autoclose'
+Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'huyvohcmc/atlas.vim'
@@ -104,6 +104,7 @@ set showmatch                   " highlight matching pairs
 set cursorline
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
+lua require('nvim-autopairs').setup{}
 
 " Highlight trailing whitespace
 set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
