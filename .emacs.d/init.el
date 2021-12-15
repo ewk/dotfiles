@@ -89,8 +89,8 @@
 ;; Font
 (set-frame-font "Droid Sans Mono-16")
 
-;; Disable syntax highlighting
-(global-font-lock-mode 0)
+;; Enable syntax highlighting
+(global-font-lock-mode 1)
 
 ;; Cursorline
 (global-hl-line-mode t)                  ; Highlight cursor line
