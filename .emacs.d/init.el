@@ -68,7 +68,7 @@
 (savehist-mode 1)                          ; Save minibuffer history
 
 ;; Write all buffers when frame focus is lost
-(add-hook 'after-focuse-change-function (lambda () (save-some-buffers t)))
+(add-function :after after-focus-change-function (lambda () (save-some-buffers t)))
 (setq make-backup-files nil)    ; No backup files ~
 (global-auto-revert-mode t)     ; Reload files changed outside Emacs
 
