@@ -100,7 +100,7 @@ call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 lua require('nvim-autopairs').setup{}
 
 " Highlight trailing whitespace
-set listchars=tab:▸\ ,extends:#,nbsp:·,eol:¬
+set listchars=tab:▸\ ,trail:¬
 set list                " Setting list disables linebreak; never use with showbreak!
 set virtualedit=block   " Visual select white space
 
