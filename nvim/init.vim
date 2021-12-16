@@ -32,9 +32,8 @@ set nowb                        " Prevents automatic write backup before overwri
 set nofoldenable                " Don't fold by default
 let g:netrw_liststyle=1         " Use list style in Netrw :E
 
-autocmd FocusGained * silent! checktime     " force autoread to update buffer
-
 " Automatically write out buffer and save location in file
+autocmd FocusGained * silent! checktime     " force autoread to update buffer
 augroup AutoSave
     autocmd!
     autocmd FocusLost * :wa " Autosave
