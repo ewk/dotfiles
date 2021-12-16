@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'huyvohcmc/atlas.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -89,8 +89,8 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
-colorscheme atlas
 silent! set guifont=Droid\ Sans\ Mono:h16
+colorscheme gruvbox
 set termguicolors
 set startofline                 " Keep cursor at same position when scrolling
 set showmatch                   " highlight matching pairs
