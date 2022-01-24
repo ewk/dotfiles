@@ -13,9 +13,9 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 set shortmess+=I                " hide startup message
-set number                      " enable line numbering at paragraphs
+set number                      " enable line numbering
 set undolevels=1000             " many levels of undo
-set gcr=a:blinkon0              " disable cursor blink
+set guicursor=a:blinkon0        " disable cursor blink
 set visualbell                  " no beeping
 set noerrorbells                " I said no beeping!
 set title                       " change terminal title
@@ -23,12 +23,10 @@ set autochdir                   " pwd is always same as current file
 set hidden                      " hide buffers instead of closing them
 set nomodeline                  " turn them off
 set lazyredraw                  " redraw only when we need to for faster macros
-set updatetime=100
-set nrformats=                  " treat all numerals as decimal
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set nobackup
 set noswapfile
-set nowb                        " Prevents automatic write backup before overwriting file
+set nowritebackup               " Prevents automatic write backup before overwriting file
 set nofoldenable                " Don't fold by default
 let g:netrw_liststyle=1         " Use list style in Netrw :E
 
@@ -92,7 +90,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 silent! set guifont=Droid\ Sans\ Mono:h16
 colorscheme gruvbox
 set termguicolors
-set startofline                 " Keep cursor at same position when scrolling
 set showmatch                   " highlight matching pairs
 set cursorline
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
@@ -105,9 +102,8 @@ set list                " Setting list disables linebreak; never use with showbr
 set virtualedit=block   " Visual select white space
 
 " Search
-set viminfo='100,f1     " Save up to 100 marks, enable capital marks
 set ignorecase          " Ignore case when searching
-set smartcase           " Ignore case if search is all lowercase, else case-sensitive
+set smartcase           " Override ignorecase if search is all uppercase
 
 " Indentation
 " You will nearly always want tabstop == softtabstop == shiftwidth
@@ -151,8 +147,6 @@ set statusline+=%=                              " right align remainder
 set statusline+=0x%-8B                          " character value
 set statusline+=%-14(%l,%c%V%)                  " line, column
 set statusline+=%<%P                            " file position
-set showmode                                    " Show editing mode
 
 " Write good
 set spell
-set mousemodel=popup
