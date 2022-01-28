@@ -3,20 +3,21 @@
 cwd="$(pwd)"
 
 # Link home directory to config files in /dotfiles
-ln -s "$cwd"/nvim "$HOME"/.config
+rm "$HOME"/.profile || true
+
 ln -s "$cwd"/.emacs.d "$HOME"
 ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
-ln -s "$cwd"/.rsyncignore "$HOME"
-rm "$HOME"/.profile || true
-ln -s "$cwd"/.profile "$HOME"
-ln -s "$cwd"/.profile "$HOME"/.zprofile
-ln -s "$cwd"/.zshenv "$HOME"
-ln -s "$cwd"/.zshrc "$HOME"
-ln -s "$cwd"/.zlogout "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
+ln -s "$cwd"/.profile "$HOME"
+ln -s "$cwd"/.profile "$HOME"/.zprofile
+ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.tmux.conf "$HOME"
+ln -s "$cwd"/.zlogout "$HOME"
+ln -s "$cwd"/.zshenv "$HOME"
+ln -s "$cwd"/.zshrc "$HOME"
+ln -s "$cwd"/nvim "$HOME"/.config
 
 # Copy config and then enter password
 cp -n .mbsyncrc "$HOME"
