@@ -3,13 +3,8 @@
 # Used to set up aliases, functions, options, key bindings and
 # executing commands
 
-#
-# Standard shell
-#
-
 # User functions
 alias grep='egrep --color --ignore-case'
-alias emacsclient='emacsclient --no-wait'
 alias ll='ls -ahlF'
 alias gpg=gpg2
 alias ls='ls --color=auto'
@@ -20,9 +15,6 @@ open() {
 
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
-
-# Grep settings
-GREP_COLOR='1;30;43'
 
 # GPG config - will only ask for password once per shell
 keychain --eval --quiet >/dev/null

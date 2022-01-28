@@ -2,12 +2,10 @@
 # This file should not contain commands that produce output.
 # Used for setting system-wide environment variables.
 
-# EDITOR
 export EDITOR="nvim"
-# sudoedit
 export SUDO_EDITOR="nvim"
 export CSCOPE_EDITOR="nvim"
-# But use Emacs key bindings in terminal, C-e, C-a, etc
+# Use Emacs key bindings in terminal, C-e, C-a, etc
 bindkey -e
 
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
@@ -16,11 +14,6 @@ export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
-
-# Colors and rainbows
-#export TERM=xterm-256color
-export CLICOLOR=1 # Enable color output on OS X
 
 # Colored man pages
 man() {
