@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 lua require('lsp-config')
@@ -125,6 +126,8 @@ augroup Filetypes
     autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType text,rst setlocal formatoptions+=tcql textwidth=80
 augroup END
+
+let g:rustfmt_autosave = 1
 
 " Autocompletion
 set omnifunc=syntaxcomplete#Complete    " Turn on omnicompletion
