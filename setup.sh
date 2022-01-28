@@ -26,8 +26,8 @@ touch "$HOME"/.mutt/mutt-headercache
 
 # Set up systemd timer for mbsync
 mkdir -p "$HOME"/.config/systemd/user
-ln -s "cwd"/mbsync.service  "$HOME"/.config/systemd/user
-ln -s "cwd"/mbsync.timer "$HOME"/.config/systemd/user
+ln -s "$cwd"/mbsync.service  "$HOME"/.config/systemd/user
+ln -s "$cwd"/mbsync.timer "$HOME"/.config/systemd/user
 
 echo
 echo 'Reload the systemd daemon to load mbsync.timer'
