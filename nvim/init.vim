@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
+Plug 'robertmeta/nofrils'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -89,10 +89,9 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
 silent! set guifont=Droid\ Sans\ Mono:h16
-colorscheme gruvbox
+colorscheme nofrils-acme
 set termguicolors
 set showmatch                   " highlight matching pairs
-set cursorline
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 lua require('nvim-autopairs').setup{}
