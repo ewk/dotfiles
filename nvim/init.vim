@@ -10,15 +10,8 @@ Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
 Plug 'rust-lang/rust.vim'
 call plug#end()
-
-lua require('lsp-config')
 
 set shortmess+=I                " hide startup message
 set number                      " enable line numbering
@@ -83,9 +76,16 @@ nnoremap J mzJ`z
 " Do not capture newline with '$' in visual mode
 vnoremap $ g_
 
-" Definition help from LSP; overrides 'keywordprg' lookup
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+" Use Tab to trigger completion
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
 silent! set guifont=Droid\ Sans\ Mono:h16
@@ -134,7 +134,7 @@ set omnifunc=syntaxcomplete#Complete    " Turn on omnicompletion
 set wildmode=list:longest
 set wildignorecase                      " Ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
-set completeopt=longest,menuone,noinsert,noselect
+set completeopt=longest,menuone
 
 " Scrolling
 set scrolloff=8
