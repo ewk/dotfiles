@@ -10,7 +10,6 @@ Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'robertmeta/nofrils'
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -125,8 +124,6 @@ augroup Filetypes
     autocmd BufReadPost,FileReadPost *.h setlocal filetype=c " C header files
     autocmd FileType text,rst setlocal formatoptions+=tcql textwidth=80
 augroup END
-
-let g:rustfmt_autosave = 1
 
 " Autocompletion
 set omnifunc=syntaxcomplete#Complete    " Turn on omnicompletion
