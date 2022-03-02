@@ -58,9 +58,8 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Strip all trailing whitespace in the current buffer
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Use system clipboard
-set clipboard+=unnamedplus
 " Copy to system clipboard
+set clipboard+=unnamedplus
 noremap <leader>c "+y
 
 " Easy window navigation
@@ -87,10 +86,10 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Visual clues
-silent! set guifont=Droid\ Sans\ Mono:h16
-colorscheme nofrils-acme
+set showmatch
 set termguicolors
-set showmatch                   " highlight matching pairs
+colorscheme nofrils-acme
+silent! set guifont=Droid\ Sans\ Mono:h16
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 lua require('nvim-autopairs').setup{}
