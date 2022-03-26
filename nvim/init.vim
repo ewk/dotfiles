@@ -71,6 +71,12 @@ noremap <C-l> <C-w>l
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z
 
+" Move by rows rather than lines
+"nnoremap j gj
+"nnoremap k gk
+"nnoremap gj j
+"nnoremap gk k
+
 " Do not capture newline with '$' in visual mode
 vnoremap $ g_
 
