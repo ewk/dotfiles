@@ -5,7 +5,6 @@ cwd="$(pwd)"
 # Link home directory to config files in /dotfiles
 rm "$HOME"/.profile || true
 
-ln -s "$cwd"/.emacs.d "$HOME"
 ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
