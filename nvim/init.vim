@@ -10,6 +10,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'robertmeta/nofrils'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -154,3 +155,9 @@ set statusline+=%<%P                            " file position
 
 " Write good
 set spell
+
+" LSP config
+lua require'lspconfig'.rust_analyzer.setup{}
+
+" Run rustfmt on save
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
