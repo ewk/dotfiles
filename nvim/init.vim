@@ -157,7 +157,7 @@ set statusline+=%<%P                            " file position
 set spell
 
 " LSP config
-lua require'lspconfig'.rust_analyzer.setup{}
+lua require('lsp-config')
 
 " Run rustfmt on save
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
