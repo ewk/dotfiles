@@ -4,6 +4,7 @@ alias ls='ls --color=auto'
 alias ll='ls --all --human-readable --group-directories-first -l'
 alias grep='egrep --color --ignore-case'
 alias gpg=gpg2
+alias dh='dirs -v'
 
 open() {
 	command xdg-open $1
@@ -11,6 +12,9 @@ open() {
 
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/ewk && export MAIL
+# Directory stacks - use 'dh' to print stack and 'cd -<NUM>' to select directory
+setopt autopushd pushdminus pushdsilent pushdtohome pushd_ignore_dups
+DIRSTACKSIZE=16
 
 # GPG config - will only ask for password once per shell
 keychain --eval --quiet >/dev/null
