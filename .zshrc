@@ -1,7 +1,4 @@
-# .zshrc main configuration file
-# This file is sourced in interactive shells.
-# Used to set up aliases, functions, options, key bindings and
-# executing commands
+# Used for setting user's interactive shell configuration and executing commands.
 
 # User functions
 alias grep='egrep --color --ignore-case'
@@ -18,10 +15,6 @@ MAIL=/var/spool/mail/ewk && export MAIL
 
 # GPG config - will only ask for password once per shell
 keychain --eval --quiet >/dev/null
-
-#
-# Zsh specific goodies
-#
 
 # Prepare version control prompt
 setopt prompt_subst # use substitutions in prompts
