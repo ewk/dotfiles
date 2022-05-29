@@ -18,7 +18,7 @@ DIRSTACKSIZE=16
 keychain --eval --quiet >/dev/null
 
 # Prepare version control prompt
-setopt prompt_subst # use substitutions in prompts
+setopt prompt_subst     # use substitutions in prompts
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 
@@ -32,12 +32,11 @@ zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}]%f '
 precmd () { vcs_info }
 PROMPT='%n@%m %F{3}%c ${vcs_info_msg_0_}$(parse_git_stash)%f%% '
 
-# OPTIONS
-setopt auto_cd # change directory by typing a directory name on its own.
-setopt extended_glob # Turn on the more powerful pattern matching features.
-setopt noclobber # Prevents redirected output from overwriting existing files
+setopt auto_cd          # change directory by typing a directory name on its own.
+setopt extended_glob    # Turn on the more powerful pattern matching features.
+setopt noclobber        # Prevents redirected output from overwriting existing files
+setopt nohashdirs       # when a command is hashed do not hash the directory containing it
 setopt nobeep
-setopt nohashdirs # automatically find new executables
 
 # History settings
 HISTSIZE=1000
@@ -48,10 +47,10 @@ setopt hist_ignore_all_dups
 setopt histverify       # Turn on verbose history substitution
 setopt append_history   # Prevents race conditions saving to history file
 
+# Map arrow keys to browse history
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
@@ -60,7 +59,6 @@ autoload -U compinit # Load the function-based completion system
 compinit -u
 
 # Load pager for long list of completion options
-# Return advances one line, tab advances one page
 zmodload zsh/complist
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' rehash true # look for new commands in PATH
