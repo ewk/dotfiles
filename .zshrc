@@ -10,8 +10,6 @@ open() {
 	command xdg-open $1
 }
 
-# Sets the Mail Environment Variable
-MAIL=/var/spool/mail/ewk && export MAIL
 # Directory stacks - use 'dh' to print stack and 'cd -<NUM>' to select directory
 setopt autopushd pushdminus pushdsilent pushdtohome pushd_ignore_dups
 DIRSTACKSIZE=16
