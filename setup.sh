@@ -9,8 +9,7 @@ ln -s "$cwd"/.gitconfig "$HOME"
 ln -s "$cwd"/.gitignore "$HOME"
 ln -s "$cwd"/.mutt "$HOME"
 ln -s "$cwd"/.notmuch-config "$HOME"
-ln -s "$cwd"/.profile "$HOME"
-ln -s "$cwd"/.profile "$HOME"/.zprofile
+ln -s "$cwd"/.zprofile "$HOME"/.zprofile
 ln -s "$cwd"/.rsyncignore "$HOME"
 ln -s "$cwd"/.tmux.conf "$HOME"
 ln -s "$cwd"/.zlogout "$HOME"
