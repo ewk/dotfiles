@@ -1,10 +1,9 @@
 # Used for setting user's interactive shell configuration and executing commands.
 
-# User functions
-alias grep='egrep --color --ignore-case'
-alias ll='ls -ahlF'
-alias gpg=gpg2
 alias ls='ls --color=auto'
+alias ll='ls --all --human-readable --group-directories-first -l'
+alias grep='egrep --color --ignore-case'
+alias gpg=gpg2
 
 open() {
 	command xdg-open $1
