@@ -54,14 +54,14 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
-# AUTO COMPLETE
-autoload -U compinit # Load the function-based completion system
+# Load the function-based completion system
+autoload -Uz compinit
 compinit -u
 
 # Load pager for long list of completion options
 zmodload zsh/complist
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*' rehash true # look for new commands in PATH
+zstyle ':completion:*' rehash true      # automatically check for new executables in PATH
 
 # Load approximate completion for autocorrection
 zstyle ':completion:::::' completer _complete _approximate
