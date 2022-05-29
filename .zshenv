@@ -1,14 +1,12 @@
-# This file is sourced on all invocations of the shell.
-# This file should not contain commands that produce output.
-# Used for setting system-wide environment variables.
+# Used for setting user's environment variables; it should not contain
+# commands that produce output or assume the shell is attached to a TTY.
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export CSCOPE_EDITOR="nvim"
-# Use Emacs key bindings in terminal, C-e, C-a, etc
-bindkey -e
-
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+
+bindkey -e      # Use Emacs key bindings in terminal, C-e, C-a, etc
 
 # Enable Ctrl-x-e to edit command line; same as typing 'fc"
 autoload -U edit-command-line
