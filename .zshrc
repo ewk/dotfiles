@@ -35,18 +35,18 @@ PROMPT='%n@%m %F{3}%c ${vcs_info_msg_0_}$(parse_git_stash)%f%% '
 # OPTIONS
 setopt auto_cd # change directory by typing a directory name on its own.
 setopt extended_glob # Turn on the more powerful pattern matching features.
-setopt histverify # Turn on verbose history substitution
-setopt append_history # Prevents race conditions saving to history file
-setopt hist_ignore_dups # Ignore duplicates in command history
 setopt noclobber # Prevents redirected output from overwriting existing files
 setopt nobeep
 setopt nohashdirs # automatically find new executables
 
-# Use 1000 history lines internally, save all of them to the file ~/.history
+# History settings
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 HISTFILE="$HOME/.history"
-setopt HIST_IGNORE_SPACE
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt histverify       # Turn on verbose history substitution
+setopt append_history   # Prevents race conditions saving to history file
 
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
