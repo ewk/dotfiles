@@ -16,6 +16,7 @@ ln -s "$cwd"/.zlogout "$HOME"
 ln -s "$cwd"/.zshenv "$HOME"
 ln -s "$cwd"/.zshrc "$HOME"
 ln -s "$cwd"/nvim "$HOME"/.config
+ln -s "$cwd"/fish "$HOME"/.config
 
 # Copy config and then enter password
 cp -n .mbsyncrc "$HOME"
