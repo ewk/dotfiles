@@ -11,6 +11,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'robertmeta/nofrils'
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -81,17 +85,6 @@ nnoremap gk k
 " Do not capture newline with '$' in visual mode
 vnoremap $ g_
 
-" Use Tab to trigger completion
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-
 " Visual clues
 set showmatch
 set termguicolors
@@ -136,7 +129,7 @@ set omnifunc=syntaxcomplete#Complete    " Turn on omnicompletion
 set wildmode=list:longest
 set wildignorecase                      " Ignore case on filename completion using :
 set wildignore+=*.o,*.obj,*.git,*.rbc,*.swp,*.bak,*.pyc,*.class
-set completeopt=longest,menuone
+set completeopt=menuone,noinsert,noselect
 
 " Scrolling
 set scrolloff=8
