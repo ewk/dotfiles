@@ -189,32 +189,57 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (iTerm 2 default theme)
-colors:
-  # Default colors
-  primary:
-    background: '#101421'
-    foreground: '#fffbf6'
-  # Normal colors
-  normal:
-    black:   '#2e2e2e'
-    red:     '#eb4129'
-    green:   '#abe047'
-    yellow:  '#f6c744'
-    blue:    '#47a0f3'
-    magenta: '#7b5cb0'
-    cyan:    '#64dbed'
-    white:   '#e5e9f0'
+# Theme: modus-operandi
+# Description: Alacritty port of modus-operandi (Modus themes for Emacs)
+# Author: Protesilaos Stavrou, <https://protesilaos.com>
+#colors:
+#  primary:
+#    background: '#ffffff'
+#    foreground: '#000000'
+#  normal:
+#    black:   '#000000'
+#    red:     '#a60000'
+#    green:   '#005e00'
+#    yellow:  '#813e00'
+#    blue:    '#0031a9'
+#    magenta: '#721045'
+#    cyan:    '#00538b'
+#    white:   '#bfbfbf'
+#  bright:
+#    black:   '#595959'
+#    red:     '#972500'
+#    green:   '#315b00'
+#    yellow:  '#70480f'
+#    blue:    '#2544bb'
+#    magenta: '#5317ac'
+#    cyan:    '#005a5f'
+#    white:   '#ffffff'
 
-  # Bright colors
+
+# Theme: modus-vivendi
+# Description: Alacritty port of modus-vivendi (Modus themes for Emacs)
+# Author: Protesilaos Stavrou, <https://protesilaos.com>
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#ffffff'
+  normal:
+    black:   '#000000'
+    red:     '#ff8059'
+    green:   '#44bc44'
+    yellow:  '#d0bc00'
+    blue:    '#2fafff'
+    magenta: '#feacd0'
+    cyan:    '#00d3d0'
+    white:   '#bfbfbf'
   bright:
-    black:   '#565656'
-    red:     '#ec5357'
-    green:   '#c0e17d'
-    yellow:  '#f9da6a'
-    blue:    '#49a4f8'
-    magenta: '#a47de9'
-    cyan:    '#99faf2'
+    black:   '#595959'
+    red:     '#ef8b50'
+    green:   '#70b900'
+    yellow:  '#c0c530'
+    blue:    '#79a8ff'
+    magenta: '#b6a0ff'
+    cyan:    '#6ae4b9'
     white:   '#ffffff'
 
     # Bright and dim foreground colors
