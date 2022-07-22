@@ -32,8 +32,6 @@ ln -s "$cwd"/mbsync.timer "$HOME"/.config/systemd/user
 
 echo
 echo 'Reload the systemd daemon to load mbsync.timer'
-echo '	$ systemctl daemon-reload'
-echo
-echo 'Then enable the timer:'
-echo '	$ systemctl --user start mbsync.timer'
-echo '	$ systemctl --user enable mbsync.timer'
+sudo systemctl daemon-reload
+systemctl --user start mbsync.timer
+systemctl --user enable mbsync.timer
