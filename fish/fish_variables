@@ -7,7 +7,6 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_gpg:gpg2
 SETUVAR _fish_abbr_grep:egrep\x20\x2d\x2dcolor\x20\x2d\x2dignore\x2dcase
 SETUVAR _fish_abbr_ll:ls\x20\x2d\x2dall\x20\x2d\x2dhuman\x2dreadable\x20\x2d\x2dgroup\x2ddirectories\x2dfirst\x20\x2dl
-SETUVAR _fish_abbr_ls:ls\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_time:command\x20/usr/bin/time\x20\x2d\x2dportability
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2d\x2dreverse

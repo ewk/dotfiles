@@ -15,7 +15,6 @@ set --export --universal EDITOR nvim
 set --export --universal SUDO_EDITOR nvim
 set --export --universal CSCOPE_EDITOR nvim
 
-abbr --add ls 'ls --color=auto'
 abbr --add ll 'ls --all --human-readable --group-directories-first -l'
 abbr --add grep 'egrep --color --ignore-case'
 abbr --add gpg gpg2
