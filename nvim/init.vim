@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'robertmeta/nofrils'
+Plug 'ishan9299/modus-theme-vim'
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
@@ -95,7 +95,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Visual clues
 set showmatch
 set termguicolors
-colorscheme nofrils-acme
+colorscheme modus-operandi
 silent! set guifont=Fira\ Code:h15
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
