@@ -18,6 +18,7 @@ ln -s "$cwd"/.zshrc "$HOME"
 ln -s "$cwd"/nvim "$HOME"/.config
 ln -s "$cwd"/fish "$HOME"/.config
 ln -s "$cwd"/alacritty "$HOME"/.config
+ln -s "$cwd"/backup.sh "$HOME/bin/"
 
 # Copy config and then enter password
 cp -n .mbsyncrc "$HOME"
