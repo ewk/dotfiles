@@ -33,7 +33,7 @@ if [ -e "$dest" ]; then
 
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/"$host"/backup-"$date" > /dev/null &
 	rsync -Pvr --exclude-from="$exclude" /etc "$dest"/"$host" > /dev/null &
-	rsync -Pvr --exclude-from="$exclude" "$HOME"/Music "$dest"/"$host"/Music > /dev/null &
+	rsync -Pvr "$HOME"/Music "$dest" > /dev/null &
 else
 	echo "Backup drive not available."
 fi
