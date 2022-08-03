@@ -29,10 +29,9 @@ if [ -e "$dest" ]; then
 	echo "Deleting old backups ..."
 	echo
 	cd "$dest"
-	find "$dest"/"$host"/* -maxdepth 0 -type d -ctime +180 -not \( -name etc \) -exec rm -rf {} \;
+	find "$dest"/"$host"/* -maxdepth 0 -type d -ctime +180 -exec rm -rf {} \;
 
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/"$host"/backup-"$date" > /dev/null &
-	rsync -Pvr --exclude-from="$exclude" /etc "$dest"/"$host" > /dev/null &
 	rsync -Pvr "$HOME"/Music "$dest" > /dev/null &
 else
 	echo "Backup drive not available."
