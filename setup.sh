@@ -3,23 +3,20 @@
 cwd="$(pwd)"
 
 # Link home directory to config files in /dotfiles
-rm "$HOME"/.profile || true
-
-ln -s "$cwd"/.gitconfig "$HOME"
-ln -s "$cwd"/.gitignore "$HOME"
-ln -s "$cwd"/.mutt "$HOME"
-ln -s "$cwd"/.notmuch-config "$HOME"
-ln -s "$cwd"/.zprofile "$HOME"/.zprofile
-ln -s "$cwd"/.rsyncignore "$HOME"
-ln -s "$cwd"/.tmux.conf "$HOME"
-ln -s "$cwd"/.zlogout "$HOME"
-ln -s "$cwd"/.zshenv "$HOME"
-ln -s "$cwd"/.zshrc "$HOME"
-ln -s "$cwd"/nvim "$HOME"/.config
-ln -s "$cwd"/fish "$HOME"/.config
-ln -s "$cwd"/alacritty "$HOME"/.config
-ln -s "$cwd"/backup.sh "$HOME/bin/"
-
+ln -sf "$cwd"/.gitconfig "$HOME"
+ln -sf "$cwd"/.gitignore "$HOME"
+ln -sf "$cwd"/.mutt "$HOME"
+ln -sf "$cwd"/.notmuch-config "$HOME"
+ln -sf "$cwd"/.rsyncignore "$HOME"
+ln -sf "$cwd"/.tmux.conf "$HOME"
+ln -sf "$cwd"/.zlogout "$HOME"
+ln -sf "$cwd"/.zprofile "$HOME"/.zprofile
+ln -sf "$cwd"/.zshenv "$HOME"
+ln -sf "$cwd"/.zshrc "$HOME"
+ln -sf "$cwd"/alacritty "$HOME"/.config
+ln -sf "$cwd"/backup.sh "$HOME/bin/"
+ln -sf "$cwd"/fish "$HOME"/.config
+ln -sf "$cwd"/nvim "$HOME"/.config
 
 touch "$HOME"/.mutt/mutt-headercache
 
