@@ -20,9 +20,6 @@ ln -s "$cwd"/fish "$HOME"/.config
 ln -s "$cwd"/alacritty "$HOME"/.config
 ln -s "$cwd"/backup.sh "$HOME/bin/"
 
-# Copy config and then enter password
-cp -n .mbsyncrc "$HOME"
-cp -n .msmtprc "$HOME"
 
 touch "$HOME"/.mutt/mutt-headercache
 
