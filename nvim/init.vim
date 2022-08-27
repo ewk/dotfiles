@@ -155,6 +155,7 @@ set statusline+=%<%P                            " file position
 
 " Write good
 set spell
+autocmd FileType diff,gitcommit setlocal nospell
 
 " LSP config
 lua require('lsp-config')
