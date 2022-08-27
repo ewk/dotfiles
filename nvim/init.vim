@@ -123,7 +123,7 @@ set copyindent      " Copy the existing lines indent when autoindenting a new li
 " Syntax of these languages can be fussy
 augroup Filetypes
     autocmd!
-    autocmd FileType c,cpp,perl,sh,zsh,mmix setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
+    autocmd FileType c,cpp,perl,sh,zsh,mmix,asm setlocal ts=8 sts=8 sw=8 noexpandtab nowrap
     autocmd FileType python setlocal formatoptions+=ro " Insert comment on newline
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType html,css,javascript setlocal ts=2 sts=2 sw=2 expandtab nowrap
