@@ -16,7 +16,7 @@ set --export --universal SUDO_EDITOR nvim
 set --export --universal CSCOPE_EDITOR nvim
 
 abbr --add ll 'ls --all --human-readable --group-directories-first -l'
-abbr --add grep 'egrep --color --ignore-case'
+abbr --add grep 'grep -E --ignore-case'
 abbr --add gpg gpg2
 
 function open
