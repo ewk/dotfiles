@@ -7,8 +7,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
@@ -100,6 +99,7 @@ silent! set guifont=Fira\ Code\ Retina:h15
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 lua require('nvim-autopairs').setup{}
+lua require('gitsigns').setup()
 
 " Highlight trailing whitespace
 set listchars=tab:▸\ ,trail:¬
@@ -147,7 +147,7 @@ set statusline=
 set statusline+=%f\                             " filename
 set statusline+=%h%m%r%w                        " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}]    " file type
-set statusline+=%16{fugitive#statusline()}      " Current branch, requires plugin
+set statusline+=%14{get(b:,'gitsigns_head','')} " Current branch from gitsigns plugin
 set statusline+=%=                              " right align remainder
 set statusline+=0x%-8B                          " character value
 set statusline+=%-14(%l,%c%V%)                  " line, column
