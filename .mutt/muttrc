@@ -7,7 +7,7 @@ set move = no                  # Do not ask to confirm moving mail from spool
 set spoolfile = "+INBOX"       # Usually value of $MAIL or $MAILDIR
 set mail_check = 120           # time in seconds
 set message_cachedir = "$HOME/.mutt/bodies"
-set tmpdir           = "$HOME/.mutt/temp"
+set tmpdir           = "/tmp"
 set certificate_file = "$HOME/.mutt/certificates"
 set header_cache = "$HOME/.mutt/mutt-headercache"
 
