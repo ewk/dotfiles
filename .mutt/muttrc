@@ -22,14 +22,12 @@ set date_format = "%m/%d/%y"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads       # Always sort mailboxes by thread
 set duplicate_threads=yes # If sort=threads, duplicates are flagged with equals sign
-#set sort_aux = reverse-last-date-received  # like gmail
 set markers = no         # Mark wrapped lines of text in the pager with a +
 set mark_old = no        # read/new is good enough
 set smart_wrap = yes     # Wrap at word boundary; 'no' wraps at screen edge
 set pager_context = 3    # Retain context lines when scrolling
 set pager_stop = yes     # don't go to next message automatically
 set status_on_top = yes  # Status bar on top.
-#push "<show-version>"    # Shows version at startup
 set delete = yes         # purge messages marked for deletion without asking
 set confirmappend = no   # do not confirm saving a message
 set mailcap_path = "$HOME/.mutt/mailcap" # locate helper file
@@ -37,7 +35,6 @@ set beep = no            # I said no beeping!
 set implicit_autoview = yes # use any mailcap handler that defines 'copiousoutput'
 alternative_order text/plain text/enriched text/html
 set text_flowed # Use format=flowed to fix HTML mail
-# set auto_tag = yes       # Automatically apply functions to tagged messages
 # Call urlview to extract URLs out of a message
 macro index \cb |urlview\n
 bind pager \c? previous-line # Fix scrollback; Mutt assumes <backspace> is ^h
@@ -113,7 +110,3 @@ macro index <F9> \
 
 # Save message to folder "archive"
 macro index,pager A  "<save-message>=archive<enter>"  "mark message as Archived"
-
-# NOTE CONFLICT WITH 'archive'!!!
-# Apply message as patch to local repo
-#macro index,pager A '| git am -s'
