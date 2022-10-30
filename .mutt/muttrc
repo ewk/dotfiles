@@ -1,104 +1,70 @@
-# ================  IMAP w/ offlineimap ====================
-set folder = "$HOME/Mail"      # Root directory of local mailboxes
-set record = "+sent"           # Where to store sent messages, relative to folder
-set postponed = "+postponed"   # Where to store draft messages
-set mbox_type = Maildir        # Mailbox type
-set move = no                  # Do not ask to confirm moving mail from spool
-set spoolfile = "+INBOX"       # Usually value of $MAIL or $MAILDIR
-set mail_check = 120           # time in seconds
-set message_cachedir = "$HOME/.mutt/bodies"
-set tmpdir           = "/tmp"
+# Mailboxes
+set mbox_type = Maildir
+set folder = "$HOME/Mail"               # Location of local mailboxes
+set spoolfile = "+INBOX"                # Directory to poll for new mail
+set record = "+sent"                    # Where to store sent messages, relative to $folder
+set postponed = "+postponed"            # Where to store draft messages, relative to $folder
+set header_cache = "$HOME/.cache/mutt"
 set certificate_file = "$HOME/.mutt/certificates"
-set header_cache = "$HOME/.mutt/mutt-headercache"
 
-# ================  SMTP  ====================
+# SMTP
 set sendmail="/usr/bin/msmtp"
 set realname = "Eddie Kovsky"
 set from = "ewk@edkovsky.org"
-set use_from = yes
+set send_charset = "utf-8"
 
-# ================  Inbox Configuration  ====================
-set date_format = "%m/%d/%y"
+# Index View
 set index_format = "[%Z]  %D  %-20.20F  %s"
-set sort = threads       # Always sort mailboxes by thread
-set duplicate_threads=yes # If sort=threads, duplicates are flagged with equals sign
-set markers = no         # Mark wrapped lines of text in the pager with a +
-set mark_old = no        # read/new is good enough
-set smart_wrap = yes     # Wrap at word boundary; 'no' wraps at screen edge
-set pager_context = 3    # Retain context lines when scrolling
-set pager_stop = yes     # don't go to next message automatically
-set status_on_top = yes  # Status bar on top.
-set delete = yes         # purge messages marked for deletion without asking
-set confirmappend = no   # do not confirm saving a message
-set mailcap_path = "$HOME/.mutt/mailcap" # locate helper file
-set beep = no            # I said no beeping!
-set implicit_autoview = yes # use any mailcap handler that defines 'copiousoutput'
-alternative_order text/plain text/enriched text/html
-set text_flowed # Use format=flowed to fix HTML mail
-# Call urlview to extract URLs out of a message
-macro index \cb |urlview\n
-bind pager \c? previous-line # Fix scrollback; Mutt assumes <backspace> is ^h
+set date_format = "%m/%d/%y"    # format of “%d” in $index_format
+set sort = threads              # sort messages by thread
+set mark_old = no               # do not mark unread messages as old
+set delete = yes                # purge messages marked for deletion without asking
+set confirmappend = no          # do not confirm saving a message
+set beep = no                   # I said no beeping!
+source "$HOME/.mutt/colors/gruvbox"
 
-# ================  Status Bar  ====================
-set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)?]───%>─%?p?( %p postponed )?─── -- (%P)"
+# Pager View
+set pager_context = 3           # retain context lines when scrolling
+set pager_stop = yes            # don't go to next message automatically
+set markers = no                # do not mark wrapped lines of text with '+'
+set implicit_autoview = yes     # use any mailcap handler that defines 'copiousoutput'
+auto_view text/html             # automatically convert html using mailcap
+alternative_order text/plain text/enriched text/html    # default to text
+set mailcap_path = "$HOME/.mutt/mailcap"
 
-# ================  Message Headers ====================
+# Message header order
 ignore *
 unignore Date: From: User-Agent: X-Mailer X-Operating-System To: \
          Cc: Reply-To: Subject: Mail-Followup-To: Resent-From:
 hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
         Cc: Reply-To: Subject: Mail-Followup-To: Resent-From:
 
-# ================  Colors  ====================
-source "$HOME/.mutt/gruvbox.muttrc"
+# Status Bar
+set status_on_top = yes         # status bar on top.
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)?]───%>─%?p?( %p postponed )?─── -- (%P)"
 
-# ================  Composition  ====================
+# Composition
 set editor = "nvim"
-set edit_headers = yes  # See the headers when editing
-set charset = UTF-8     # value of $LANG; also fallback for send_charset
-unset use_domain        # because joe@localhost is just embarassing
-set alias_file = "$HOME/.mutt/mutt_aliases" # Address book
-source "$HOME/.mutt/mutt_aliases"     # Source address book
-set sort_alias = alias                 # Sort alphabetically by name
-# set signature="$HOME/.mutt/signature"
-set followup_to = no # do not insert Mail-Followup-To header in list replies
-set honor_followup_to = yes # do not honor Mail-Followup-To header
-set query_command="goobook query '%s'" # Access google contacts
-bind editor <Tab> complete-query
+set edit_headers = yes          # See the headers when editing
+set use_domain = no             # because joe@localhost is just embarassing
+set followup_to = no            # do not insert Mail-Followup-To header in list replies
+set honor_followup_to = yes     # but do honor Mail-Followup-To header
+set fast_reply = yes
+set include = yes               # include message in replies
 
-# ================  Encryption  ====================
-# GPG settings
-set crypt_autosign = no # sign all outgoing messages
-set crypt_replyencrypt = yes # encrypt replies to encrypted messages
-set crypt_replysignencrypted = yes # augments replyencrypt; see manual
-set crypt_replysign = yes # sign replies to signed messages
-set crypt_use_gpgme = yes # replace classic code
-set crypt_verify_sig = yes # alwasy verify signatures
+# GPG and PGP
+set crypt_use_gpgme = yes       # replace classic code
+set pgp_auto_decode = yes       # decrypt pgp messages automatically
+set crypt_replysignencrypted = yes
+source /usr/share/doc/mutt/samples/gpg.rc
 
-# PGP settings
-source "$HOME/.mutt/pgprc"
-set pgp_auto_decode = yes # decrypt pgp messages automatically
+# ==== Keyboard customization ====
+# Fix scrollback; Mutt assumes <backspace> is ^h
+bind pager \c? previous-line
 
-# ================  Filters and Lists  ====================
-lists .+vger.kernel.org
-lists kernel-hardening@lists.openwall.com
-lists .+kernelnewbies.org
-lists .+archlinux.org
-lists .+lists.fedoraproject.org
-lists .+lists.nclug.org
-lists .+lists.debian.org
-
-subscribe .+vger.kernel.org
-subscribe kernel-hardening@lists.openwall.com
-subscribe .+kernelnewbies.org
-subscribe .+archlinux.org
-subscribe .+lists.fedoraproject.org
-subscribe .+lists.nclug.org
-subscribe .+lists.debian.org
-
-# delete duplicate list messages in folder
-folder-hook . 'push <delete-pattern>~=<enter>'
+# Save message to folder "archive"
+macro index,pager A  "<save-message>=archive<enter>"  "mark message as Archived"
 
 # notmuch: F8 search all mail and F9 rebuild threads
 macro index <F8> \
@@ -107,6 +73,3 @@ macro index <F8> \
 macro index <F9> \
     "<enter-command>unset wait_key<enter><pipe-message>/usr/bin/notmuch-mutt thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter><enter-command>set wait_key<enter>" \
           "search and reconstruct owning thread (using notmuch)"
-
-# Save message to folder "archive"
-macro index,pager A  "<save-message>=archive<enter>"  "mark message as Archived"
