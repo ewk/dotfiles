@@ -26,9 +26,10 @@ env:
 window:
   # Window dimensions (changes require restart)
   #
-  # Number of lines/columns (not pixels) in the terminal. The number of columns
-  # must be at least `2`, while using a value of `0` for columns and lines will
-  # fall back to the window manager's recommended size.
+  # Number of lines/columns (not pixels) in the terminal. Both lines and columns
+  # must be non-zero for this to take effect. The number of columns must be at
+  # least `2`, while using a value of `0` for columns and lines will fall back
+  # to the window manager's recommended size
   dimensions:
     columns: 100
     lines: 50
@@ -93,11 +94,12 @@ window:
     # General application class
     #general: Alacritty
 
-  # GTK theme variant (Linux/BSD only)
+  # Decorations theme variant (Linux/BSD only)
   #
-  # Override the variant of the GTK theme. Commonly supported values are `dark`
-  # and `light`. Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
+  # Override the variant of the GTK theme/Wayland client side decorations.
+  # Commonly supported values are `dark` and `light`. Set this to `None` to use
+  # the default theme variant.
+  #decorations_theme_variant: None
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -172,12 +174,6 @@ font:
   #glyph_offset:
   #  x: 0
   #  y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
 
   # Use built-in font for box drawing characters.
   #
@@ -448,6 +444,11 @@ cursor:
     #   - Always: Force the cursor to always blink
     blinking: Off
 
+    # Time after which cursor stops blinking, in seconds.
+    #
+    # Specifying '0' will disable timeout for blinking.
+    #blink_timeout: 5
+
   # Vi mode cursor style
   #
   # If the vi mode cursor style is `None` or not specified, it will fall back to
@@ -477,8 +478,7 @@ live_config_reload: true
 # shell.
 #
 # Default:
-#   - (macOS) /bin/bash --login
-#   - (Linux/BSD) user login shell
+#   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
 #shell:
 #  program: /bin/bash
@@ -513,8 +513,8 @@ mouse:
 
 # Regex hints
 #
-# Terminal hints can be used to find text in the visible part of the terminal
-# and pipe it to other applications.
+# Terminal hints can be used to find text or hyperlink in the visible part of
+# the terminal and pipe it to other applications.
 #hints:
   # Keys used for the hint labels.
   #alphabet: "jfkdls;ahgurieowpq"
