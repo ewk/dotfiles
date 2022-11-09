@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ishan9299/modus-theme-vim'
-Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -156,9 +155,3 @@ set statusline+=%<%P                            " file position
 " Write good
 set spell
 autocmd FileType diff,gitcommit setlocal nospell
-
-" LSP config
-lua require('lsp-config')
-
-" Run rustfmt on save
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
