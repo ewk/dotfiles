@@ -94,7 +94,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 set showmatch
 set termguicolors
 colorscheme modus-operandi
-silent! set guifont=Fira\ Code\ Retina:h15
+silent! set guifont=Fira\ Mono:h15
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
 lua require('nvim-autopairs').setup{}
