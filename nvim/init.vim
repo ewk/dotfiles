@@ -8,7 +8,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'ishan9299/modus-theme-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
 
 set shortmess+=I                " hide startup message
@@ -93,7 +94,9 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Visual clues
 set showmatch
 set termguicolors
-colorscheme modus-operandi
+lua require('treesitter-config')
+lua require('gruvbox-config')
+colorscheme gruvbox
 silent! set guifont=Fira\ Mono:h15
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
