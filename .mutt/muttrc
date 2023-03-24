@@ -57,7 +57,6 @@ set include = yes               # include message in replies
 set crypt_use_gpgme = yes       # replace classic code
 set pgp_auto_decode = yes       # decrypt pgp messages automatically
 set crypt_replysignencrypted = yes
-source /usr/share/doc/mutt/samples/gpg.rc
 
 # ==== Keyboard customization ====
 # Fix scrollback; Mutt assumes <backspace> is ^h
