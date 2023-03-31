@@ -9,10 +9,6 @@ ln -sf "$cwd"/.mutt "$HOME"
 ln -sf "$cwd"/.notmuch-config "$HOME"
 ln -sf "$cwd"/.rsyncignore "$HOME"
 ln -sf "$cwd"/.tmux.conf "$HOME"
-ln -sf "$cwd"/.zlogout "$HOME"
-ln -sf "$cwd"/.zprofile "$HOME"/.zprofile
-ln -sf "$cwd"/.zshenv "$HOME"
-ln -sf "$cwd"/.zshrc "$HOME"
 ln -sf "$cwd"/alacritty "$HOME"/.config
 ln -sf "$cwd"/backup.sh "$HOME/bin/"
 ln -sf "$cwd"/fish "$HOME"/.config
