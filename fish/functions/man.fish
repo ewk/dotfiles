@@ -13,5 +13,7 @@ function man --description "colorized man page output"
   set -x LESS_TERMCAP_us (set_color afafd7 --underline)
   set -x LESS_TERMCAP_ue (set_color normal)
 
+  set -lx GROFF_NO_SGR yes # fix groff misbehavior on Fedora
+
   command man $argv
 end
