@@ -32,7 +32,7 @@ if [ -e "$dest" ]; then
 	find "$dest"/"$host"/* -maxdepth 0 -type d -ctime +180 -exec rm -rf {} \;
 
 	rsync -aPv --exclude-from="$exclude" "$source" "$dest"/"$host"/backup-"$date" > /dev/null &
-	rsync -Pvr "$HOME"/Music "$dest" > /dev/null &
+	rsync -aPv "$HOME"/Music "$dest" > /dev/null &
 else
 	echo "Backup drive not available."
 fi
