@@ -9,6 +9,7 @@ ln -sf .rsyncignore "$HOME"
 ln -sf .tmux.conf "$HOME"
 ln -sf alacritty "$HOME"/.config
 ln -sf backup.sh "$HOME/bin/"
+ln -sf foot "$HOME"/.config
 ln -sf fish "$HOME"/.config
 ln -sf nvim "$HOME"/.config
 
