@@ -79,3 +79,12 @@ color body color214 color234 "^gpg: There is no indication that the signature be
 color body color214 color234 "^gpg: can't handle these multiple signatures"
 color body color214 color234 "^gpg: signature verification suppressed"
 color body color214 color234 "^gpg: invalid node with packet of type"
+
+# Diff syntax highlighting
+color body white color234 "^diff \-.*"
+color body white color234 "^index [a-f0-9].*"
+color body white color234 "^\-\-\- .*"
+color body white color234 "^[\+]{3} .*"
+color body cyan color234 "^@@ .*"
+color body green color234 "^[\+][^\+]+.*"
+color body red  color234 "^\-[^\-]+.*"
