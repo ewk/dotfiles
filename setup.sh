@@ -10,7 +10,6 @@ ln -sf "$cwd"/.notmuch-config "$HOME"
 ln -sf "$cwd"/.rsyncignore "$HOME"
 ln -sf "$cwd"/alacritty "$HOME"/.config
 ln -sf "$cwd"/backup.sh "$HOME/bin/"
-ln -sf "$cwd"/foot "$HOME"/.config
 ln -sf "$cwd"/fish "$HOME"/.config
 ln -sf "$cwd"/nvim "$HOME"/.config
 
