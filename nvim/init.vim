@@ -92,18 +92,18 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Visual clues
 set showmatch
 set termguicolors
-lua require('treesitter-config')
 lua require('gruvbox-config')
-silent! set guifont=Fira\ Mono:h15
-highlight ColorColumn ctermbg=131 guibg=#af5f5f
-call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
-lua require('nvim-autopairs').setup{}
 lua require('gitsigns').setup()
+lua require('treesitter-config')
+lua require('nvim-autopairs').setup{}
+silent! set guifont=Fira\ Mono:h15
 
-" Highlight trailing whitespace
-set listchars=tab:▸\ ,trail:¬
+" Highlight whitespace and lines past 100 columns
 set list                " Setting list disables linebreak; never use with showbreak!
-set virtualedit=block   " Visual select white space
+set virtualedit=block   " Select white space in Visual mode
+set listchars=tab:▸\ ,trail:¬
+call matchadd('ColorColumn', '\%101v', 100)
+highlight ColorColumn ctermbg=131 guibg=#af5f5f
 
 " Search
 set ignorecase          " Ignore case when searching
