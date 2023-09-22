@@ -15,15 +15,12 @@ call plug#end()
 set shortmess+=I                " hide startup message
 set number                      " enable line numbering
 set undolevels=1000             " many levels of undo
-set guicursor=a:blinkon0        " disable cursor blink
 set visualbell                  " no beeping
 set noerrorbells                " I said no beeping!
 set title                       " change terminal title
 set autochdir                   " pwd is always same as current file
-set hidden                      " hide buffers instead of closing them
 set nomodeline                  " turn them off
 set lazyredraw                  " redraw only when we need to for faster macros
-set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set nobackup
 set noswapfile
 set nowritebackup               " Prevents automatic write backup before overwriting file
