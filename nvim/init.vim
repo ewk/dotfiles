@@ -96,7 +96,6 @@ set showmatch
 set termguicolors
 lua require('treesitter-config')
 lua require('gruvbox-config')
-colorscheme gruvbox
 silent! set guifont=Fira\ Mono:h15
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
 call matchadd('ColorColumn', '\%101v', 100)   " highlight lines past 100 columns
