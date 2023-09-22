@@ -25,6 +25,7 @@ set nobackup
 set noswapfile
 set nowritebackup               " Prevents automatic write backup before overwriting file
 set nofoldenable                " Don't fold by default
+set spell                       " Write good
 let g:netrw_liststyle=1         " Use list style in Netrw :E
 
 " Automatically write out buffer and save location in file
@@ -150,7 +151,3 @@ set statusline+=%=                              " right align remainder
 set statusline+=0x%-8B                          " character value
 set statusline+=%-14(%l,%c%V%)                  " line, column
 set statusline+=%<%P                            " file position
-
-" Write good
-set spell
-autocmd FileType diff,gitcommit setlocal nospell
