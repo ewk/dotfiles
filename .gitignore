@@ -60,5 +60,5 @@ doc/app
 fish/fish_variables
 log/*.log
 nvim/.netrwhist
+nvim/lazy-lock.json
 tags
-

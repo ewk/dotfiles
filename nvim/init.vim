@@ -1,16 +1,4 @@
-" Automatically install vim-plug if not present
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.config/nvim/plugged')
-Plug 'windwp/nvim-autopairs'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'ellisonleao/gruvbox.nvim'
-call plug#end()
+lua require('plugins-config')
 
 set shortmess+=I                " hide startup message
 set number                      " enable line numbering
