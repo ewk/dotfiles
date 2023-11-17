@@ -1,6 +1,8 @@
 function fish_prompt --description "minimal VCS prompt"
     set -g __fish_git_prompt_showcolorhints 1
     set -g __fish_git_prompt_showstashstate 1
+    set -g __fish_git_prompt_showdirtystate 1
+    set -g __fish_git_prompt_describe_style default
     set -g __fish_git_prompt_char_stashstate \U1F95E
 
     set -g fish_color_cwd yellow
