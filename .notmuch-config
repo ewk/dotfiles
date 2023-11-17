@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/ewk/Mail
+path=Mail
 
 # User configuration
 #
