@@ -16,6 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     "windwp/nvim-autopairs",
     "lewis6991/gitsigns.nvim",
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "comment" },
+        })
+    end },
     { "ellisonleao/gruvbox.nvim", priority = 1000 },
 })
