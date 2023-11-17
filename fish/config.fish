@@ -20,7 +20,7 @@ abbr --add grep 'grep -E --ignore-case'
 abbr --add gpg gpg2
 
 function open
-    command xdg-open $argv[1]
+    xdg-open $argv
 end
 
 function on_exit --on-event fish_exit
