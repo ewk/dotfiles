@@ -23,8 +23,4 @@ function open
     xdg-open $argv
 end
 
-function on_exit --on-event fish_exit
-    clear
-end
-
 fish_config theme choose coolbeans
