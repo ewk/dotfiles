@@ -7,6 +7,7 @@ function fish_prompt --description "minimal VCS prompt"
 
     set -g fish_color_cwd yellow
     set -g fish_color_user normal
+    set -g prompt_symbol \U276F
 
     printf '%s ' (prompt_login)
     set_color $fish_color_cwd
@@ -14,6 +15,6 @@ function fish_prompt --description "minimal VCS prompt"
     printf '%s' (prompt_pwd)
     set_color normal
 
-    printf '%s \U276F ' (__fish_git_prompt)
-    set_color normal
+    printf '%s ' (__fish_git_prompt)
+    printf "%s " $prompt_symbol
 end
