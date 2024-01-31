@@ -20,4 +20,4 @@ ln -sf "$cwd"/mbsync.timer "$HOME"/.config/systemd/user
 sudo systemctl daemon-reload
 systemctl --user start mbsync.timer
 systemctl --user enable mbsync.timer
-systemctl --user status mbsync.timer
+systemctl --user status mbsync.timer --no-pager
