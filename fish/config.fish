@@ -1,7 +1,6 @@
 # Anything that produces output must be guarded here
 if status is-interactive
     set --universal fish_greeting
-    keychain --eval --quiet >/dev/null  # only ask for password once per session
 end
 
 # Update $PATH
