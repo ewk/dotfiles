@@ -484,8 +484,8 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
-#shell:
-#program: /usr/bin/tmux
+shell:
+  program: /usr/bin/fish
 
 # Startup directory
 #
