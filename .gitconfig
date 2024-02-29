@@ -9,7 +9,6 @@
     #signingkey = <gpg-key-id>
 
 [core]
-    excludesfile = ~/.gitignore
     editor = nvim
     abbrev = 12 # default 7 char abbreviations may collide
     pager = less # default is less
