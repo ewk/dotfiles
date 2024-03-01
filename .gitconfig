@@ -15,14 +15,12 @@
     signOff = True # enable --signoff for format-patch
     coverLetter = auto # generate a cover letter for multiple patches
 
-# Change format of git-lg, git-show
-# Usage: git show --format=fixes aa3bf2bd8f15
 [pretty]
-	fixes = Fixes: %h (\"%s\")
+    log = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
 [alias]
     g = grep -P --break --heading --line-number
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --abbrev-commit --pretty=log
     fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
     diff = diff --check # check if patch introduces whitespace errors
 
