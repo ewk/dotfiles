@@ -12,8 +12,8 @@
     #template = ~/.gitmessage # commit message template
 
 [format]
-    signOff = True # enable --signoff for format-patch
-    coverLetter = auto # generate a cover letter for multiple patches
+    signOff = true
+    coverLetter = auto
 
 [pretty]
     log = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
@@ -21,7 +21,6 @@
 [alias]
     g = grep --break --heading
     lg = log --color --graph --abbrev-commit --pretty=log
-    fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
     diff = diff --check # check if patch introduces whitespace errors
 
 [credential]
