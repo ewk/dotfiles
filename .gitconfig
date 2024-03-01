@@ -47,3 +47,5 @@
 [commit]
     verbose = true # show full patch when editing the commit message
 
+[tag]
+    sort = version:refname
