@@ -8,7 +8,6 @@
 [core]
     editor = $EDITOR
     abbrev = 12 # default 7 char abbreviations may collide
-    #template = ~/.gitmessage # commit message template
 
 [format]
     signOff = true
