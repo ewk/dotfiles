@@ -26,7 +26,11 @@
     helper = cache --timeout=3600
 
 [push]
-    default = matching
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
 
 [grep]
     extendRegexp = true
