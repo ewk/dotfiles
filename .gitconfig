@@ -49,3 +49,6 @@
 
 [tag]
     sort = version:refname
+
+[rerere]
+    enabled = true
