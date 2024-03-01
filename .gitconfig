@@ -19,7 +19,7 @@
     log = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
 [alias]
-    g = grep -P --break --heading --line-number
+    g = grep --break --heading
     lg = log --color --graph --abbrev-commit --pretty=log
     fp = format-patch --signoff --keep-subject # Do not strip/add [PATCH] from first line
     diff = diff --check # check if patch introduces whitespace errors
@@ -31,9 +31,8 @@
     default = matching
 
 [grep]
-    #extendRegexp = true # ignored when patternType is set
+    extendRegexp = true
     lineNumber = true
-    patternType = perl
 
 [sendemail]
     from = Eddie Kovsky <ewk@edkovsky.org>
