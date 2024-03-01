@@ -51,3 +51,6 @@
 
 [rerere]
     enabled = true
+
+[pull]
+    ff = only
