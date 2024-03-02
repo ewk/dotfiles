@@ -35,10 +35,9 @@
     lineNumber = true
 
 [sendemail]
-    confirm = always #auto
-	#suppress-cc = author, self
     suppressFrom = true
     sendmailCmd = /usr/bin/msmtp
+    confirm = always
 
 [commit]
     verbose = true # show full patch when editing the commit message
