@@ -19,7 +19,6 @@
 [alias]
     g = grep --break --heading
     lg = log --color --graph --abbrev-commit --pretty=log
-    diff = diff --check # check if patch introduces whitespace errors
 
 [credential]
     helper = cache --timeout=3600
