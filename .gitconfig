@@ -35,12 +35,10 @@
     lineNumber = true
 
 [sendemail]
-    from = Eddie Kovsky <ewk@edkovsky.org>
-    smtpserver = "/usr/bin/msmtp"
-    smtpencryption = tls
     confirm = always #auto
 	#suppress-cc = author, self
     suppressFrom = true
+    sendmailCmd = /usr/bin/msmtp
 
 [commit]
     verbose = true # show full patch when editing the commit message
