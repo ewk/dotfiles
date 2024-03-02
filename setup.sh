@@ -3,7 +3,6 @@
 cwd="$(pwd)"
 
 # Link home directory to config files in /dotfiles
-ln -sf "$cwd"/.gitconfig "$HOME"
 ln -sf "$cwd"/git "$HOME"/.config/git
 ln -sf "$cwd"/.mutt "$HOME"
 ln -sf "$cwd"/.notmuch-config "$HOME"
