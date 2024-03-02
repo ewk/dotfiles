@@ -95,6 +95,3 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [shell]
 program = "/usr/bin/fish"
-
-[window]
-title = ""
