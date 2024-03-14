@@ -11,6 +11,8 @@ ln -sf "$cwd"/alacritty "$HOME"/.config
 ln -sf "$cwd"/backup.sh "$HOME/bin/"
 ln -sf "$cwd"/fish "$HOME"/.config
 ln -sf "$cwd"/nvim "$HOME"/.config
+ln -sf "$cwd"/zshenv "$HOME"/.zshenv
+ln -sf "$cwd"/zshrc "$HOME"/.zshrc
 
 # Set up systemd timer for mbsync
 mkdir -p "$HOME"/.config/systemd/user
