@@ -42,6 +42,11 @@ RPROMPT='%(?..[%B%F{red}%?%f%b])'
 # Environment, aliases, and functions
 bindkey -e		# Use Emacs key bindings in terminal, C-e, C-a, etc
 
+# Enable 'ctrl-x-e' to edit command line; same as typing 'fc'
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export CSCOPE_EDITOR="nvim"
