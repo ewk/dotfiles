@@ -32,8 +32,11 @@ parse_git_stash () {
 }
 
 # vcs prompt
-zstyle ':vcs_info:*' actionformats '%F{magenta}[%F{green}%b%F{yellow}|%F{red}%a%F{magenta}]%f '
-zstyle ':vcs_info:*' formats '%F{magenta}[%F{green}%b%F{magenta}]%f '
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:*' formats '%F{magenta}[%F{green}%b%F{red}%u%c%F{magenta}]%f '
+zstyle ':vcs_info:*' actionformats '%F{magenta}[%F{green}%b%F{yellow}|%F{red}%a%u%c%F{magenta}]%f '
 precmd () { vcs_info }
 PROMPT='%n@%m %F{yellow}%c ${vcs_info_msg_0_}$(parse_git_stash)%f%% '
 RPROMPT='%(?..[%B%F{red}%?%f%b])'
