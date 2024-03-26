@@ -10,9 +10,9 @@ if test -e $HOME/bin
     fish_add_path $HOME/bin
 end
 
-set --export --universal EDITOR nvim
-set --export --universal SUDO_EDITOR nvim
-set --export --universal CSCOPE_EDITOR nvim
+set --export --global EDITOR nvim
+set --export --global SUDO_EDITOR nvim
+set --export --global CSCOPE_EDITOR nvim
 
 abbr --add ll 'ls --all --human-readable --group-directories-first -l'
 abbr --add grep 'grep -E --ignore-case'
