@@ -80,7 +80,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Visual clues
 set showmatch
 set termguicolors
-lua require('gruvbox-config')
+lua require('themes-config')
 lua require('gitsigns').setup()
 lua require('treesitter-config')
 lua require('nvim-autopairs').setup{}
