@@ -1,5 +1,3 @@
-live_config_reload = true
-
 [colors.bright]
 black = "#595959"
 blue = "#79a8ff"
@@ -93,5 +91,10 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[shell]
+[general]
+live_config_reload = true
+
+[terminal]
+
+[terminal.shell]
 program = "/usr/bin/fish"
