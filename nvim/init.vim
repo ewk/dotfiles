@@ -89,9 +89,11 @@ silent! set guifont=Fira\ Mono:h15
 " Highlight whitespace and lines past 100 columns
 set list                " Setting list disables linebreak; never use with showbreak!
 set virtualedit=block   " Select white space in Visual mode
-set listchars=tab:▸\ ,trail:¬
+set listchars=tab:▸\\u0020
 call matchadd('ColorColumn', '\%101v', 100)
 highlight ColorColumn ctermbg=131 guibg=#af5f5f
+highlight ExtraWhitespace ctermbg=red guibg=#9d1f1f
+match ExtraWhitespace /\s\+$/
 
 " Search
 set ignorecase          " Ignore case when searching
