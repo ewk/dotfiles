@@ -31,9 +31,16 @@ size = 15
 [font.normal]
 family = "Fira Code"
 
+# Use default hints configuration, but links are only visible and clickable with Control modifier
 [[hints.enabled]]
 command = "xdg-open"
 post_processing = true
+persist = false
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
+binding = { key = "U", mods = "Control|Shift" }
+hyperlinks = true
+mouse.enabled = true
+mouse.mods = "Control"
 
 [[keyboard.bindings]]
 action = "CreateNewWindow"
