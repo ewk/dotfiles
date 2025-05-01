@@ -17,5 +17,5 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     "lewis6991/gitsigns.nvim",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
+    { "miikanissi/modus-themes.nvim", priority = 1000 },
 })
