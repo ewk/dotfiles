@@ -3,9 +3,6 @@ if status is-interactive
     set --universal fish_greeting
 end
 
-# Update $PATH
-fish_add_path $HOME/.cargo/bin
-
 if test -e $HOME/bin
     fish_add_path $HOME/bin
 end
