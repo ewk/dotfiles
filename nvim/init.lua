@@ -81,7 +81,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 -- Visual clues
 vim.opt.showmatch = true
-vim.opt.termguicolors = true
 require('themes-config')
 require('gitsigns').setup()
 require('treesitter-config')
@@ -107,7 +106,6 @@ vim.opt.tabstop = 4         -- Number of visual spaces per TAB
 vim.opt.softtabstop = 4     -- Number of spaces inserted per TAB; higher precedence than tabstop
 vim.opt.shiftwidth = 4      -- Amount of white space to insert or remove in normal mode
 vim.opt.expandtab = true    -- Turn TAB into spaces using value of softtabstop
-vim.opt.autoindent = true   -- Always autoindent and copy previous indentation on copy
 vim.opt.shiftround = true   -- Use multiple of shiftwidth when indenting with '<' and '>'
 vim.opt.copyindent = true   -- Copy the existing lines indent when autoindenting a new line.
 
