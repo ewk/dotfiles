@@ -16,6 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     "windwp/nvim-autopairs",
     "lewis6991/gitsigns.nvim",
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    "romus204/tree-sitter-manager.nvim",
     { "miikanissi/modus-themes.nvim", priority = 1000 },
 })
