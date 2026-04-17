@@ -66,18 +66,14 @@ vim.keymap.set('n', 'gk', 'k', { noremap = true })
 -- Do not capture newline with '$' in visual mode
 vim.keymap.set('v', '$', 'g_', { noremap = true })
 
-vim.cmd([[
-" Use Tab to trigger completion
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-]])
+-- Use Tab to select completions
+vim.keymap.set('i', '<Tab>', function()
+  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
+end, { expr = true })
+
+vim.keymap.set('i', '<S-Tab>', function()
+  return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
+end, { expr = true })
 
 -- Visual clues
 vim.opt.showmatch = true
@@ -140,6 +136,7 @@ vim.opt.wildmode = 'list:longest'
 vim.opt.wildignorecase = true       -- Ignore case when completing file names and directories.
 vim.opt.wildignore = { '*.o', '*.obj', '*.git', '*.rbc', '*.swp', '*.bak', '*.pyc', '*.class' }
 vim.opt.completeopt = "longest,menuone"
+vim.opt.autocomplete = true
 
 -- Scrolling
 vim.opt.scrolloff = 8
