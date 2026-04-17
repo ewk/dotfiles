@@ -146,7 +146,7 @@ local statusline = {
     '%f',                                   -- filename
     '%h%m%r%w',                             -- status flags
     '%10{&filetype}',                       -- file type
-    --'%14{get(b:,'gitsigns_head','')}',    -- current branch from gitsigns plugin
+    '%14{get(b:,\'gitsigns_head\',\'\')}',  -- current branch from gitsigns plugin
     '%=',                                   -- right align remainder
     '0x%-8B',                               -- character value
     '%-14(%l,%c%V%)',                       -- line, column
